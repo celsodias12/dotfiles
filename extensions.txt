@@ -4,7 +4,7 @@ CoenraadS.bracket-pair-colorizer-2
 dbaeumer.vscode-eslint
 DiegoMolina.css-minify
 dracula-theme.theme-dracula
-dzannotti.vscode-babel-coloring
+mgmcdermott.vscode-language-babel
 eamodio.gitlens
 EditorConfig.EditorConfig
 esbenp.prettier-vscode
