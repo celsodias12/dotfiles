@@ -86,6 +86,5 @@
 
   "colorHelper.formatsOrder": [],
   "liveServer.settings.donotShowInfoMsg": true,
-  "discord.removeTimestamp": true,
-  "discord.swapBigAndSmallImage": true
+  "discord.removeTimestamp": true
 }
