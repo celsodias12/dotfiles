@@ -85,5 +85,7 @@
   },
 
   "colorHelper.formatsOrder": [],
-  "liveServer.settings.donotShowInfoMsg": true
+  "liveServer.settings.donotShowInfoMsg": true,
+  "discord.removeTimestamp": true,
+  "discord.swapBigAndSmallImage": true
 }
