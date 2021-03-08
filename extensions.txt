@@ -25,3 +25,5 @@ SonarSource.sonarlint-vscode
 spywhere.guides
 Wscats.eno
 Zignd.html-css-class-completion
+igordvlpr.pack-vsix
+alefragnani.bookmarks
