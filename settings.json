@@ -1,8 +1,6 @@
 {
   "terminal.integrated.fontSize": 12,
   "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
-
-  "workbench.colorTheme": "Dracula",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.editor.labelFormat": "short",
 
@@ -17,12 +15,21 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.renderLineHighlight": "gutter",
-  "editor.rulers": [80, 110],
+  "editor.rulers": [90, 110],
   "editor.linkedEditing": true,
   "editor.suggestSelection": "first",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
+
+  "prettier.bracketSpacing": true,
+  "prettier.jsxBracketSameLine": false,
+  "prettier.trailingComma": "es5",
+  "prettier.tabWidth": 2,
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
+  "prettier.arrowParens": "avoid",
+  "prettier.printWidth": 90,
 
   "files.autoSave": "afterDelay",
   "files.associations": {
@@ -86,5 +93,15 @@
 
   "colorHelper.formatsOrder": [],
   "liveServer.settings.donotShowInfoMsg": true,
-  "discord.removeTimestamp": true
+  "discord.removeTimestamp": true,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "workbench.colorTheme": "Dracula",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
