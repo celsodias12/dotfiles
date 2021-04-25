@@ -4,8 +4,6 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.editor.labelFormat": "short",
 
-  // "breadcrumbs.enabled": true,
-
   "editor.tabSize": 2,
   "editor.fontSize": 14,
   "editor.fontFamily": "Fira Code",
@@ -15,11 +13,18 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.renderLineHighlight": "gutter",
-  "editor.rulers": [90, 110],
+  "editor.rulers": [80, 110],
   "editor.linkedEditing": true,
   "editor.suggestSelection": "first",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
+  },
+
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "**/package-lock.json": true,
   },
 
   "prettier.bracketSpacing": true,
@@ -29,7 +34,7 @@
   "prettier.singleQuote": true,
   "prettier.jsxSingleQuote": true,
   "prettier.arrowParens": "avoid",
-  "prettier.printWidth": 90,
+  "prettier.printWidth": 80,
 
   "files.autoSave": "afterDelay",
   "files.associations": {
@@ -103,5 +108,7 @@
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "files.eol": "\n",
+  "redhat.telemetry.enabled": false
 }
