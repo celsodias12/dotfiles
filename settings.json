@@ -3,6 +3,7 @@
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "terminal.integrated.tabs.enabled": true,
 
+  "workbench.startupEditor": "none",
   "workbench.colorTheme": "Dracula Pro",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.editor.labelFormat": "short",
@@ -13,8 +14,12 @@
     "errorLens.infoForeground": "#737373",
     "errorLens.warningForeground": "#a0734b",
     "errorLens.errorBackground": "#66000000",
-    "errorLens.hintBackground": "#66000000"
+    "errorLens.hintBackground": "#66000000",
+    "editor.lineHighlightBackground": "#1073cf2d",
+    "editor.lineHighlightBorder": "#9fced11f"
   },
+
+  "explorer.compactFolders": false,
 
   "editor.tabSize": 2,
   "editor.fontSize": 14,
@@ -31,6 +36,9 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
+  "editor.inlineSuggest.enabled": true,
+  "editor.wordWrap": "off",
+  "editor.wordBasedSuggestions": false,
 
   "search.exclude": {
     "**/node_modules": true,
@@ -48,14 +56,14 @@
   "prettier.arrowParens": "avoid",
   "prettier.printWidth": 80,
 
-  "files.autoSave": "afterDelay",
+  // "files.autoSave": "afterDelay",
   "files.associations": {
     ".sequelizerc": "javascript",
     ".stylelintrc": "json",
     ".prettierrc": "json",
     "*.tsx": "typescriptreact"
   },
-  "files.eol": "\n",
+  // "files.eol": "\n",
 
   "emmet.syntaxProfiles": { "javascript": "jsx" },
   "emmet.includeLanguages": { "javascript": "javascriptreact" },
@@ -107,10 +115,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
-  "[prisma]": {
-    "editor.formatOnSave": true
-  },
-
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -119,9 +123,14 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
+  "[env]": {
+    "editor.defaultFormatter": "IronGeek.vscode-env"
+  },
+
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+
   "[css]": {
     "editor.defaultFormatter": "MikeBovenlander.formate"
   },
@@ -131,33 +140,79 @@
   "quokka.compactMessageOutput": false,
 
   "cSpell.userWords": [
+    "Cnpj",
     "Ionicons",
+    "Laravel",
     "Parens",
     "RECENTLOGGED",
     "REPORTSELECTED",
     "RNFS",
+    "Roadmap",
+    "Roboto",
+    "Rocketseat",
     "Xiaomi",
+    "antd",
     "appcenter",
     "avds",
     "browserslist",
+    "camelcase",
     "categorys",
     "celso",
+    "celsodias",
     "checkmark",
     "codepush",
+    "commitlint",
     "datetimepicker",
+    "docwxyxoifgyqh",
+    "dtos",
+    "expdas",
+    "expds",
     "formik",
     "gradlew",
+    "impas",
+    "iphone",
+    "linkedin",
     "middlewares",
+    "multiline",
     "navs",
+    "nestjs",
+    "nestjsx",
     "noopener",
     "noreferrer",
+    "paren",
     "persistor",
     "pjpeg",
+    "postgres",
+    "prebuild",
+    "rajdhani",
+    "rcombreducer",
+    "rcreducer",
     "reactotron",
+    "rlog",
+    "rmieiof",
+    "rncc",
+    "rndrawer",
+    "rnfc",
+    "rnimpsc",
+    "rnisc",
+    "rnndrawer",
+    "rnnf",
+    "rnnstack",
+    "rnntabs",
+    "rnps",
+    "rnreactotron",
+    "rnsc",
+    "rnstack",
+    "rreducer",
     "signin",
     "singin",
     "soapenv",
-    "submenu"
+    "stylert",
+    "stylesheet",
+    "submenu",
+    "timestamptz",
+    "typeorm",
+    "varchar"
   ],
   "sonarlint.ls.javaHome": "C:\\Program Files\\Java\\jdk1.8.0_291",
 
@@ -174,5 +229,19 @@
   "liveshare.connectionMode": "relay",
   "yaml.schemas": {
     "file:///c%3A/Users/celso/.vscode/extensions/atlassian.atlascode-2.9.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
-  }
+  },
+
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": false
+  },
+  "atlascode.jira.lastCreateSiteAndProject": {
+    "siteId": "",
+    "projectKey": ""
+  },
+  "diffEditor.wordWrap": "off",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "aws.profile": "profile:celso"
 }
