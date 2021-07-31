@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "pretty": "prettier --write \"./**/*.{ts,tsx}\"",
+    "lint": "eslint src/**",
+    "lintFix": "eslint src/** --fix",
+    // react native
+    "android:release": "react-native run-android --variant=release",
+    "ios:release": "react-native run-ios --configuration Release",
+    "clean": "cd android && gradlew clean && cd app && RD/s/q build && cd .. && cd .. && npm start -- --reset-cache",
+    "build:android:dev": "cd android && gradlew assembleRelease && cd app && cd build && cd outputs && cd apk && cd release && start .",
+    "build:android:prod": "cd android && gradlew bundleRelease && cd app && cd build && cd outputs && cd apk && cd release && start .",
+    "push:android:dev": "appcenter codepush release-react -a username/appName -d Staging",
+    "push:android:prod": "appcenter codepush release-react -a username/appName -d Production"
+  }
+}
