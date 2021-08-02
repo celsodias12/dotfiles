@@ -1,8 +1,7 @@
 node_modules
 .next
-dist
-build
 yarn.lock
 package-lock.json
 public
 dist
+build
