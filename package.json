@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "pretty": "prettier --write \"./**/*.{ts,tsx}\"",
+    "pretty": "prettier --write .",
     "lint": "eslint src/**",
     "lintFix": "eslint src/** --fix",
     // react native
