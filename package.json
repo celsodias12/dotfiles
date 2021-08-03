@@ -12,5 +12,10 @@
     "push:android:dev": "appcenter codepush release-react -a username/appName -d Staging",
     "push:android:prod": "appcenter codepush release-react -a username/appName -d Production",
     "start:production": "NODE_ENV=production react-native start",
-  }
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "yarn lint:fix"
+    ]
+  },
 }
