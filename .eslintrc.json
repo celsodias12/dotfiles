@@ -38,7 +38,7 @@
         "newlinesBetween": "always",
         "groups": [
           "/^react/",
-          ["/^@react/", "/^@"],
+          ["/^@react/", "/^@/"],
           "module",
           "parent",
           "sibling",
