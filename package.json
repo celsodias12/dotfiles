@@ -1,17 +1,17 @@
 {
   "scripts": {
-    "pretty": "prettier --write .",
-    "lint": "eslint src/**",
-    "lintFix": "eslint src/** --fix",
-    // react native
     "android:release": "react-native run-android --variant=release",
-    "ios:release": "react-native run-ios --configuration Release",
-    "clean": "cd android && gradlew clean && cd app && RD/s/q build && cd .. && cd .. && npm start -- --reset-cache",
-    "build:android:dev": "cd android && gradlew assembleRelease && cd app && cd build && cd outputs && cd apk && cd release && start .",
-    "build:android:prod": "cd android && gradlew bundleRelease && cd app && cd build && cd outputs && cd apk && cd release && start .",
+    "win:clean": "cd android && gradlew clean && cd .. && npm start -- --reset-cache",
+    "mac:clean": "cd android && ./gradlew clean && cd .. && npm start -- --reset-cache",
+    "win:build:android:dev": "cd android && gradlew assembleRelease && cd app && cd build && cd outputs && cd apk && cd release && start .",
+    "win:build:android:prod": "cd android && gradlew bundleRelease && cd app && cd build && cd outputs && cd apk && cd release && start .",
+    "mac:build:android:dev": "cd android && ./gradlew assembleRelease && cd app && cd build && cd outputs && cd apk && cd release && open .",
+    "mac:build:android:prod": "cd android && ./gradlew bundleRelease && cd app && cd build && cd outputs && cd apk && cd release && open .",
     "push:android:dev": "appcenter codepush release-react -a username/appName -d Staging",
     "push:android:prod": "appcenter codepush release-react -a username/appName -d Production",
     "start:production": "NODE_ENV=production react-native start",
+    "lint": "eslint src/** --no-error-on-unmatched-pattern",
+    "lint:fix": "eslint src/** --fix --no-error-on-unmatched-pattern"
   },
   "lint-staged": {
     "**/*.{ts,tsx}": [
