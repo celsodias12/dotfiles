@@ -10,7 +10,7 @@
     "push:android:dev": "appcenter codepush release-react -a username/appName -d Staging",
     "push:android:prod": "appcenter codepush release-react -a username/appName -d Production",
     "start:production": "NODE_ENV=production react-native start",
-    "lint": "eslint src/** --no-error-on-unmatched-pattern",
+    "lint": "eslint src/** --no-error-on-unmatched-pattern && npm run tsc",
     "lint:fix": "eslint src/** --fix --no-error-on-unmatched-pattern"
   },
   "lint-staged": {
