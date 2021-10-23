@@ -7,3 +7,5 @@ package-lock.json
 public
 dist
 build
+*.jpg
+*.png
