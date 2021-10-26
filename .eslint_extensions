@@ -1,0 +1,9 @@
+eslint@7.32.0
+eslint-config-standard
+eslint-plugin-jsx-a11y
+eslint-plugin-import-helpers
+eslint-plugin-import
+@typescript-eslint
+@typescript-eslint/parser
+eslint-plugin-node
+eslint-plugin-promise
