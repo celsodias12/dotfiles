@@ -3,11 +3,11 @@
   "terminal.integrated.defaultProfile.windows": "Command Prompt",
   "terminal.integrated.tabs.enabled": true,
 
+  "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
   "workbench.colorTheme": "Dracula Pro",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.editor.labelFormat": "short",
-  "workbench.sideBar.location": "right",
   "workbench.colorCustomizations": {
     "errorLens.infoBackground": "#66000000",
     "errorLens.warningBackground": "#66000000",
@@ -24,7 +24,7 @@
   "editor.bracketPairColorization.enabled": true,
   "editor.tabSize": 2,
   "editor.fontSize": 14,
-  "editor.fontFamily": "Fira Code",
+  "editor.fontFamily": "JetBrains Mono",
   "editor.fontLigatures": true,
   "editor.lineHeight": 0,
   "editor.renderIndentGuides": false,
@@ -41,6 +41,10 @@
   "editor.wordWrap": "off",
   "editor.wordBasedSuggestions": false,
   "editor.suggest.preview": true,
+  "editor.guides.bracketPairs": true,
+  "editor.guides.bracketPairsHorizontal": "active",
+  "editor.accessibilitySupport": "off",
+  "editor.hover.above": true,
 
   "search.exclude": {
     "**/node_modules": true,
@@ -205,20 +209,6 @@
   "quokka.compactMessageOutput": false,
 
   "cSpell.userWords": [
-    "Cnpj",
-    "Gerencianet",
-    "Ionicons",
-    "Laravel",
-    "Parens",
-    "Pressable",
-    "RECENTLOGGED",
-    "REPORTSELECTED",
-    "RNFS",
-    "Rastreagro",
-    "Roadmap",
-    "Roboto",
-    "Rocketseat",
-    "Xiaomi",
     "allowlist",
     "antd",
     "appcenter",
@@ -230,23 +220,35 @@
     "categorys",
     "celso",
     "celsodias",
+    "chakra",
     "checkmark",
+    "Cnpj",
     "codepush",
     "collapsable",
     "commitlint",
     "datetimepicker",
     "docwxyxoifgyqh",
     "dtos",
+    "eqeqeq",
     "expdas",
     "expds",
     "formik",
+    "freelas",
+    "geocode",
     "geolocation",
+    "Gerencianet",
+    "googlemaps",
     "gradlew",
+    "Hackintosh",
+    "hcaptcha",
     "impas",
+    "Ionicons",
     "iphone",
+    "Laravel",
     "linkedin",
     "mapbox",
     "middlewares",
+    "mmssss",
     "modalize",
     "multiline",
     "navs",
@@ -256,23 +258,31 @@
     "nonstrict",
     "noopener",
     "noreferrer",
+    "Onesignal",
     "paren",
+    "Parens",
     "persistor",
     "pjpeg",
     "postgres",
     "prebuild",
+    "Pressable",
     "qrcode",
     "rajdhani",
+    "Rastreagro",
     "rcombreducer",
     "rcreducer",
     "reactotron",
+    "RECENTLOGGED",
     "reduxsauce",
     "rehydrated",
+    "REPORTSELECTED",
+    "respawn",
     "rlog",
     "rmieiof",
     "rncc",
     "rndrawer",
     "rnfc",
+    "RNFS",
     "rnimpsc",
     "rnisc",
     "rnndrawer",
@@ -283,6 +293,9 @@
     "rnreactotron",
     "rnsc",
     "rnstack",
+    "Roadmap",
+    "Roboto",
+    "Rocketseat",
     "rreducer",
     "signin",
     "singin",
@@ -295,10 +308,13 @@
     "timestamptz",
     "typeorm",
     "unform",
-    "varchar"
+    "varchar",
+    "vercel",
+    "whatsapp",
+    "Xiaomi"
   ],
 
-  "sonarlint.ls.javaHome": "C:\\Program Files\\Java\\jdk1.8.0_291",
+  "sonarlint.ls.javaHome": "C:\\Program Files\\Java\\jdk-11.0.12",
   "sonarlint.rules": {
     "javascript:S4326": {
       "level": "off"
@@ -307,6 +323,9 @@
       "level": "off"
     },
     "typescript:S3358": {
+      "level": "off"
+    },
+    "typescript:S4624": {
       "level": "off"
     }
   },
@@ -330,6 +349,8 @@
     "siteId": "",
     "projectKey": ""
   },
+  "atlascode.helpExplorerEnabled": false,
+  "atlascode.jira.enabled": true,
 
   "diffEditor.wordWrap": "off",
   "diffEditor.ignoreTrimWhitespace": false,
@@ -345,7 +366,8 @@
 
   "discord.removeTimestamp": true,
   "discord.removeRemoteRepository": true,
-  "editor.accessibilitySupport": "off",
+  "discord.removeLowerDetails": true,
+
   "atlascode.jira.jqlList": [
     {
       "id": "b5390fb2-8b30-4b31-af1c-4b8f3a9fd155",
@@ -356,6 +378,37 @@
       "monitor": true
     }
   ],
-  "atlascode.helpExplorerEnabled": false,
-  "atlascode.jira.enabled": true
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "json.schemas": [],
+  "yaml.customTags": [
+    "!And",
+    "!And sequence",
+    "!If",
+    "!If sequence",
+    "!Not",
+    "!Not sequence",
+    "!Equals",
+    "!Equals sequence",
+    "!Or",
+    "!Or sequence",
+    "!FindInMap",
+    "!FindInMap sequence",
+    "!Base64",
+    "!Join",
+    "!Join sequence",
+    "!Cidr",
+    "!Ref",
+    "!Sub",
+    "!Sub sequence",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!ImportValue sequence",
+    "!Select",
+    "!Select sequence",
+    "!Split",
+    "!Split sequence"
+  ]
 }
