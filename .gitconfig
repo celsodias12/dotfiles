@@ -1,0 +1,21 @@
+[user]
+	email = 47264001+celsodias12@users.noreply.github.com
+	name = Celso Dias
+[core]
+	longpaths = true
+[alias]
+  ch = checkout
+  co = commit
+  br = branch
+	nbr= checkout -b
+	dbr= branch -d
+	a = add
+	re = reset
+	st = stash
+	stl = stash list
+	sts = stash save
+	sta = stash apply
+	std = stash drop
+	l= log --graph
+[init]
+	defaultBranch = main
