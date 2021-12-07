@@ -27,7 +27,6 @@
   "editor.fontFamily": "JetBrains Mono",
   "editor.fontLigatures": true,
   "editor.lineHeight": 0,
-  "editor.renderIndentGuides": false,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.renderLineHighlight": "gutter",
@@ -229,6 +228,7 @@
     "datetimepicker",
     "docwxyxoifgyqh",
     "dtos",
+    "ellipsize",
     "eqeqeq",
     "expdas",
     "expds",
@@ -297,6 +297,7 @@
     "Roboto",
     "Rocketseat",
     "rreducer",
+    "Searchbar",
     "signin",
     "singin",
     "soapenv",
@@ -316,26 +317,15 @@
 
   "sonarlint.ls.javaHome": "C:\\Program Files\\Java\\jdk-11.0.12",
   "sonarlint.rules": {
-    "javascript:S4326": {
-      "level": "off"
-    },
-    "javascript:S3358": {
-      "level": "off"
-    },
     "typescript:S3358": {
-      "level": "off"
-    },
-    "typescript:S4624": {
       "level": "off"
     }
   },
 
-  "tabnine.experimentalAutoImports": true,
-
   "liveshare.connectionMode": "relay",
 
   "yaml.schemas": {
-    "file:///c%3A/Users/Celso/.vscode/extensions/atlassian.atlascode-2.9.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///c%3A/Users/celso/.vscode/extensions/atlassian.atlascode-2.10.0/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
 
   "github.copilot.enable": {
@@ -368,16 +358,6 @@
   "discord.removeRemoteRepository": true,
   "discord.removeLowerDetails": true,
 
-  "atlascode.jira.jqlList": [
-    {
-      "id": "b5390fb2-8b30-4b31-af1c-4b8f3a9fd155",
-      "enabled": true,
-      "name": "My gfras Issues",
-      "query": "assignee = currentUser() AND resolution = Unresolved ORDER BY lastViewed DESC",
-      "siteId": "c9d25ffb-c8c6-42a8-965b-74d84473547a",
-      "monitor": true
-    }
-  ],
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
   },
@@ -410,5 +390,22 @@
     "!Select sequence",
     "!Split",
     "!Split sequence"
-  ]
+  ],
+  "aws.profile": "profile:celso",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.project": true,
+    "**/.settings": true
+  },
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
+  "versionlens.suggestions.showOnStartup": true,
+  "turboConsoleLog.logMessagePrefix": "",
+  "files.defaultLanguage": "${activeEditorLanguage}",
+  "code-runner.runInTerminal": true,
+  "gitlens.advanced.messages": {
+    "suppressImproperWorkspaceCasingWarning": true
+  }
 }
