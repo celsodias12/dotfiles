@@ -18,6 +18,7 @@
     "editor.lineHighlightBackground": "#1073cf2d",
     "editor.lineHighlightBorder": "#9fced11f"
   },
+  "workbench.list.smoothScrolling": true,
 
   "explorer.compactFolders": false,
 
@@ -28,6 +29,7 @@
   "editor.fontLigatures": true,
   "editor.lineHeight": 0,
   "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.renderLineHighlight": "gutter",
   "editor.rulers": [90, 120],
@@ -44,6 +46,21 @@
   "editor.guides.bracketPairsHorizontal": "active",
   "editor.accessibilitySupport": "off",
   "editor.hover.above": true,
+  "editor.smoothScrolling": true,
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.unicodeHighlight.invisibleCharacters": true,
+  "editor.unicodeHighlight.ambiguousCharacters": true,
+  "editor.unicodeHighlight.nonBasicASCII": true,
+  "editor.unicodeHighlight.allowedCharacters": {
+    "ê": true,
+    "ç": true,
+    "ã": true,
+    "à": true,
+    "á": true,
+    "õ": true,
+    "ú": true,
+    "º": true
+  },
 
   "search.exclude": {
     "**/node_modules": true,
@@ -65,6 +82,8 @@
   "typescript.inlayHints.parameterTypes.enabled": true,
   "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
   "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.suggest.classMemberSnippets.enabled": true,
+  "typescript.suggest.classMemberSnippets.enabled": true,
 
   "prettier.bracketSpacing": true,
   "prettier.jsxBracketSameLine": false,
@@ -90,6 +109,13 @@
     ".prettierrc": "json",
     "*.tsx": "typescriptreact"
   },
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.project": true,
+    "**/.settings": true
+  },
+  "files.defaultLanguage": "${activeEditorLanguage}",
 
   "emmet.syntaxProfiles": { "javascript": "jsx" },
   "emmet.includeLanguages": { "javascript": "javascriptreact" },
@@ -163,6 +189,11 @@
     "*.route.js": "Routing",
     "*.route.jsx": "Routing",
     //
+    "*.routes.ts": "Routing",
+    "*.routes.tsx": "Routing",
+    "*.routes.js": "Routing",
+    "*.routes.jsx": "Routing",
+    //
     ".i18n.js": "I18n",
     ".i18n.ts": "I18n",
     //
@@ -201,6 +232,14 @@
 
   "[css]": {
     "editor.defaultFormatter": "MikeBovenlander.formate"
+  },
+
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
+
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
   },
 
   "redhat.telemetry.enabled": false,
@@ -244,6 +283,7 @@
     "impas",
     "Ionicons",
     "iphone",
+    "Keychain",
     "Laravel",
     "linkedin",
     "mapbox",
@@ -298,7 +338,6 @@
     "Rocketseat",
     "rreducer",
     "Searchbar",
-    "signin",
     "singin",
     "soapenv",
     "stylert",
@@ -319,13 +358,16 @@
   "sonarlint.rules": {
     "typescript:S3358": {
       "level": "off"
+    },
+    "typescript:S4138": {
+      "level": "off"
     }
   },
 
   "liveshare.connectionMode": "relay",
 
   "yaml.schemas": {
-    "file:///c%3A/Users/celso/.vscode/extensions/atlassian.atlascode-2.10.0/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///c%3A/Users/celso/.vscode/extensions/atlassian.atlascode-2.10.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
 
   "github.copilot.enable": {
@@ -358,10 +400,10 @@
   "discord.removeRemoteRepository": true,
   "discord.removeLowerDetails": true,
 
-  "[xml]": {
-    "editor.defaultFormatter": "redhat.vscode-xml"
-  },
+  "atlascode.jira.jqlList": [],
+
   "json.schemas": [],
+
   "yaml.customTags": [
     "!And",
     "!And sequence",
@@ -391,20 +433,16 @@
     "!Split",
     "!Split sequence"
   ],
+
   "aws.profile": "profile:celso",
-  "files.exclude": {
-    "**/.classpath": true,
-    "**/.factorypath": true,
-    "**/.project": true,
-    "**/.settings": true
-  },
-  "[java]": {
-    "editor.defaultFormatter": "redhat.java"
-  },
+
   "versionlens.suggestions.showOnStartup": true,
+
   "turboConsoleLog.logMessagePrefix": "",
-  "files.defaultLanguage": "${activeEditorLanguage}",
+  "turboConsoleLog.quote": "'",
+
   "code-runner.runInTerminal": true,
+
   "gitlens.advanced.messages": {
     "suppressImproperWorkspaceCasingWarning": true
   }
