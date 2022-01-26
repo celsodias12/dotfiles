@@ -3,7 +3,7 @@
   "terminal.integrated.defaultProfile.windows": "Command Prompt",
   "terminal.integrated.tabs.enabled": true,
 
-  "workbench.sideBar.location": "right",
+  // "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
   "workbench.colorTheme": "Dracula Pro",
   "workbench.iconTheme": "material-icon-theme",
@@ -19,6 +19,7 @@
     "editor.lineHighlightBorder": "#9fced11f"
   },
   "workbench.list.smoothScrolling": true,
+  "workbench.tree.renderIndentGuides": "always",
 
   "explorer.compactFolders": false,
 
@@ -59,7 +60,19 @@
     "á": true,
     "õ": true,
     "ú": true,
-    "º": true
+    "º": true,
+    "Ç": true,
+    "Ã": true,
+    "ó": true,
+    "í": true,
+    "é": true,
+    "â": true,
+    "Ô": true,
+    "É": true,
+    "°": true,
+    "ñ": true,
+    "¡": true,
+    "¿": true
   },
 
   "search.exclude": {
@@ -68,6 +81,7 @@
     "**/yarn.lock": true
   },
 
+  "javascript.validate.enable": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.suggest.autoImports": true,
@@ -298,6 +312,7 @@
     "nonstrict",
     "noopener",
     "noreferrer",
+    "npkill",
     "Onesignal",
     "paren",
     "Parens",
@@ -367,18 +382,18 @@
   "liveshare.connectionMode": "relay",
 
   "yaml.schemas": {
-    "file:///c%3A/Users/celso/.vscode/extensions/atlassian.atlascode-2.10.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///c%3A/Users/celso/.vscode/extensions/atlassian.atlascode-2.10.5/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
 
   "github.copilot.enable": {
     "*": true,
-    "yaml": false,
+    "yaml": true,
     "plaintext": false,
     "markdown": false
   },
 
   "atlascode.jira.lastCreateSiteAndProject": {
-    "siteId": "",
+    "siteId": "c9d25ffb-c8c6-42a8-965b-74d84473547a",
     "projectKey": ""
   },
   "atlascode.helpExplorerEnabled": false,
@@ -445,5 +460,9 @@
 
   "gitlens.advanced.messages": {
     "suppressImproperWorkspaceCasingWarning": true
-  }
+  },
+  "turboConsoleLog.delimiterInsideMessage": "",
+  "turboConsoleLog.insertEnclosingFunction": false,
+  "turboConsoleLog.insertEnclosingClass": false,
+  "turboConsoleLog.includeFileNameAndLineNum": false
 }
