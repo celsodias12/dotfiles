@@ -6,3 +6,4 @@ eslint-plugin-import
 @typescript-eslint/parser
 eslint-plugin-node
 eslint-plugin-promise
+eslint-plugin-unused-imports
