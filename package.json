@@ -1,17 +1,26 @@
 {
   "scripts": {
+    // react native
+    "start": "react-native start --reset-cache",
+    "android": "react-native run-android",
     "android:release": "react-native run-android --variant=release",
-    "win:clean": "cd android && gradlew clean && cd .. && npm start -- --reset-cache",
-    "mac:clean": "cd android && ./gradlew clean && cd .. && npm start -- --reset-cache",
-    "win:build:android:dev": "cd android && gradlew assembleRelease && cd app && cd build && cd outputs && cd apk && cd release && start .",
-    "win:build:android:prod": "cd android && gradlew bundleRelease && cd app && cd build && cd outputs && cd bundle && cd release && start .",
-    "mac:build:android:dev": "cd android && ./gradlew assembleRelease && cd app && cd build && cd outputs && cd apk && cd release && open .",
-    "mac:build:android:prod": "cd android && ./gradlew bundleRelease && cd app && cd build && cd outputs && cd bundle && cd release && open .",
-    "push:android:dev": "appcenter codepush release-react -a username/appName -d Staging",
-    "push:android:prod": "appcenter codepush release-react -a username/appName -d Production",
-    "start:production": "NODE_ENV=production react-native start",
-    "lint": "eslint src/** --no-error-on-unmatched-pattern && npm run tsc",
-    "lint:fix": "eslint src/** --fix --no-error-on-unmatched-pattern"
+    "ios": "react-native run-ios",
+    "win:clean": "cd android && gradlew clean && cd .. && npm start",
+    "win:apk:dev": "cd android && gradlew clean && gradlew assembleRelease --scan && cd app && cd build && cd outputs && cd apk && cd release && start .",
+    "win:apk:prod": "cd android && gradlew clean && gradlew bundleRelease && cd app && cd build && cd outputs && cd bundle && cd release && start .",
+    "mac:clean": "cd android && ./gradlew clean && cd .. && npm start",
+    "mac:apk:dev": "cd android && ./gradlew clean && ./gradlew assembleRelease --scan && cd app && cd build && cd outputs && cd apk && cd release && open .",
+    "mac:apk:prod": "cd android && ./gradlew clean && ./gradlew bundleRelease && cd app && cd build && cd outputs && cd apk && cd release && open .",
+    "push:android:dev": "appcenter codepush release-react -a RastreagroTests/Transportes-Android -d Staging",
+    "push:android:prod": "appcenter codepush release-react -a RastreagroTests/Transportes-Android -d Production",
+    "test": "jest",
+    "test:deepLink": "adb shell am start -W -a android.intent.action.VIEW -d 'rastreagro://transportes?Home=true/test=false' com.rastreagro",
+    "lint": "eslint src/** --ext .js,.jsx,.ts,.tsx && npx tsc",
+    "lint:fix": "eslint src/** --ext .js,.jsx,.ts,.tsx --fix",
+    "check:versions": "npx solidarity",
+    "fastDelete:node_modules": "npx npkill",
+    "react-devtools": "react-devtools",
+    "bundle": "npx react-native-bundle-visualizer"
   },
   "lint-staged": {
     "**/*.{ts,tsx}": [
