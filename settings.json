@@ -72,7 +72,8 @@
     "°": true,
     "ñ": true,
     "¡": true,
-    "¿": true
+    "¿": true,
+    "©": true
   },
 
   "search.exclude": {
@@ -89,7 +90,7 @@
   "typescript.inlayHints.parameterNames.enabled": "all",
   "javascript.inlayHints.parameterNames.enabled": "all",
   "javascript.inlayHints.variableTypes.enabled": true,
-  "typescript.inlayHints.variableTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": false,
   "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
   "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
   "javascript.inlayHints.parameterTypes.enabled": true,
@@ -131,10 +132,16 @@
   },
   "files.defaultLanguage": "${activeEditorLanguage}",
 
-  "emmet.syntaxProfiles": { "javascript": "jsx" },
-  "emmet.includeLanguages": { "javascript": "javascriptreact" },
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
 
   "screencastMode.onlyKeyboardShortcuts": true,
+
+  "npm.packageManager": "npm",
 
   "material-icon-theme.activeIconPack": "nest",
   "material-icon-theme.folders.associations": {
@@ -322,6 +329,7 @@
     "prebuild",
     "Pressable",
     "qrcode",
+    "Qube",
     "rajdhani",
     "Rastreagro",
     "rcombreducer",
@@ -370,19 +378,11 @@
   ],
 
   "sonarlint.ls.javaHome": "C:\\Program Files\\Java\\jdk-11.0.12",
-  "sonarlint.rules": {
-    "typescript:S3358": {
-      "level": "off"
-    },
-    "typescript:S4138": {
-      "level": "off"
-    }
-  },
 
   "liveshare.connectionMode": "relay",
 
   "yaml.schemas": {
-    "file:///c%3A/Users/celso/.vscode/extensions/atlassian.atlascode-2.10.5/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///c%3A/Users/celso/.vscode/extensions/atlassian.atlascode-2.10.7/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
 
   "github.copilot.enable": {
@@ -414,8 +414,6 @@
   "discord.removeTimestamp": true,
   "discord.removeRemoteRepository": true,
   "discord.removeLowerDetails": true,
-
-  "atlascode.jira.jqlList": [],
 
   "json.schemas": [],
 
@@ -453,14 +451,14 @@
 
   "versionlens.suggestions.showOnStartup": true,
 
-  "turboConsoleLog.logMessagePrefix": "",
-  "turboConsoleLog.quote": "'",
-
   "code-runner.runInTerminal": true,
 
   "gitlens.advanced.messages": {
     "suppressImproperWorkspaceCasingWarning": true
   },
+
+  "turboConsoleLog.logMessagePrefix": "",
+  "turboConsoleLog.quote": "'",
   "turboConsoleLog.delimiterInsideMessage": "",
   "turboConsoleLog.insertEnclosingFunction": false,
   "turboConsoleLog.insertEnclosingClass": false,
