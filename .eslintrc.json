@@ -56,15 +56,15 @@
     "react-hooks/exhaustive-deps": "off",
     "react/react-in-jsx-scope": "off",
     "react/display-name": "off",
-    "react/jsx-no-bind": [
-      "error",
-      {
-        "ignoreDOMComponents": false,
-        "ignoreRefs": false,
-        "allowArrowFunctions": true,
-        "allowFunctions": false
-      }
-    ],
+    // "react/jsx-no-bind": [
+    //   "error",
+    //   {
+    //     "ignoreDOMComponents": false,
+    //     "ignoreRefs": false,
+    //     "allowArrowFunctions": false,
+    //     "allowFunctions": false
+    //   }
+    // ],
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
@@ -85,8 +85,12 @@
       }
     ],
     "quotes": "off",
-    "@typescript-eslint/no-unused-vars": "off",
-    "unused-imports/no-unused-imports": "error"
+    "@typescript-eslint/no-unused-vars": "error",
+    "unused-imports/no-unused-imports": "error",
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "*", "next": "return" }
+    ]
   },
   "settings": {
     "react": {
