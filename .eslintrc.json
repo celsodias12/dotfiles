@@ -65,6 +65,8 @@
     //     "allowFunctions": false
     //   }
     // ],
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
@@ -89,7 +91,11 @@
     "unused-imports/no-unused-imports": "error",
     "padding-line-between-statements": [
       "error",
-      { "blankLine": "always", "prev": "*", "next": "return" }
+      { "blankLine": "always", "prev": "*", "next": "return" },
+      { "blankLine": "always", "prev": "*", "next": "if" },
+      { "blankLine": "always", "prev": "*", "next": "switch" },
+      { "blankLine": "always", "prev": "*", "next": "try" },
+      { "blankLine": "always", "prev": "*", "next": "while" }
     ]
   },
   "settings": {
