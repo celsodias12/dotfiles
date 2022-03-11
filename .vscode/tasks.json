@@ -9,7 +9,6 @@
           "isDefault": true
         },
         "label": "", // Your command name (this name is used in the prelaunchtask to run this task)
-        "detail": "", // Your command details here
         "isBackground": true,
         "problemMatcher": {
           "owner": "custom", // This is not needed but, required by the problemMatcher Object
