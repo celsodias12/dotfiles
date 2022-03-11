@@ -20,6 +20,7 @@
   },
   "workbench.list.smoothScrolling": true,
   "workbench.tree.renderIndentGuides": "always",
+  "workbench.editor.historyBasedLanguageDetection": true,
 
   "explorer.compactFolders": false,
 
@@ -33,11 +34,11 @@
   "editor.formatOnPaste": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.renderLineHighlight": "gutter",
-  "editor.rulers": [90, 120],
   "editor.linkedEditing": true,
   "editor.suggestSelection": "first",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true
   },
   "editor.inlineSuggest.enabled": true,
   "editor.wordWrap": "off",
@@ -73,7 +74,9 @@
     "ñ": true,
     "¡": true,
     "¿": true,
-    "©": true
+    "©": true,
+    "Ó": true,
+    "Ú": true
   },
 
   "search.exclude": {
@@ -301,6 +304,7 @@
     "gradlew",
     "Hackintosh",
     "hcaptcha",
+    "iife",
     "impas",
     "Ionicons",
     "iphone",
@@ -312,6 +316,7 @@
     "mmssss",
     "modalize",
     "multiline",
+    "Multiselect",
     "navs",
     "nestjs",
     "nestjsx",
@@ -382,7 +387,7 @@
   "liveshare.connectionMode": "relay",
 
   "yaml.schemas": {
-    "file:///c%3A/Users/celso/.vscode/extensions/atlassian.atlascode-2.10.7/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///c%3A/Users/celso/.vscode/extensions/atlassian.atlascode-2.10.9/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
 
   "github.copilot.enable": {
@@ -398,6 +403,16 @@
   },
   "atlascode.helpExplorerEnabled": false,
   "atlascode.jira.enabled": true,
+  "atlascode.jira.jqlList": [
+    {
+      "id": "d7752dd5-ea3c-4649-bdb9-e5c6e4bb07e1",
+      "enabled": true,
+      "name": "My gfras Issues",
+      "query": "assignee = currentUser() AND resolution = Unresolved ORDER BY lastViewed DESC",
+      "siteId": "c9d25ffb-c8c6-42a8-965b-74d84473547a",
+      "monitor": true
+    }
+  ],
 
   "diffEditor.wordWrap": "off",
   "diffEditor.ignoreTrimWhitespace": false,
@@ -462,5 +477,7 @@
   "turboConsoleLog.delimiterInsideMessage": "",
   "turboConsoleLog.insertEnclosingFunction": false,
   "turboConsoleLog.insertEnclosingClass": false,
-  "turboConsoleLog.includeFileNameAndLineNum": false
+  "turboConsoleLog.includeFileNameAndLineNum": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "workbench.sideBar.location": "right"
 }
