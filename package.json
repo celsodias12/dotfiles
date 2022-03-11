@@ -22,6 +22,9 @@
     "react-devtools": "react-devtools",
     "bundle": "npx react-native-bundle-visualizer"
   },
+  "engines": {
+    "yarn": "ONLY THE USE OF NPM IS ALLOWED", // For this to work add the .npmrc file
+  },
   "lint-staged": {
     "**/*.{ts,tsx}": [
       "npm lint:fix"
