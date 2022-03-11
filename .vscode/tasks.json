@@ -3,13 +3,13 @@
     "tasks": [
       {
         "type": "npm",
-        "script": "NAME OF YOUR SCRIPT THAT IS IN THE package.json",
+        "script": "", // Name of your script that is in the package.json
         "group": {
           "kind": "test",
           "isDefault": true
         },
-        "label": "YOUR COMMAND NAME (THIS NAME IS USED IN THE preLaunchTask TO RUN THIS TASK)",
-        "detail": "YOUR COMMAND DETAILS HERE",
+        "label": "", // Your command name (this name is used in the prelaunchtask to run this task)
+        "detail": "", // Your command details here
         "isBackground": true,
         "problemMatcher": {
           "owner": "custom", // This is not needed but, required by the problemMatcher Object
