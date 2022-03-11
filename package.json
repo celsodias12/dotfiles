@@ -15,16 +15,16 @@
     "push:android:prod": "appcenter codepush release-react -a RastreagroTests/Transportes-Android -d Production",
     "test": "jest",
     "test:deepLink": "adb shell am start -W -a android.intent.action.VIEW -d 'rastreagro://transportes?Home=true/test=false' com.rastreagro",
-    "lint": "eslint src/** --ext .js,.jsx,.ts,.tsx && npx tsc",
+    "lint": "eslint src/** --ext .js,.jsx,.ts,.tsx && npx tspsc",
     "lint:fix": "eslint src/** --ext .js,.jsx,.ts,.tsx --fix",
     "check:versions": "npx solidarity",
-    "fastDelete:node_modules": "npx npkill",
+    "fastDeleteNodeModules": "npx npkill",
     "react-devtools": "react-devtools",
     "bundle": "npx react-native-bundle-visualizer"
   },
   "lint-staged": {
     "**/*.{ts,tsx}": [
-      "yarn lint:fix"
+      "npm lint:fix"
     ]
   },
 }
