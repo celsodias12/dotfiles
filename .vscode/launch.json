@@ -10,7 +10,7 @@
         "name": "Debug with Edge",
         "url": "http://localhost:3333",
         "webRoot": "${workspaceFolder}",
-        "preLaunchTask": "SPECIFY THE NAME OF THE TASK WHICH IS IN task.json"
+        "preLaunchTask": "THE NAME OF THE TASK WHICH IS IN task.json"
       },
       {
         "type": "pwa-chrome",
@@ -18,7 +18,7 @@
         "name": "Debug with Chrome",
         "url": "http://localhost:3333",
         "webRoot": "${workspaceFolder}",
-        "preLaunchTask": "SPECIFY THE NAME OF THE TASK WHICH IS IN task.json"
+        "preLaunchTask": "THE NAME OF THE TASK WHICH IS IN task.json"
       }
     ]
   }
