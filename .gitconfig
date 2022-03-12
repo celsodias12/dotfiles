@@ -7,8 +7,8 @@
   ch = checkout
   co = commit
   br = branch
-	cbr= checkout -b
-	dbr= branch -d
+	chb= checkout -b
+	brd= branch -d
 	a = add
 	re = reset
 	st = stash
