@@ -3,7 +3,7 @@
   "terminal.integrated.defaultProfile.windows": "Command Prompt",
   "terminal.integrated.tabs.enabled": true,
 
-  // "workbench.sideBar.location": "right",
+  "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
   "workbench.colorTheme": "Dracula Pro",
   "workbench.iconTheme": "material-icon-theme",
@@ -37,8 +37,8 @@
   "editor.linkedEditing": true,
   "editor.suggestSelection": "first",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.organizeImports": true
+    "source.fixAll.eslint": true
+    // "source.organizeImports": true
   },
   "editor.inlineSuggest.enabled": true,
   "editor.wordWrap": "off",
@@ -143,6 +143,7 @@
   },
 
   "screencastMode.onlyKeyboardShortcuts": true,
+  "screencastMode.fontSize": 26,
 
   "npm.packageManager": "npm",
 
@@ -432,36 +433,6 @@
 
   "json.schemas": [],
 
-  "yaml.customTags": [
-    "!And",
-    "!And sequence",
-    "!If",
-    "!If sequence",
-    "!Not",
-    "!Not sequence",
-    "!Equals",
-    "!Equals sequence",
-    "!Or",
-    "!Or sequence",
-    "!FindInMap",
-    "!FindInMap sequence",
-    "!Base64",
-    "!Join",
-    "!Join sequence",
-    "!Cidr",
-    "!Ref",
-    "!Sub",
-    "!Sub sequence",
-    "!GetAtt",
-    "!GetAZs",
-    "!ImportValue",
-    "!ImportValue sequence",
-    "!Select",
-    "!Select sequence",
-    "!Split",
-    "!Split sequence"
-  ],
-
   "aws.profile": "profile:celso",
 
   "versionlens.suggestions.showOnStartup": true,
@@ -471,6 +442,7 @@
   "gitlens.advanced.messages": {
     "suppressImproperWorkspaceCasingWarning": true
   },
+  "gitlens.hovers.currentLine.over": "line",
 
   "turboConsoleLog.logMessagePrefix": "",
   "turboConsoleLog.quote": "'",
@@ -478,6 +450,15 @@
   "turboConsoleLog.insertEnclosingFunction": false,
   "turboConsoleLog.insertEnclosingClass": false,
   "turboConsoleLog.includeFileNameAndLineNum": false,
-  "gitlens.hovers.currentLine.over": "line",
-  "workbench.sideBar.location": "right"
+
+  "vscode-edge-devtools.mirrorEdits": true,
+  "vscode-edge-devtools.webhint": false,
+
+  "sonarlint.connectedMode.connections.sonarqube": [
+    {
+      "connectionId": "SonarLint VSCode",
+      "serverUrl": "http://localhost:9000",
+      "token": "341d04bce1fd563bfb23c9a33778bd05309acd40"
+    }
+  ]
 }
