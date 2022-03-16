@@ -4,8 +4,10 @@
 [core]
 	longpaths = true
 [alias]
+ 	p = push
   ch = checkout
   co = commit
+  com = commit -m
   br = branch
 	chb= checkout -b
 	brd= branch -d
