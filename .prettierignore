@@ -1,11 +1,8 @@
-*.svg
-*.ttf
+./src/assets
 node_modules
-.next
+./build
 yarn.lock
 package-lock.json
-public
-dist
-build
-src/assets
+./public
+./dist
 .env.*
