@@ -234,37 +234,29 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
   "[env]": {
     "editor.defaultFormatter": "IronGeek.vscode-env"
   },
-
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
   "[css]": {
     "editor.defaultFormatter": "MikeBovenlander.formate"
   },
-
-  "[java]": {
-    "editor.defaultFormatter": "redhat.java"
-  },
-
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
   },
 
   "redhat.telemetry.enabled": false,
@@ -292,6 +284,7 @@
     "datetimepicker",
     "docwxyxoifgyqh",
     "dtos",
+    "dtostrf",
     "ellipsize",
     "eqeqeq",
     "expdas",
@@ -305,10 +298,13 @@
     "gradlew",
     "Hackintosh",
     "hcaptcha",
+    "Heltec",
+    "hookform",
     "iife",
     "impas",
     "Ionicons",
     "iphone",
+    "jetify",
     "Keychain",
     "Laravel",
     "linkedin",
@@ -316,6 +312,7 @@
     "middlewares",
     "mmssss",
     "modalize",
+    "Moti",
     "multiline",
     "Multiselect",
     "navs",
@@ -334,6 +331,7 @@
     "postgres",
     "prebuild",
     "Pressable",
+    "Pressables",
     "qrcode",
     "Qube",
     "rajdhani",
@@ -380,7 +378,8 @@
     "varchar",
     "vercel",
     "whatsapp",
-    "Xiaomi"
+    "Xiaomi",
+    "zustand"
   ],
 
   "sonarlint.ls.javaHome": "C:\\Program Files\\Java\\jdk-11.0.12",
@@ -388,7 +387,7 @@
   "liveshare.connectionMode": "relay",
 
   "yaml.schemas": {
-    "file:///c%3A/Users/celso/.vscode/extensions/atlassian.atlascode-2.10.9/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///c%3A/Users/celso/.vscode/extensions/atlassian.atlascode-2.10.11/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
 
   "github.copilot.enable": {
@@ -439,9 +438,6 @@
 
   "code-runner.runInTerminal": true,
 
-  "gitlens.advanced.messages": {
-    "suppressImproperWorkspaceCasingWarning": true
-  },
   "gitlens.hovers.currentLine.over": "line",
 
   "turboConsoleLog.logMessagePrefix": "",
@@ -460,5 +456,35 @@
       "serverUrl": "http://localhost:9000",
       "token": "341d04bce1fd563bfb23c9a33778bd05309acd40"
     }
+  ],
+
+  "yaml.customTags": [
+    "!And",
+    "!And sequence",
+    "!If",
+    "!If sequence",
+    "!Not",
+    "!Not sequence",
+    "!Equals",
+    "!Equals sequence",
+    "!Or",
+    "!Or sequence",
+    "!FindInMap",
+    "!FindInMap sequence",
+    "!Base64",
+    "!Join",
+    "!Join sequence",
+    "!Cidr",
+    "!Ref",
+    "!Sub",
+    "!Sub sequence",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!ImportValue sequence",
+    "!Select",
+    "!Select sequence",
+    "!Split",
+    "!Split sequence"
   ]
 }
