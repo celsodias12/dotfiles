@@ -1,9 +1,9 @@
 {
   "terminal.integrated.fontSize": 12,
-  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.tabs.enabled": true,
 
-  "workbench.sideBar.location": "right",
+  "workbench.sideBar.location": "left",
   "workbench.startupEditor": "none",
   "workbench.colorTheme": "Dracula Pro",
   "workbench.iconTheme": "material-icon-theme",
@@ -30,7 +30,7 @@
   "editor.fontFamily": "JetBrains Mono",
   "editor.fontLigatures": true,
   "editor.lineHeight": 0,
-  "editor.formatOnSave": true,
+  // "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.renderLineHighlight": "gutter",
@@ -76,7 +76,10 @@
     "¿": true,
     "©": true,
     "Ó": true,
-    "Ú": true
+    "Ú": true,
+    "Á": true,
+    "ü": true,
+    "û": true
   },
 
   "search.exclude": {
@@ -306,6 +309,7 @@
     "iphone",
     "jetify",
     "Keychain",
+    "keycloak",
     "Laravel",
     "linkedin",
     "mapbox",
@@ -383,12 +387,49 @@
   ],
 
   "sonarlint.ls.javaHome": "C:\\Program Files\\Java\\jdk-11.0.12",
+  "sonarlint.connectedMode.connections.sonarqube": [
+    {
+      "connectionId": "SonarLint VSCode",
+      "serverUrl": "http://localhost:9000",
+      "token": "341d04bce1fd563bfb23c9a33778bd05309acd40"
+    }
+  ],
 
   "liveshare.connectionMode": "relay",
+  "liveshare.presence": false,
 
   "yaml.schemas": {
-    "file:///c%3A/Users/celso/.vscode/extensions/atlassian.atlascode-2.10.11/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///c%3A/Users/celso/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
+  "yaml.customTags": [
+    "!And",
+    "!And sequence",
+    "!If",
+    "!If sequence",
+    "!Not",
+    "!Not sequence",
+    "!Equals",
+    "!Equals sequence",
+    "!Or",
+    "!Or sequence",
+    "!FindInMap",
+    "!FindInMap sequence",
+    "!Base64",
+    "!Join",
+    "!Join sequence",
+    "!Cidr",
+    "!Ref",
+    "!Sub",
+    "!Sub sequence",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!ImportValue sequence",
+    "!Select",
+    "!Select sequence",
+    "!Split",
+    "!Split sequence"
+  ],
 
   "github.copilot.enable": {
     "*": true,
@@ -449,42 +490,6 @@
 
   "vscode-edge-devtools.mirrorEdits": true,
   "vscode-edge-devtools.webhint": false,
-
-  "sonarlint.connectedMode.connections.sonarqube": [
-    {
-      "connectionId": "SonarLint VSCode",
-      "serverUrl": "http://localhost:9000",
-      "token": "341d04bce1fd563bfb23c9a33778bd05309acd40"
-    }
-  ],
-
-  "yaml.customTags": [
-    "!And",
-    "!And sequence",
-    "!If",
-    "!If sequence",
-    "!Not",
-    "!Not sequence",
-    "!Equals",
-    "!Equals sequence",
-    "!Or",
-    "!Or sequence",
-    "!FindInMap",
-    "!FindInMap sequence",
-    "!Base64",
-    "!Join",
-    "!Join sequence",
-    "!Cidr",
-    "!Ref",
-    "!Sub",
-    "!Sub sequence",
-    "!GetAtt",
-    "!GetAZs",
-    "!ImportValue",
-    "!ImportValue sequence",
-    "!Select",
-    "!Select sequence",
-    "!Split",
-    "!Split sequence"
-  ]
+  "vscode-edge-devtools.fallbackRevision": "@a41122be052fe9616f0def5fe6842fa942930d46",
+  "quokka.showOutputOnStart": true
 }
