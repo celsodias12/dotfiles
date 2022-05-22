@@ -1,16 +1,16 @@
 [user]
 	email = 47264001+celsodias12@users.noreply.github.com
 	name = Celso Dias
-[core]
-	longpaths = true
+[init]
+	defaultBranch = main
 [alias]
- 	p = push
   ch = checkout
-  co = commit
-  com = commit -m
-  br = branch
 	chb= checkout -b
+  cm = commit
+  cmm = commit -m
+  br = branch
 	brd= branch -d
+	brr= branch -m
 	a = add
 	re = reset
 	st = stash
@@ -19,5 +19,6 @@
 	sta = stash apply
 	std = stash drop
 	l= log --graph
-[init]
-	defaultBranch = main
+
+[includeIf "gitdir:~/projects/work/b2/"]
+  path = .gitconfig.b2
