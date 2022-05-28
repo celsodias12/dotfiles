@@ -27,10 +27,10 @@
   "editor.bracketPairColorization.enabled": true,
   "editor.tabSize": 2,
   "editor.fontSize": 14,
-  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
   "editor.lineHeight": 0,
-  // "editor.formatOnSave": true,
+  "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.renderLineHighlight": "gutter",
@@ -79,7 +79,9 @@
     "Ú": true,
     "Á": true,
     "ü": true,
-    "û": true
+    "û": true,
+    "Í": true,
+    "❯": true
   },
 
   "search.exclude": {
@@ -89,22 +91,24 @@
   },
 
   "javascript.validate.enable": false,
-  "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.suggest.autoImports": true,
-  "typescript.suggest.autoImports": true,
-  "typescript.inlayHints.parameterNames.enabled": "all",
   "javascript.inlayHints.parameterNames.enabled": "all",
   "javascript.inlayHints.variableTypes.enabled": true,
-  "typescript.inlayHints.variableTypes.enabled": false,
   "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
   "javascript.inlayHints.parameterTypes.enabled": true,
-  "typescript.inlayHints.parameterTypes.enabled": true,
   "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
   "javascript.suggest.classMemberSnippets.enabled": true,
+
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.suggest.autoImports": true,
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.inlayHints.variableTypes.enabled": false,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
   "typescript.suggest.classMemberSnippets.enabled": true,
+  "typescript.referencesCodeLens.enabled": true,
 
   "prettier.bracketSpacing": true,
   "prettier.jsxBracketSameLine": false,
@@ -265,6 +269,7 @@
   "redhat.telemetry.enabled": false,
 
   "quokka.compactMessageOutput": false,
+  "quokka.showOutputOnStart": true,
 
   "cSpell.userWords": [
     "allowlist",
@@ -474,6 +479,7 @@
   "json.schemas": [],
 
   "aws.profile": "profile:celso",
+  "aws.telemetry": false,
 
   "versionlens.suggestions.showOnStartup": true,
 
@@ -490,6 +496,5 @@
 
   "vscode-edge-devtools.mirrorEdits": true,
   "vscode-edge-devtools.webhint": false,
-  "vscode-edge-devtools.fallbackRevision": "@a41122be052fe9616f0def5fe6842fa942930d46",
-  "quokka.showOutputOnStart": true
+  "vscode-edge-devtools.fallbackRevision": "@a41122be052fe9616f0def5fe6842fa942930d46"
 }
