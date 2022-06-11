@@ -272,17 +272,13 @@
   "quokka.showOutputOnStart": true,
 
   "cSpell.userWords": [
-    "allowlist",
     "antd",
     "appcenter",
     "avds",
-    "blocklist",
     "bootsplash",
     "browserslist",
     "camelcase",
     "categorys",
-    "celso",
-    "celsodias",
     "chakra",
     "checkmark",
     "Cnpj",
@@ -312,6 +308,7 @@
     "impas",
     "Ionicons",
     "iphone",
+    "JDBC",
     "jetify",
     "Keychain",
     "keycloak",
@@ -376,6 +373,7 @@
     "Searchbar",
     "singin",
     "soapenv",
+    "Stopots",
     "stylert",
     "stylesheet",
     "submenu",
@@ -391,14 +389,7 @@
     "zustand"
   ],
 
-  "sonarlint.ls.javaHome": "C:\\Program Files\\Java\\jdk-11.0.12",
-  "sonarlint.connectedMode.connections.sonarqube": [
-    {
-      "connectionId": "SonarLint VSCode",
-      "serverUrl": "http://localhost:9000",
-      "token": "341d04bce1fd563bfb23c9a33778bd05309acd40"
-    }
-  ],
+  "sonarlint.ls.javaHome": "C:\\Program Files\\Java\\jdk-11.0.15",
 
   "liveshare.connectionMode": "relay",
   "liveshare.presence": false,
@@ -437,28 +428,11 @@
   ],
 
   "github.copilot.enable": {
-    "*": true,
-    "yaml": true,
-    "plaintext": false,
-    "markdown": false
+    "*": true
   },
 
-  "atlascode.jira.lastCreateSiteAndProject": {
-    "siteId": "c9d25ffb-c8c6-42a8-965b-74d84473547a",
-    "projectKey": ""
-  },
   "atlascode.helpExplorerEnabled": false,
   "atlascode.jira.enabled": true,
-  "atlascode.jira.jqlList": [
-    {
-      "id": "d7752dd5-ea3c-4649-bdb9-e5c6e4bb07e1",
-      "enabled": true,
-      "name": "My gfras Issues",
-      "query": "assignee = currentUser() AND resolution = Unresolved ORDER BY lastViewed DESC",
-      "siteId": "c9d25ffb-c8c6-42a8-965b-74d84473547a",
-      "monitor": true
-    }
-  ],
 
   "diffEditor.wordWrap": "off",
   "diffEditor.ignoreTrimWhitespace": false,
@@ -483,8 +457,6 @@
 
   "versionlens.suggestions.showOnStartup": true,
 
-  "code-runner.runInTerminal": true,
-
   "gitlens.hovers.currentLine.over": "line",
 
   "turboConsoleLog.logMessagePrefix": "",
@@ -494,7 +466,6 @@
   "turboConsoleLog.insertEnclosingClass": false,
   "turboConsoleLog.includeFileNameAndLineNum": false,
 
-  "vscode-edge-devtools.mirrorEdits": true,
   "vscode-edge-devtools.webhint": false,
   "vscode-edge-devtools.fallbackRevision": "@a41122be052fe9616f0def5fe6842fa942930d46"
 }
