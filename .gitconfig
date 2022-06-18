@@ -4,8 +4,8 @@
 [init]
 	defaultBranch = main
 [alias]
-  ch = checkout
-	chb= checkout -b
+  sw = switch
+	swc= switch -c
   cm = commit
   cmm = commit -m
   br = branch
@@ -20,6 +20,7 @@
 	sta = stash apply
 	std = stash drop
 	l= log --graph
+	incm = cmm 'feat: inital commit'
 
 [includeIf "gitdir:~/Desktop/projects/work/b2/"]
   path = .gitconfig.b2
