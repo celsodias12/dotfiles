@@ -21,6 +21,7 @@
 	std = stash drop
 	l= log --graph
 	incm = cmm 'feat: inital commit'
+	cl = clone
 
 [includeIf "gitdir:~/Desktop/projects/work/b2/"]
   path = .gitconfig.b2
