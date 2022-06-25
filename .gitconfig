@@ -1,6 +1,5 @@
-[user]
-	email = 47264001+celsodias12@users.noreply.github.com
-	name = Celso Dias
+[include]
+	path = .gitconfig.default
 [init]
 	defaultBranch = main
 [alias]
@@ -22,6 +21,13 @@
 	l= log --graph
 	incm = cmm 'feat: inital commit'
 	cl = clone
+	po = pull origin
 
 [includeIf "gitdir:~/Desktop/projects/work/b2/"]
   path = .gitconfig.b2
+
+[includeIf "gitdir:~/Desktop/projects/work/b2/tools-b2list/"]
+	path = .gitconfig.default
+
+[includeIf "gitdir:~/Desktop/projects/work/rastreagro/"]
+  path = .gitconfig.rastreagro
