@@ -1,5 +1,5 @@
-[include]
-	path = .gitconfig.default
+[includeIf "gitdir:~/"]
+  path = .gitconfig.default
 [init]
 	defaultBranch = main
 [alias]
@@ -28,6 +28,3 @@
 
 [includeIf "gitdir:~/Desktop/projects/work/b2/tools-b2list/"]
 	path = .gitconfig.default
-
-[includeIf "gitdir:~/Desktop/projects/work/rastreagro/"]
-  path = .gitconfig.rastreagro
