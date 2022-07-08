@@ -1,5 +1,6 @@
 [includeIf "gitdir:~/"]
   path = .gitconfig.default
+	name = Celso Dias
 [init]
 	defaultBranch = main
 [alias]
