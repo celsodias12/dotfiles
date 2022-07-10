@@ -1,6 +1,6 @@
-[includeIf "gitdir:~/"]
-  path = .gitconfig.default
-	name = Celso Dias
+[user]
+	email = 47264001+celsodias12@users.noreply.github.com
+  name = Celso Dias
 [init]
 	defaultBranch = main
 [alias]
