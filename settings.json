@@ -8,6 +8,8 @@
   "workbench.colorTheme": "Dracula Pro",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.editor.labelFormat": "short",
+  "workbench.editor.splitInGroupLayout": "horizontal",
+  "workbench.editor.historyBasedLanguageDetection": true,
   "workbench.colorCustomizations": {
     "errorLens.infoBackground": "#66000000",
     "errorLens.warningBackground": "#66000000",
@@ -20,11 +22,9 @@
   },
   "workbench.list.smoothScrolling": true,
   "workbench.tree.renderIndentGuides": "always",
-  "workbench.editor.historyBasedLanguageDetection": true,
 
   "explorer.compactFolders": false,
 
-  "editor.bracketPairColorization.enabled": true,
   "editor.tabSize": 2,
   "editor.fontSize": 14,
   "editor.fontFamily": "Fira Code",
@@ -40,12 +40,16 @@
     "source.fixAll.eslint": true
     // "source.organizeImports": true
   },
+  "editor.suggest.showMethods": true,
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.snippetSuggestions": "bottom",
   "editor.inlineSuggest.enabled": true,
   "editor.wordWrap": "off",
   "editor.wordBasedSuggestions": false,
   "editor.suggest.preview": true,
   "editor.guides.bracketPairs": true,
   "editor.guides.bracketPairsHorizontal": "active",
+  "editor.bracketPairColorization.enabled": true,
   "editor.accessibilitySupport": "off",
   "editor.hover.above": true,
   "editor.smoothScrolling": true,
@@ -265,6 +269,9 @@
   "[cpp]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
   },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 
   "redhat.telemetry.enabled": false,
 
@@ -382,6 +389,7 @@
     "timestamptz",
     "typeorm",
     "unform",
+    "unipam",
     "varchar",
     "vercel",
     "whatsapp",
@@ -390,6 +398,12 @@
   ],
 
   "sonarlint.ls.javaHome": "C:\\Program Files\\Java\\jdk-11.0.15",
+  "sonarlint.connectedMode.connections.sonarqube": [
+    {
+      "connectionId": "B2 - SonarQube",
+      "serverUrl": "https://08ce-186-210-145-28.sa.ngrok.io"
+    }
+  ],
 
   "liveshare.connectionMode": "relay",
   "liveshare.presence": false,
@@ -467,5 +481,8 @@
   "turboConsoleLog.includeFileNameAndLineNum": false,
 
   "vscode-edge-devtools.webhint": false,
-  "vscode-edge-devtools.fallbackRevision": "@a41122be052fe9616f0def5fe6842fa942930d46"
+  "vscode-edge-devtools.fallbackRevision": "@a41122be052fe9616f0def5fe6842fa942930d46",
+
+  "git.autofetch": true
+
 }
