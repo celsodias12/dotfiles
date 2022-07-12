@@ -23,6 +23,8 @@
 	incm = cmm 'feat: inital commit'
 	cl = clone
 	po = pull origin
+	ca = commit --amend -m
+
 
 [includeIf "gitdir:~/Desktop/projects/work/b2/"]
   path = .gitconfig.b2
