@@ -5,12 +5,12 @@
 	defaultBranch = main
 [alias]
   sw = switch
-	swc= switch -c
+	swc = switch -c
   cm = commit
   cmm = commit -m
   br = branch
-	brd= branch -d
-	brr= branch -m
+	brd = branch -d
+	brr = branch -m
 	a = add
 	re = reset
 	st = stash
@@ -18,13 +18,18 @@
 	sts = stash save
 	sta = stash apply
 	std = stash drop
-	l= log --graph
-	incm = cmm 'feat: inital commit'
+	stp = stash pop
+	lg = log --graph
+	cmin = cmm 'feat: inital commit'
 	cl = clone
-	po = pull origin
-	ca = commit --amend -m
+	puor = pull origin
+	cmam = commit --amend -m
 	delcm = reset HEAD~1
 	fbrs = fetch --all
+	me = merge
+	meq = merge --quit
+	reh = reset --hard
+	exst = !git add . && git stash && git stash show "stash@{0}" -p > stash.patch
 
 [includeIf "gitdir:~/Desktop/projects/work/b2/"]
   path = .gitconfig.b2
@@ -34,4 +39,3 @@
 
 [includeIf "gitdir:~/Desktop/projects/work/b2/tools-b2list/"]
 	path = .gitconfig.default
-	
