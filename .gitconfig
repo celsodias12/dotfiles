@@ -30,6 +30,7 @@
 	meq = merge --quit
 	reh = reset --hard
 	exst = !git add . && git stash && git stash show "stash@{0}" -p > stash.patch
+	imst = apply stash.patch
 
 [includeIf "gitdir:~/Desktop/projects/work/b2/"]
   path = .gitconfig.b2
@@ -39,3 +40,4 @@
 
 [includeIf "gitdir:~/Desktop/projects/work/b2/tools-b2list/"]
 	path = .gitconfig.default
+	
