@@ -4,7 +4,7 @@
 [init]
 	defaultBranch = main
 [alias]
-  sw = switch
+	sw = switch
 	swc = switch -c
   cm = commit
   cmm = commit -m
@@ -29,7 +29,7 @@
 	me = merge
 	meq = merge --quit
 	reh = reset --hard
-	exst = !git add . && git stash && git stash show "stash@{0}" -p > stash.patch
+	exst = !git add . && git st && git st show "stash@{0}" -p > stash.patch && git stp
 	imst = apply stash.patch
 
 [includeIf "gitdir:~/Desktop/projects/work/b2/"]
