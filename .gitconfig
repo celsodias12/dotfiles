@@ -11,6 +11,7 @@
   br = branch
 	brd = branch -d
 	brr = branch -m
+	brl = branch --list
 	a = add
 	re = reset
 	st = stash
@@ -25,12 +26,14 @@
 	puor = pull origin
 	cmam = commit --amend -m
 	delcm = reset HEAD~1
-	fbrs = fetch --all
+	f = fetch
 	me = merge
 	meq = merge --quit
 	reh = reset --hard
 	exst = !git add . && git st && git st show "stash@{0}" -p > stash.patch && git stp
 	imst = apply stash.patch
+	p = pull
+
 
 [includeIf "gitdir:~/Desktop/projects/work/b2/"]
   path = .gitconfig.b2
