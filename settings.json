@@ -2,6 +2,7 @@
   "terminal.integrated.fontSize": 12,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.tabs.enabled": true,
+  "terminal.integrated.smoothScrolling": true,
 
   "workbench.sideBar.location": "left",
   "workbench.startupEditor": "none",
@@ -42,7 +43,6 @@
   },
   "editor.suggest.showMethods": true,
   "editor.acceptSuggestionOnEnter": "on",
-  "editor.snippetSuggestions": "bottom",
   "editor.inlineSuggest.enabled": true,
   "editor.wordWrap": "off",
   "editor.wordBasedSuggestions": false,
@@ -87,6 +87,7 @@
     "Í": true,
     "❯": true
   },
+  "editor.stickyScroll.enabled": true,
 
   "search.exclude": {
     "**/node_modules": true,
@@ -114,23 +115,22 @@
   "typescript.suggest.classMemberSnippets.enabled": true,
   "typescript.referencesCodeLens.enabled": true,
 
-  "prettier.bracketSpacing": true,
-  "prettier.jsxBracketSameLine": false,
-  "prettier.trailingComma": "es5",
-  "prettier.tabWidth": 2,
-  "prettier.singleQuote": true,
-  "prettier.jsxSingleQuote": true,
-  "prettier.arrowParens": "avoid",
-  "prettier.printWidth": 80,
-  "prettier.embeddedLanguageFormatting": "auto",
-  "prettier.htmlWhitespaceSensitivity": "css",
-  "prettier.insertPragma": false,
-  "prettier.proseWrap": "preserve",
-  "prettier.quoteProps": "preserve",
-  "prettier.requirePragma": false,
-  "prettier.semi": false,
-  "prettier.useTabs": false,
-  "prettier.endOfLine": "auto",
+  // "prettier.bracketSpacing": true,
+  // "prettier.trailingComma": "es5",
+  // "prettier.tabWidth": 2,
+  // "prettier.singleQuote": true,
+  // "prettier.jsxSingleQuote": true,
+  // "prettier.arrowParens": "avoid",
+  // "prettier.printWidth": 80,
+  // "prettier.embeddedLanguageFormatting": "auto",
+  // "prettier.htmlWhitespaceSensitivity": "css",
+  // "prettier.insertPragma": false,
+  // "prettier.proseWrap": "preserve",
+  // "prettier.quoteProps": "preserve",
+  // "prettier.requirePragma": false,
+  // "prettier.semi": false,
+  // "prettier.useTabs": false,
+  // "prettier.endOfLine": "auto",
 
   "files.associations": {
     ".sequelizerc": "javascript",
@@ -189,56 +189,56 @@
     "tsconfig.json": "tune",
     "*.proto": "3d",
     "*.webpack.js": "webpack",
-    //
+
     "*.reducer.ts": "Redux-reducer",
     "*.reducer.tsx": "Redux-reducer",
     "*.reducer.js": "Redux-reducer",
     "*.reducer.jsx": "Redux-reducer",
-    //
+
     "*.action.ts": "Redux-action",
     "*.action.tsx": "Redux-action",
     "*.action.js": "Redux-action",
     "*.action.jsx": "Redux-action",
-    //
+    
     "*.store.ts": "Redux-store",
     "*.store.tsx": "Redux-store",
     "*.store.js": "Redux-store",
     "*.store.jsx": "Redux-store",
-    //
+    
     "route.ts": "Routing",
     "route.tsx": "Routing",
     "route.js": "Routing",
     "route.jsx": "Routing",
-    //
+    
     "routes.ts": "Routing",
     "routes.tsx": "Routing",
     "routes.js": "Routing",
     "routes.jsx": "Routing",
-    //
+    
     "router.ts": "Routing",
     "router.tsx": "Routing",
     "router.js": "Routing",
     "router.jsx": "Routing",
-    //
+    
     "*.route.ts": "Routing",
     "*.route.tsx": "Routing",
     "*.route.js": "Routing",
     "*.route.jsx": "Routing",
-    //
+    
     "*.routes.ts": "Routing",
     "*.routes.tsx": "Routing",
     "*.routes.js": "Routing",
     "*.routes.jsx": "Routing",
-    //
+    
     ".i18n.js": "I18n",
     ".i18n.ts": "I18n",
-    //
+    
     "types.ts": "typescript-def",
-    //
+    
     "type.ts": "typescript-def",
-    //
+    
     "*.types.ts": "typescript-def",
-    //
+    
     "*.type.ts": "typescript-def"
   },
 
@@ -272,6 +272,9 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[sql]": {
+    "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
+  },
 
   "redhat.telemetry.enabled": false,
 
@@ -279,6 +282,7 @@
   "quokka.showOutputOnStart": true,
 
   "cSpell.userWords": [
+    "adyen",
     "antd",
     "appcenter",
     "avds",
@@ -286,13 +290,16 @@
     "browserslist",
     "camelcase",
     "categorys",
+    "Celso",
     "chakra",
     "checkmark",
+    "cielo",
     "Cnpj",
     "codepush",
     "collapsable",
     "commitlint",
     "datetimepicker",
+    "DDTHH",
     "docwxyxoifgyqh",
     "dtos",
     "dtostrf",
@@ -319,6 +326,7 @@
     "jetify",
     "Keychain",
     "keycloak",
+    "Konduto",
     "Laravel",
     "linkedin",
     "mapbox",
@@ -378,39 +386,33 @@
     "Rocketseat",
     "rreducer",
     "Searchbar",
+    "Sesamo",
     "singin",
     "soapenv",
+    "sonarlint",
     "Stopots",
     "stylert",
     "stylesheet",
     "submenu",
     "swipeable",
+    "tanstack",
     "textinput",
     "timestamptz",
+    "tokenex",
     "typeorm",
     "unform",
     "unipam",
     "varchar",
     "vercel",
+    "WALLU",
     "whatsapp",
     "Xiaomi",
     "zustand"
   ],
 
-  "sonarlint.ls.javaHome": "C:\\Program Files\\Java\\jdk-11.0.15",
-  "sonarlint.connectedMode.connections.sonarqube": [
-    {
-      "connectionId": "B2 - SonarQube",
-      "serverUrl": "https://08ce-186-210-145-28.sa.ngrok.io"
-    }
-  ],
-
   "liveshare.connectionMode": "relay",
   "liveshare.presence": false,
 
-  "yaml.schemas": {
-    "file:///c%3A/Users/celso/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
-  },
   "yaml.customTags": [
     "!And",
     "!And sequence",
@@ -451,8 +453,6 @@
   "diffEditor.wordWrap": "off",
   "diffEditor.ignoreTrimWhitespace": false,
 
-  "projectManager.git.baseFolders": ["C:\\Users\\Celso\\Desktop\\projects"],
-
   "colorize.languages": [
     "javascript",
     "typescript",
@@ -460,13 +460,8 @@
     "typescriptreact"
   ],
 
-  "discord.removeTimestamp": true,
-  "discord.removeRemoteRepository": true,
-  "discord.removeLowerDetails": true,
-
   "json.schemas": [],
 
-  "aws.profile": "profile:celso",
   "aws.telemetry": false,
 
   "versionlens.suggestions.showOnStartup": true,
@@ -481,8 +476,6 @@
   "turboConsoleLog.includeFileNameAndLineNum": false,
 
   "vscode-edge-devtools.webhint": false,
-  "vscode-edge-devtools.fallbackRevision": "@a41122be052fe9616f0def5fe6842fa942930d46",
 
-  "git.autofetch": true
-
+  "git.autofetch": true,
 }
