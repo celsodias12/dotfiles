@@ -1,9 +1,10 @@
 eslint@7.32.0
-eslint-config-standard
+eslint-config-standard@16.0.3
 eslint-plugin-jsx-a11y
 eslint-plugin-import-helpers
 eslint-plugin-import
 @typescript-eslint/parser
 eslint-plugin-node
 eslint-plugin-promise
-eslint-plugin-unused-imports
+eslint-plugin-unused-imports@1.1.5
+
