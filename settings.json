@@ -34,11 +34,11 @@
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.renderLineHighlight": "gutter",
+  "editor.renderLineHighlight": "all",
   "editor.linkedEditing": true,
   "editor.suggestSelection": "first",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+      "source.fixAll.eslint": true,
     // "source.organizeImports": true
   },
   "editor.suggest.showMethods": true,
@@ -115,22 +115,22 @@
   "typescript.suggest.classMemberSnippets.enabled": true,
   "typescript.referencesCodeLens.enabled": true,
 
-  // "prettier.bracketSpacing": true,
-  // "prettier.trailingComma": "es5",
-  // "prettier.tabWidth": 2,
-  // "prettier.singleQuote": true,
-  // "prettier.jsxSingleQuote": true,
-  // "prettier.arrowParens": "avoid",
-  // "prettier.printWidth": 80,
-  // "prettier.embeddedLanguageFormatting": "auto",
-  // "prettier.htmlWhitespaceSensitivity": "css",
-  // "prettier.insertPragma": false,
-  // "prettier.proseWrap": "preserve",
-  // "prettier.quoteProps": "preserve",
-  // "prettier.requirePragma": false,
-  // "prettier.semi": false,
-  // "prettier.useTabs": false,
-  // "prettier.endOfLine": "auto",
+  "prettier.bracketSpacing": true,
+  "prettier.trailingComma": "es5",
+  "prettier.tabWidth": 2,
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
+  "prettier.arrowParens": "avoid",
+  "prettier.printWidth": 80,
+  "prettier.embeddedLanguageFormatting": "auto",
+  "prettier.htmlWhitespaceSensitivity": "css",
+  "prettier.insertPragma": false,
+  "prettier.proseWrap": "preserve",
+  "prettier.quoteProps": "preserve",
+  "prettier.requirePragma": false,
+  "prettier.semi": false,
+  "prettier.useTabs": false,
+  "prettier.endOfLine": "auto",
 
   "files.associations": {
     ".sequelizerc": "javascript",
@@ -199,46 +199,46 @@
     "*.action.tsx": "Redux-action",
     "*.action.js": "Redux-action",
     "*.action.jsx": "Redux-action",
-    
+
     "*.store.ts": "Redux-store",
     "*.store.tsx": "Redux-store",
     "*.store.js": "Redux-store",
     "*.store.jsx": "Redux-store",
-    
+
     "route.ts": "Routing",
     "route.tsx": "Routing",
     "route.js": "Routing",
     "route.jsx": "Routing",
-    
+
     "routes.ts": "Routing",
     "routes.tsx": "Routing",
     "routes.js": "Routing",
     "routes.jsx": "Routing",
-    
+
     "router.ts": "Routing",
     "router.tsx": "Routing",
     "router.js": "Routing",
     "router.jsx": "Routing",
-    
+
     "*.route.ts": "Routing",
     "*.route.tsx": "Routing",
     "*.route.js": "Routing",
     "*.route.jsx": "Routing",
-    
+
     "*.routes.ts": "Routing",
     "*.routes.tsx": "Routing",
     "*.routes.js": "Routing",
     "*.routes.jsx": "Routing",
-    
+
     ".i18n.js": "I18n",
     ".i18n.ts": "I18n",
-    
+
     "types.ts": "typescript-def",
-    
+
     "type.ts": "typescript-def",
-    
+
     "*.types.ts": "typescript-def",
-    
+
     "*.type.ts": "typescript-def"
   },
 
@@ -249,7 +249,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -273,7 +273,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[sql]": {
-    "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
+    "editor.defaultFormatter": "bradymholt.pgformatter"
+  },
+  "[postgres]": {
+    "editor.defaultFormatter": "bradymholt.pgformatter"
   },
 
   "redhat.telemetry.enabled": false,
@@ -294,6 +297,7 @@
     "chakra",
     "checkmark",
     "cielo",
+    "cnab",
     "Cnpj",
     "codepush",
     "collapsable",
@@ -322,6 +326,7 @@
     "impas",
     "Ionicons",
     "iphone",
+    "itau",
     "JDBC",
     "jetify",
     "Keychain",
@@ -413,6 +418,9 @@
   "liveshare.connectionMode": "relay",
   "liveshare.presence": false,
 
+  "yaml.schemas": {
+    "file:///home/celso/.vscode-server/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
   "yaml.customTags": [
     "!And",
     "!And sequence",
@@ -453,12 +461,17 @@
   "diffEditor.wordWrap": "off",
   "diffEditor.ignoreTrimWhitespace": false,
 
+  "projectManager.git.baseFolders": ["C:\\Users\\Celso\\Desktop\\projects"],
+
   "colorize.languages": [
     "javascript",
     "typescript",
     "javascriptreact",
     "typescriptreact"
   ],
+
+  "update.mode": "none",
+  "update.enableWindowsBackgroundUpdates": false,
 
   "json.schemas": [],
 
@@ -468,14 +481,10 @@
 
   "gitlens.hovers.currentLine.over": "line",
 
-  "turboConsoleLog.logMessagePrefix": "",
-  "turboConsoleLog.quote": "'",
-  "turboConsoleLog.delimiterInsideMessage": "",
-  "turboConsoleLog.insertEnclosingFunction": false,
-  "turboConsoleLog.insertEnclosingClass": false,
-  "turboConsoleLog.includeFileNameAndLineNum": false,
-
   "vscode-edge-devtools.webhint": false,
 
   "git.autofetch": true,
+  "git.mergeEditor": false,
+
+  "gitlab.showPipelineUpdateNotifications": true,
 }
