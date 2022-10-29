@@ -38,7 +38,7 @@
   "editor.linkedEditing": true,
   "editor.suggestSelection": "first",
   "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true,
+    "source.fixAll.eslint": true
     // "source.organizeImports": true
   },
   "editor.suggest.showMethods": true,
@@ -136,7 +136,8 @@
     ".sequelizerc": "javascript",
     ".stylelintrc": "json",
     ".prettierrc": "json",
-    "*.tsx": "typescriptreact"
+    "*.tsx": "typescriptreact",
+    ".env.*": "properties"
   },
   "files.exclude": {
     "**/.classpath": true,
@@ -255,7 +256,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[env]": {
-    "editor.defaultFormatter": "IronGeek.vscode-env"
+    "editor.defaultFormatter": "dotenv.dotenv-vscode"
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -414,12 +415,15 @@
     "Xiaomi",
     "zustand"
   ],
+  "cSpell.enableFiletypes": [
+    "!plaintext"
+  ],
 
   "liveshare.connectionMode": "relay",
   "liveshare.presence": false,
 
   "yaml.schemas": {
-    "file:///home/celso/.vscode-server/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///c%3A/Users/celso/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "yaml.customTags": [
     "!And",
@@ -457,6 +461,10 @@
 
   "atlascode.helpExplorerEnabled": false,
   "atlascode.jira.enabled": true,
+  "atlascode.jira.lastCreateSiteAndProject": {
+    "siteId": "",
+    "projectKey": "B2LIS"
+  },
 
   "diffEditor.wordWrap": "off",
   "diffEditor.ignoreTrimWhitespace": false,
@@ -469,9 +477,6 @@
     "javascriptreact",
     "typescriptreact"
   ],
-
-  "update.mode": "none",
-  "update.enableWindowsBackgroundUpdates": false,
 
   "json.schemas": [],
 
