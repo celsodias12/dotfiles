@@ -3,43 +3,44 @@
   name = Celso Dias
 [init]
 	defaultBranch = main
+[push]
+	autoSetupRemote = true
 [alias]
 	sw = switch
 	swc = switch -c
   cm = commit
   cmm = commit -m
+	cmam = commit --amend -m
+	incm = cmm 'feat: inital commit'
+	acmm = !git a . && git cmm 
   br = branch
 	brd = branch -d
 	brr = branch -m
 	brl = branch --list
-	pod = push origin --delete 
+	pod = push origin --delete
 	a = add
 	re = reset
+	delcm = reset HEAD~1
+	reh = reset --hard
 	st = stash
 	stl = stash list
+	stw = stash show
 	sts = stash save
 	sta = stash apply
 	std = stash drop
 	stp = stash pop
 	lg = log --graph
-	cmin = cmm 'feat: inital commit'
 	cl = clone
-	puor = pull origin
-	cmam = commit --amend -m
-	delcm = reset HEAD~1
+	p = pull
+	por = pull origin
 	fe = fetch
 	me = merge
 	meq = merge --quit
-	reh = reset --hard
-	exst = !git add . && git st && git st show "stash@{0}" -p > stash.patch && git stp
+	exst = !git a . && git st && git stw "stash@{0}" -p > stash.patch && git stp
 	imst = apply stash.patch
-	p = pull
 
 [includeIf "gitdir:~/Desktop/projects/work/b2/"]
   path = .gitconfig.b2
 
 [includeIf "gitdir:~/Desktop/projects/work/luizalabs/"]
   path = .gitconfig.luizalabs
-
-[includeIf "gitdir:~/Desktop/projects/work/b2/tools-b2list/"]
-	path = .gitconfig.default
