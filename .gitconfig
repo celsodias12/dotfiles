@@ -30,6 +30,10 @@
 	std = stash drop
 	stp = stash pop
 	lg = log --graph
+	lga = log --graph --all
+	lgo = log --graph --oneline
+	lpo = log --pretty=oneline
+	lo = log --oneline
 	cl = clone
 	p = pull
 	por = pull origin
@@ -38,7 +42,7 @@
 	meq = merge --quit
 	exst = !git a . && git st && git stw "stash@{0}" -p > stash.patch && git stp
 	imst = apply stash.patch
-
+	
 [includeIf "gitdir:~/Desktop/projects/work/b2/"]
   path = .gitconfig.b2
 
