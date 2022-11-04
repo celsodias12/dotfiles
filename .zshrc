@@ -156,5 +156,25 @@ alias dcd="docker compose down"
 alias dcs="docker compose stop"
 
 # Kill ports
-alias kbs="fuser -n tcp -k 9000"
+alias kbs="fuser -n tcp -k 9876"
 alias ks="fuser -n tcp -k 5000"
+alias kb="fuser -n tcp -k 3312"
+
+# Courses
+alias nlw="cd ~/projects/courses/rocketseat/nlw"
+alias ignite="cd ~/projects/courses/rocketseat/ignite"
+alias copa="cd ~/projects/courses/rocketseat/nlw/copa"
+alias full_cycle="cd ~/projects/courses/full_cycle"
+alias jstack="cd ~/projects/courses/jstack"
+
+# npm
+alias nrbs="npm run bank-slip-service"
+alias ns="npm start"
+alias nrd="npm run dev"
+
+# Explorer
+alias ex="explorer.exe ."
+
+# Zsh
+alias soz="source ~/.zshrc"
+alias coz="code ~/.zshrc"
