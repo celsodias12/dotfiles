@@ -88,6 +88,9 @@
     "❯": true
   },
   "editor.stickyScroll.enabled": true,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": []
+  },
 
   "search.exclude": {
     "**/node_modules": true,
@@ -108,7 +111,7 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.suggest.autoImports": true,
   "typescript.inlayHints.parameterNames.enabled": "all",
-  "typescript.inlayHints.variableTypes.enabled": false,
+  "typescript.inlayHints.variableTypes.enabled": true,
   "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
   "typescript.inlayHints.parameterTypes.enabled": true,
   "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
@@ -133,11 +136,9 @@
   "prettier.endOfLine": "auto",
 
   "files.associations": {
-    ".sequelizerc": "javascript",
-    ".stylelintrc": "json",
-    ".prettierrc": "json",
     "*.tsx": "typescriptreact",
-    ".env.*": "properties"
+    ".env.*": "properties",
+    ".env": "properties"
   },
   "files.exclude": {
     "**/.classpath": true,
@@ -187,7 +188,9 @@
   },
   "material-icon-theme.files.associations": {
     "ormconfig.json": "database",
+
     "tsconfig.json": "tune",
+
     "*.proto": "3d",
     "*.webpack.js": "webpack",
 
@@ -235,11 +238,8 @@
     ".i18n.ts": "I18n",
 
     "types.ts": "typescript-def",
-
     "type.ts": "typescript-def",
-
     "*.types.ts": "typescript-def",
-
     "*.type.ts": "typescript-def"
   },
 
@@ -279,6 +279,21 @@
   "[postgres]": {
     "editor.defaultFormatter": "bradymholt.pgformatter"
   },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[properties]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
 
   "redhat.telemetry.enabled": false,
 
@@ -312,6 +327,7 @@
     "eqeqeq",
     "expdas",
     "expds",
+    "fastify",
     "formik",
     "freelas",
     "geocode",
@@ -415,15 +431,20 @@
     "Xiaomi",
     "zustand"
   ],
-  "cSpell.enableFiletypes": [
-    "!plaintext"
+  "cSpell.enableFiletypes": ["!plaintext"],
+
+  "sonarlint.connectedMode.connections.sonarqube": [
+    {
+      "connectionId": "",
+      "serverUrl": ""
+    }
   ],
 
   "liveshare.connectionMode": "relay",
   "liveshare.presence": false,
 
   "yaml.schemas": {
-    "file:///c%3A/Users/celso/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///home/celso/.vscode-server/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "yaml.customTags": [
     "!And",
@@ -461,10 +482,6 @@
 
   "atlascode.helpExplorerEnabled": false,
   "atlascode.jira.enabled": true,
-  "atlascode.jira.lastCreateSiteAndProject": {
-    "siteId": "",
-    "projectKey": "B2LIS"
-  },
 
   "diffEditor.wordWrap": "off",
   "diffEditor.ignoreTrimWhitespace": false,
@@ -492,4 +509,10 @@
   "git.mergeEditor": false,
 
   "gitlab.showPipelineUpdateNotifications": true,
+
+  "dotenv.enableAutocloaking": false,
+
+  "database-client.showFilter": true,
+
+  "remote.downloadExtensionsLocally": true
 }
