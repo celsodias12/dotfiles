@@ -1,3 +1,14 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export PATH=$PATH:$JAVA_HOME/bin
+
+export OPENSSL_CONF=/dev/null
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -5,47 +16,48 @@
 ZSH_THEME="spaceship"
 
 SPACESHIP_USER_SHOW=always
-SPACESHIP_PROMPT_ADD_NEWLINE=false
+# SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL="❯"
 SPACESHIP_CHAR_SUFFIX=" "
+SPACESHIP_BATTERY_SHOW=false
 
 SPACESHIP_PROMPT_ORDER=(
-  time          # Time stamps section
-  user          # Username section
-  dir           # Current directory section
-  host          # Hostname section
-  git           # Git section (git_branch + git_status)
-  hg            # Mercurial section (hg_branch  + hg_status)
+  time # Time stamps section
+  user # Username section
+  dir  # Current directory section
+  host # Hostname section
+  git  # Git section (git_branch + git_status)
+  hg   # Mercurial section (hg_branch  + hg_status)
   # package       # Package version
-  gradle        # Gradle section
-  maven         # Maven section
-  # node          # Node.js section
-  ruby          # Ruby section
-  elixir        # Elixir section
-  xcode         # Xcode section
-  swift         # Swift section
-  golang        # Go section
-  php           # PHP section
-  rust          # Rust section
-  haskell       # Haskell Stack section
-  julia         # Julia section
-  aws           # Amazon Web Services section
-  gcloud        # Google Cloud Platform section
-  venv          # virtualenv section
-  conda         # conda virtualenv section
-  pyenv         # Pyenv section
-  dotnet        # .NET section
-  ember         # Ember.js section
-  kubectl       # Kubectl context section
-  terraform     # Terraform workspace section
-  ibmcloud      # IBM Cloud section
-  exec_time     # Execution time
-  line_sep      # Line break
-  battery       # Battery level and status
-  vi_mode       # Vi-mode indicator
-  jobs          # Background jobs indicator
-  exit_code     # Exit code section
-  char          # Prompt character
+  gradle    # Gradle section
+  maven     # Maven section
+  node      # Node.js section
+  ruby      # Ruby section
+  elixir    # Elixir section
+  xcode     # Xcode section
+  swift     # Swift section
+  golang    # Go section
+  php       # PHP section
+  rust      # Rust section
+  haskell   # Haskell Stack section
+  julia     # Julia section
+  aws       # Amazon Web Services section
+  gcloud    # Google Cloud Platform section
+  venv      # virtualenv section
+  conda     # conda virtualenv section
+  pyenv     # Pyenv section
+  dotnet    # .NET section
+  ember     # Ember.js section
+  kubectl   # Kubectl context section
+  terraform # Terraform workspace section
+  ibmcloud  # IBM Cloud section
+  exec_time # Execution time
+  line_sep  # Line break
+  battery   # Battery level and status
+  vi_mode   # Vi-mode indicator
+  jobs      # Background jobs indicator
+  exit_code # Exit code section
+  char      # Prompt character
 )
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -145,10 +157,11 @@ export PATH="~/.nvm/versions/node/v16.15.0/bin:$PATH"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Folders
-alias dev="cd ~/projects"
+alias projects="cd ~/projects"
 alias b2="cd ~/projects/work/b2"
 alias labs="cd ~/projects/work/luizalabs"
 alias ssh-dir="cd ~/.ssh"
+alias downloads="cd ~/Downloads"
 
 # Docker
 alias dcu="docker compose up -d"
@@ -158,7 +171,8 @@ alias dcs="docker compose stop"
 # Kill ports
 alias kbs="fuser -n tcp -k 9876"
 alias ks="fuser -n tcp -k 5000"
-alias kb="fuser -n tcp -k 3312"
+alias kbsrp="fuser -n tcp -k 3312"
+alias kbss="fuser -n tcp -k 3315"
 
 # Courses
 alias nlw="cd ~/projects/courses/rocketseat/nlw"
@@ -168,9 +182,10 @@ alias full_cycle="cd ~/projects/courses/full_cycle"
 alias jstack="cd ~/projects/courses/jstack"
 
 # npm
-alias nrbs="npm run bank-slip-service"
 alias ns="npm start"
 alias nrd="npm run dev"
+alias nrl="npm run lint"
+alias nre="npm run eslint"
 
 # Explorer
 alias ex="explorer.exe ."
@@ -178,3 +193,9 @@ alias ex="explorer.exe ."
 # Zsh
 alias soz="source ~/.zshrc"
 alias coz="code ~/.zshrc"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/celso/downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/celso/downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/celso/downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/celso/downloads/google-cloud-sdk/completion.zsh.inc'; fi
