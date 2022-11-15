@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -182,20 +184,26 @@ alias full_cycle="cd ~/projects/courses/full_cycle"
 alias jstack="cd ~/projects/courses/jstack"
 
 # npm
+alias nrbs="npm run bank-slip-service"
 alias ns="npm start"
 alias nrd="npm run dev"
 alias nrl="npm run lint"
-alias nre="npm run eslint"
+alias nres="npm run eslint"
 
 # Explorer
-alias ex="explorer.exe ."
+alias ex="explorer.exe"
 
-# Zsh
-alias soz="source ~/.zshrc"
-alias coz="code ~/.zshrc"
+# Terminal
+alias cl="clear"
+
+# Fig
+alias fiso="fig source"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/celso/downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/celso/downloads/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/celso/downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/celso/downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
