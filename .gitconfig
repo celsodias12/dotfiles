@@ -24,6 +24,7 @@
 	reh = reset --hard
 	st = stash
 	stl = stash list
+	stc = stash clear
 	stw = stash show
 	sts = stash save
 	sta = stash apply
