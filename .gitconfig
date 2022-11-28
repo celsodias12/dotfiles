@@ -1,51 +1,51 @@
 [user]
-	email = 47264001+celsodias12@users.noreply.github.com
-  name = Celso Dias
+email = 47264001+celsodias12@users.noreply.github.com
+name = Celso Dias
 [init]
-	defaultBranch = main
+defaultBranch = main
 [push]
-	autoSetupRemote = true
+autoSetupRemote = true
 [alias]
-	sw = switch
-	swc = switch -c
-  cm = commit
-  cmm = commit -m
-	cmam = commit --amend -m
-	incm = cmm 'feat: inital commit'
-	acmm = !git a . && git cmm 
-  br = branch
-	brd = branch -d
-	brr = branch -m
-	brl = branch --list
-	pod = push origin --delete
-	a = add
-	re = reset
-	delcm = reset HEAD~1
-	reh = reset --hard
-	st = stash
-	stl = stash list
-	stc = stash clear
-	stw = stash show
-	sts = stash save
-	sta = stash apply
-	std = stash drop
-	stp = stash pop
-	lg = log --graph
-	lga = log --graph --all
-	lgo = log --graph --oneline
-	lpo = log --pretty=oneline
-	lo = log --oneline
-	cl = clone
-	p = pull
-	por = pull origin
-	fe = fetch
-	me = merge
-	meq = merge --quit
-	exst = !git a . && git st && git stw "stash@{0}" -p > stash.patch && git stp
-	imst = apply stash.patch
-	
-[includeIf "gitdir:~/Desktop/projects/work/b2/"]
-  path = .gitconfig.b2
+sw = switch
+swc = switch -c
+cm = commit
+cmm = commit -m
+cmam = commit --amend -m
+incm = cmm 'feat: inital commit'
+acmm = !git a . && git cmm
+br = branch
+brd = branch -d
+brr = branch -m
+brl = branch --list
+pod = push origin --delete
+a = add
+re = reset
+delcm = reset HEAD~1
+reh = reset --hard
+st = stash
+stl = stash list
+stc = stash clear
+stw = stash show
+sts = stash save
+sta = stash apply
+std = stash drop
+stp = stash pop
+lg = log --graph
+lga = log --graph --all
+lgo = log --graph --oneline
+lpo = log --pretty=oneline
+lo = log --oneline
+cl = clone
+p = pull
+por = pull origin
+fe = fetch
+me = merge
+meq = merge --quit
+exst = !git add . && git stash && git stash show "stash@{0}" -p >stash.patch && git stash pop
+imst = apply stash.patch
 
-[includeIf "gitdir:~/Desktop/projects/work/luizalabs/"]
-  path = .gitconfig.luizalabs
+[includeIf "gitdir:~/projects/work/luizalabs/"]
+path = ~/.gitconfig.luizalabs
+
+[includeIf "gitdir:~/"]
+path = ~/.gitconfig.default
