@@ -11,6 +11,7 @@ export PATH=$PATH:$JAVA_HOME/bin
 
 export OPENSSL_CONF=/dev/null
 
+export PATH=$PATH:/usr/local/go/bin
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -31,20 +32,20 @@ SPACESHIP_PROMPT_ORDER=(
   git  # Git section (git_branch + git_status)
   hg   # Mercurial section (hg_branch  + hg_status)
   # package       # Package version
-  gradle    # Gradle section
-  maven     # Maven section
-  node      # Node.js section
-  ruby      # Ruby section
-  elixir    # Elixir section
-  xcode     # Xcode section
-  swift     # Swift section
-  golang    # Go section
-  php       # PHP section
-  rust      # Rust section
-  haskell   # Haskell Stack section
-  julia     # Julia section
-  aws       # Amazon Web Services section
-  gcloud    # Google Cloud Platform section
+  gradle  # Gradle section
+  maven   # Maven section
+  node    # Node.js section
+  ruby    # Ruby section
+  elixir  # Elixir section
+  xcode   # Xcode section
+  swift   # Swift section
+  golang  # Go section
+  php     # PHP section
+  rust    # Rust section
+  haskell # Haskell Stack section
+  julia   # Julia section
+  aws     # Amazon Web Services section
+  # gcloud    # Google Cloud Platform section
   venv      # virtualenv section
   conda     # conda virtualenv section
   pyenv     # Pyenv section
@@ -163,25 +164,30 @@ alias projects="cd ~/projects"
 alias b2="cd ~/projects/work/b2"
 alias labs="cd ~/projects/work/luizalabs"
 alias ssh-dir="cd ~/.ssh"
-alias downloads="cd ~/Downloads"
+alias downloads="cd ~/downloads"
+alias hm="cd ~"
+
+# Courses
+alias courses="cd ~/projects/courses"
+alias nlw="cd ~/projects/courses/rocketseat/nlw"
+alias ignite="cd ~/projects/courses/rocketseat/ignite"
+alias copa="cd ~/projects/courses/rocketseat/nlw/copa"
+alias fc="cd ~/projects/courses/full_cycle"
+alias fc3="cd ~/projects/courses/full_cycle/full_cycle_3"
+alias jstack="cd ~/projects/courses/jstack"
 
 # Docker
-alias dcu="docker compose up -d"
+alias dcu="docker compose up"
+alias dcud="docker compose up -d"
 alias dcd="docker compose down"
 alias dcs="docker compose stop"
 
 # Kill ports
+alias k="fuser -n tcp -k"
 alias kbs="fuser -n tcp -k 9876"
 alias ks="fuser -n tcp -k 5000"
-alias kbsrp="fuser -n tcp -k 3312"
-alias kbss="fuser -n tcp -k 3315"
-
-# Courses
-alias nlw="cd ~/projects/courses/rocketseat/nlw"
-alias ignite="cd ~/projects/courses/rocketseat/ignite"
-alias copa="cd ~/projects/courses/rocketseat/nlw/copa"
-alias full_cycle="cd ~/projects/courses/full_cycle"
-alias jstack="cd ~/projects/courses/jstack"
+alias ksrp="fuser -n tcp -k 3312"
+alias kss="fuser -n tcp -k 3315"
 
 # npm
 alias nrbs="npm run bank-slip-service"
@@ -189,15 +195,12 @@ alias ns="npm start"
 alias nrd="npm run dev"
 alias nrl="npm run lint"
 alias nres="npm run eslint"
-
-# Explorer
-alias ex="explorer.exe"
+alias ni="npm i"
+alias nr="npm r"
 
 # Terminal
 alias cl="clear"
-
-# Fig
-alias fiso="fig source"
+alias sozsh="source ~/.zshrc"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/celso/downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/celso/downloads/google-cloud-sdk/path.zsh.inc'; fi
