@@ -15,6 +15,7 @@
   acmm = !git a . && git cmm
   br = branch
   brd = branch -d
+  brD = branch -D
   brr = branch -m
   brl = branch --list
   pod = push origin --delete
