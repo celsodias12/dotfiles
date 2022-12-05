@@ -12,6 +12,8 @@ export PATH=$PATH:$JAVA_HOME/bin
 export OPENSSL_CONF=/dev/null
 
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/home/$USER/sonar-scanner/bin
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -178,7 +180,6 @@ alias jstack="cd ~/projects/courses/jstack"
 
 # Docker
 alias dcu="docker compose up"
-alias dcud="docker compose up -d"
 alias dcd="docker compose down"
 alias dcs="docker compose stop"
 
@@ -188,6 +189,7 @@ alias kbs="fuser -n tcp -k 9876"
 alias ks="fuser -n tcp -k 5000"
 alias ksrp="fuser -n tcp -k 3312"
 alias kss="fuser -n tcp -k 3315"
+alias klabs="kbs && ks && ksrp && kss"
 
 # npm
 alias nrbs="npm run bank-slip-service"
@@ -201,6 +203,9 @@ alias nr="npm r"
 # Terminal
 alias cl="clear"
 alias sozsh="source ~/.zshrc"
+
+# Sonar
+alias sc="sonar-scanner"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/celso/downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/celso/downloads/google-cloud-sdk/path.zsh.inc'; fi
