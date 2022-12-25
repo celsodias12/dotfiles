@@ -7,4 +7,4 @@ eslint-plugin-import
 eslint-plugin-node
 eslint-plugin-promise
 eslint-plugin-unused-imports@1.1.5
-
+prettier
