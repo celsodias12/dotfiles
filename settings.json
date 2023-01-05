@@ -3,6 +3,7 @@
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.tabs.enabled": true,
   "terminal.integrated.smoothScrolling": true,
+  "terminal.integrated.shellIntegration.history": 500,
 
   "workbench.sideBar.location": "left",
   "workbench.startupEditor": "none",
@@ -25,6 +26,9 @@
   "workbench.tree.renderIndentGuides": "always",
 
   "explorer.compactFolders": false,
+  "explorer.autoRevealExclude": {
+    "**/node_modules": true
+  },
 
   "editor.tabSize": 2,
   "editor.fontSize": 14,
@@ -85,7 +89,8 @@
     "ü": true,
     "û": true,
     "Í": true,
-    "❯": true
+    "❯": true,
+    "’": true
   },
   "editor.stickyScroll.enabled": true,
   "editor.tokenColorCustomizations": {
@@ -98,24 +103,32 @@
     "**/yarn.lock": true
   },
 
-  "javascript.validate.enable": false,
-  "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.suggest.autoImports": true,
-  "javascript.inlayHints.parameterNames.enabled": "all",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.inlayHints.parameterNames.enabled": "literals",
   "javascript.inlayHints.variableTypes.enabled": true,
   "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "javascript.inlayHints.parameterTypes.enabled": true,
+  "javascript.inlayHints.parameterTypes.enabled": false,
   "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
+  "javascript.inlayHints.variableTypes.suppressWhenTypeMatchesName": true,
   "javascript.suggest.classMemberSnippets.enabled": true,
+  "javascript.validate.enable": true,
+  "javascript.autoClosingTags": true,
+  "javascript.referencesCodeLens.enabled": true,
 
-  "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.suggest.autoImports": true,
-  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.inlayHints.parameterNames.enabled": "literals",
   "typescript.inlayHints.variableTypes.enabled": true,
   "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.parameterTypes.enabled": false,
   "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
+  "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName": true,
   "typescript.suggest.classMemberSnippets.enabled": true,
+  "typescript.validate.enable": true,
+  "typescript.autoClosingTags": true,
   "typescript.referencesCodeLens.enabled": true,
 
   "prettier.bracketSpacing": true,
@@ -124,7 +137,7 @@
   "prettier.singleQuote": true,
   "prettier.jsxSingleQuote": true,
   "prettier.arrowParens": "avoid",
-  "prettier.printWidth": 80,
+  "prettier.printWidth": 150,
   "prettier.embeddedLanguageFormatting": "auto",
   "prettier.htmlWhitespaceSensitivity": "css",
   "prettier.insertPragma": false,
@@ -147,6 +160,7 @@
     "**/.settings": true
   },
   "files.defaultLanguage": "${activeEditorLanguage}",
+  "files.maxMemoryForLargeFilesMB": 8192,
 
   "emmet.syntaxProfiles": {
     "javascript": "jsx"
@@ -188,55 +202,43 @@
   },
   "material-icon-theme.files.associations": {
     "ormconfig.json": "database",
-
     "tsconfig.json": "tune",
-
     "*.proto": "3d",
     "*.webpack.js": "webpack",
-
     "*.reducer.ts": "Redux-reducer",
     "*.reducer.tsx": "Redux-reducer",
     "*.reducer.js": "Redux-reducer",
     "*.reducer.jsx": "Redux-reducer",
-
     "*.action.ts": "Redux-action",
     "*.action.tsx": "Redux-action",
     "*.action.js": "Redux-action",
     "*.action.jsx": "Redux-action",
-
     "*.store.ts": "Redux-store",
     "*.store.tsx": "Redux-store",
     "*.store.js": "Redux-store",
     "*.store.jsx": "Redux-store",
-
     "route.ts": "Routing",
     "route.tsx": "Routing",
     "route.js": "Routing",
     "route.jsx": "Routing",
-
     "routes.ts": "Routing",
     "routes.tsx": "Routing",
     "routes.js": "Routing",
     "routes.jsx": "Routing",
-
     "router.ts": "Routing",
     "router.tsx": "Routing",
     "router.js": "Routing",
     "router.jsx": "Routing",
-
     "*.route.ts": "Routing",
     "*.route.tsx": "Routing",
     "*.route.js": "Routing",
     "*.route.jsx": "Routing",
-
     "*.routes.ts": "Routing",
     "*.routes.tsx": "Routing",
     "*.routes.js": "Routing",
     "*.routes.jsx": "Routing",
-
     ".i18n.js": "I18n",
     ".i18n.ts": "I18n",
-
     "types.ts": "typescript-def",
     "type.ts": "typescript-def",
     "*.types.ts": "typescript-def",
@@ -250,7 +252,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -293,6 +295,15 @@
   },
   "[dockerfile]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[nginx]": {
+    "editor.defaultFormatter": "ahmadalli.vscode-nginx-conf"
+  },
+  "[dotenv]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
   },
 
   "redhat.telemetry.enabled": false,
@@ -444,7 +455,7 @@
   "liveshare.presence": false,
 
   "yaml.schemas": {
-    "file:///home/celso/.vscode-server/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///c%3A/Users/celso/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "yaml.customTags": [
     "!And",
@@ -480,24 +491,13 @@
     "*": true
   },
 
-  "atlascode.helpExplorerEnabled": false,
-  "atlascode.jira.enabled": true,
-
   "diffEditor.wordWrap": "off",
-  "diffEditor.ignoreTrimWhitespace": false,
 
-  "projectManager.git.baseFolders": ["C:\\Users\\Celso\\Desktop\\projects"],
+  "projectManager.git.baseFolders": ["C:\\Users\\Celso\\Desktop\\projects", "~/Projects"],
 
-  "colorize.languages": [
-    "javascript",
-    "typescript",
-    "javascriptreact",
-    "typescriptreact"
-  ],
+  "colorize.languages": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
 
   "json.schemas": [],
-
-  "aws.telemetry": false,
 
   "versionlens.suggestions.showOnStartup": true,
 
@@ -512,7 +512,27 @@
 
   "dotenv.enableAutocloaking": false,
 
-  "database-client.showFilter": true,
+  "remote.downloadExtensionsLocally": true,
 
-  "remote.downloadExtensionsLocally": true
+  "totalTypeScript.hideAllTips": false,
+  "totalTypeScript.hideBasicTips": true,
+  "totalTypeScript.hiddenTips": [
+    "passing-generics-to-types",
+    "record-utility-type",
+    "conditional-type",
+    "mapped-type",
+    "type-alias-with-generics",
+    "keyof",
+    "typeof",
+    "partial-utility-type",
+    "required-utility-type",
+    "type-alias-with-multiple-generics",
+    "interface-with-generics",
+    "generic-slots-in-functions",
+    "infer",
+    "pick-utility-type",
+    "returntype-utility-type",
+    "never-keyword",
+    "omit-utility-type"
+  ]
 }
