@@ -163,11 +163,12 @@ export PATH="~/.nvm/versions/node/v16.15.0/bin:$PATH"
 
 # Folders
 alias projects="cd ~/projects"
-alias b2="cd ~/projects/work/b2"
-alias labs="cd ~/projects/work/luizalabs"
+alias b2="projects && cd work/b2"
+alias labs="projects && cd work/luizalabs"
 alias ssh-dir="cd ~/.ssh"
 alias downloads="cd ~/downloads"
-alias hm="cd ~"
+alias home="cd ~"
+alias react="projects && cd react"
 
 # Courses
 alias courses="cd ~/projects/courses"
@@ -182,17 +183,12 @@ alias jstack="cd ~/projects/courses/jstack"
 alias dcu="docker compose up"
 alias dcd="docker compose down"
 alias dcs="docker compose stop"
+alias dcps="docker compose ps"
 
 # Kill ports
 alias k="fuser -n tcp -k"
-alias kbs="fuser -n tcp -k 9876"
-alias ks="fuser -n tcp -k 5000"
-alias ksrp="fuser -n tcp -k 3312"
-alias kss="fuser -n tcp -k 3315"
-alias klabs="kbs && ks && ksrp && kss"
 
 # npm
-alias nrbs="npm run bank-slip-service"
 alias ns="npm start"
 alias nrd="npm run dev"
 alias nrl="npm run lint"
@@ -202,10 +198,24 @@ alias nr="npm r"
 
 # Terminal
 alias cl="clear"
-alias sozsh="source ~/.zshrc"
+alias sozs="source ~/.zshrc"
 
 # Sonar
-alias sc="sonar-scanner"
+alias sosc="sonar-scanner"
+
+# Python
+alias venv="python -m venv venv"
+alias ac="source venv/bin/activate"
+alias deac="deactivate"
+
+# System
+alias update="sudo apt update && sudo apt upgrade && sudo apt autoremove"
+alias ips="ip -c -br a"
+alias ..="cd .."
+alias grhi="history | grep"
+
+# Others
+alias vsc="code ."
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/celso/downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/celso/downloads/google-cloud-sdk/path.zsh.inc'; fi
@@ -213,5 +223,7 @@ if [ -f '/home/celso/downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/c
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/celso/downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/celso/downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
