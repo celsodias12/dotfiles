@@ -22,6 +22,8 @@ GitHub.vscode-pull-request-github
 GitLab.gitlab-workflow
 Gruntfuggly.todo-tree
 helixquar.randomeverything
+hnw.vscode-auto-open-markdown-preview
+IBM.output-colorizer
 jasonlhy.hungry-delete
 kamikillerto.vscode-colorize
 kisstkondoros.vscode-gutter-preview
@@ -45,6 +47,7 @@ ms-vsliveshare.vsliveshare
 ms-vsliveshare.vsliveshare-pack
 nicoespeon.abracadabra
 oouo-diogo-perdigao.docthis
+Orta.vscode-twoslash-queries
 paulmolluzzo.convert-css-in-js
 pflannery.vscode-versionlens
 PKief.material-icon-theme
