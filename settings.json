@@ -154,12 +154,6 @@
     ".env.*": "properties",
     ".env": "properties"
   },
-  "files.exclude": {
-    "**/.classpath": true,
-    "**/.factorypath": true,
-    "**/.project": true,
-    "**/.settings": true
-  },
   "files.defaultLanguage": "${activeEditorLanguage}",
   "files.maxMemoryForLargeFilesMB": 8192,
 
