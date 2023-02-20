@@ -155,7 +155,7 @@
     ".env": "properties"
   },
   "files.defaultLanguage": "${activeEditorLanguage}",
-  "files.maxMemoryForLargeFilesMB": 8192,
+  "files.maxMemoryForLargeFilesMB": 16384,
 
   "emmet.syntaxProfiles": {
     "javascript": "jsx"
