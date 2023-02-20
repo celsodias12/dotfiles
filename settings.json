@@ -32,6 +32,7 @@
 
   "editor.tabSize": 2,
   "editor.fontSize": 14,
+  "editor.rulers": [120],
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
   "editor.lineHeight": 0,
@@ -57,7 +58,7 @@
   "editor.accessibilitySupport": "off",
   "editor.hover.above": true,
   "editor.smoothScrolling": true,
-  "editor.cursorSmoothCaretAnimation": true,
+  "editor.cursorSmoothCaretAnimation": "on",
   "editor.unicodeHighlight.invisibleCharacters": true,
   "editor.unicodeHighlight.ambiguousCharacters": true,
   "editor.unicodeHighlight.nonBasicASCII": true,
@@ -131,22 +132,22 @@
   "typescript.autoClosingTags": true,
   "typescript.referencesCodeLens.enabled": true,
 
-  "prettier.bracketSpacing": true,
-  "prettier.trailingComma": "es5",
+  "prettier.printWidth": 120,
   "prettier.tabWidth": 2,
-  "prettier.singleQuote": true,
-  "prettier.jsxSingleQuote": true,
-  "prettier.arrowParens": "avoid",
-  "prettier.printWidth": 150,
-  "prettier.embeddedLanguageFormatting": "auto",
-  "prettier.htmlWhitespaceSensitivity": "css",
-  "prettier.insertPragma": false,
-  "prettier.proseWrap": "preserve",
-  "prettier.quoteProps": "preserve",
-  "prettier.requirePragma": false,
-  "prettier.semi": false,
   "prettier.useTabs": false,
-  "prettier.endOfLine": "auto",
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.quoteProps": "as-needed",
+  "prettier.jsxSingleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.bracketSpacing": true,
+  "prettier.bracketSameLine": true,
+  "prettier.arrowParens": "avoid",
+  "prettier.proseWrap": "preserve",
+  "prettier.htmlWhitespaceSensitivity": "css",
+  "prettier.endOfLine": "lf",
+  "prettier.embeddedLanguageFormatting": "auto",
+  "prettier.singleAttributePerLine": false,
 
   "files.associations": {
     "*.tsx": "typescriptreact",
@@ -302,9 +303,6 @@
   "[dotenv]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.python"
-  },
 
   "redhat.telemetry.enabled": false,
 
@@ -352,6 +350,7 @@
     "hookform",
     "iife",
     "impas",
+    "instana",
     "Ionicons",
     "iphone",
     "itau",
@@ -442,7 +441,6 @@
     "Xiaomi",
     "zustand"
   ],
-  "cSpell.enableFiletypes": ["!plaintext"],
 
   "sonarlint.connectedMode.connections.sonarqube": [
     {
@@ -497,8 +495,6 @@
 
   "colorize.languages": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
 
-  "json.schemas": [],
-
   "versionlens.suggestions.showOnStartup": true,
 
   "gitlens.hovers.currentLine.over": "line",
@@ -533,6 +529,12 @@
     "pick-utility-type",
     "returntype-utility-type",
     "never-keyword",
-    "omit-utility-type"
-  ]
+    "omit-utility-type",
+    "non-null-expression",
+    "exclude-utility-type",
+    "tuple-type",
+    "as-const"
+  ],
+
+  "console-ninja.featureSet": "Pro"
 }
