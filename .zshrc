@@ -162,19 +162,28 @@ export PATH="~/.nvm/versions/node/v16.15.0/bin:$PATH"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Folders
-alias projects="cd ~/projects"
-alias b2="projects && cd work/b2"
-alias labs="projects && cd work/luizalabs"
 alias ssh-dir="cd ~/.ssh"
 alias downloads="cd ~/downloads"
 alias home="cd ~"
-alias react="projects && cd react"
+
+# Projects folders
+alias projects="cd ~/projects"
+alias c++="cd ~/projects/c++"
+alias challenges="cd ~/projects/challenges"
+alias devOps="cd ~/projects/devOps"
+alias eletronic="cd ~/projects/eletronic"
+alias logic="cd ~/projects/logic"
+alias node="cd ~/projects/node"
+alias others="cd ~/projects/others"
+alias react="cd ~/projects/react"
+alias teach="cd ~/projects/teach"
+alias work="cd ~/projects/work"
+alias labs="cd ~/projects/work/luizalabs"
 
 # Courses
 alias courses="cd ~/projects/courses"
 alias nlw="cd ~/projects/courses/rocketseat/nlw"
 alias ignite="cd ~/projects/courses/rocketseat/ignite"
-alias copa="cd ~/projects/courses/rocketseat/nlw/copa"
 alias fc="cd ~/projects/courses/full_cycle"
 alias fc3="cd ~/projects/courses/full_cycle/full_cycle_3"
 alias jstack="cd ~/projects/courses/jstack"
@@ -183,7 +192,8 @@ alias jstack="cd ~/projects/courses/jstack"
 alias dcu="docker compose up"
 alias dcd="docker compose down"
 alias dcs="docker compose stop"
-alias dcps="docker compose ps"
+alias dcp="docker compose ps"
+alias dcr="docker compose run"
 
 # Kill ports
 alias k="fuser -n tcp -k"
@@ -196,10 +206,6 @@ alias nres="npm run eslint"
 alias ni="npm i"
 alias nr="npm r"
 
-# Terminal
-alias cl="clear"
-alias sozs="source ~/.zshrc"
-
 # Sonar
 alias sosc="sonar-scanner"
 
@@ -209,10 +215,12 @@ alias ac="source venv/bin/activate"
 alias deac="deactivate"
 
 # System
+alias cl="clear"
 alias update="sudo apt update && sudo apt upgrade && sudo apt autoremove"
 alias ips="ip -c -br a"
 alias ..="cd .."
 alias grhi="history | grep"
+alias sozs="source ~/.zshrc"
 
 # Others
 alias vsc="code ."
@@ -227,3 +235,4 @@ if [ -f '/home/celso/downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+alias gdnew="for next in \$( git ls-files --others --exclude-standard ) ; do git --no-pager diff --no-index /dev/null \$next; done;"
