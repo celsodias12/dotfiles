@@ -220,7 +220,8 @@ alias update="sudo apt update && sudo apt upgrade && sudo apt autoremove"
 alias ips="ip -c -br a"
 alias ..="cd .."
 alias grhi="history | grep"
-alias sozs="source ~/.zshrc"
+alias sozsh="source ~/.zshrc"
+alias vsczsh="code ~/.zshrc"
 
 # Others
 alias vsc="code ."
@@ -236,3 +237,23 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 alias gdnew="for next in \$( git ls-files --others --exclude-standard ) ; do git --no-pager diff --no-index /dev/null \$next; done;"
+
+yarn() {
+  if [ -f yarn.lock ] && [ -f package-lock.json ]; then
+    echo 'use npm';
+  elif [ -f package-lock.json ]; then
+    echo 'use npm';
+  else
+    command yarn $*;
+  fi
+}
+
+npm() {
+  if [ -f yarn.lock ] && [ -f package-lock.json ]; then
+    command npm $*;
+  elif [ -f yarn.lock ]; then
+    echo 'use yarn';
+  else
+    command npm $*;
+  fi
+}
