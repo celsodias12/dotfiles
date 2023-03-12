@@ -240,11 +240,11 @@ alias gdnew="for next in \$( git ls-files --others --exclude-standard ) ; do git
 
 npm() {
   if [ -f pnpm-lock.yaml ]; then
-    echo 'npm > use pnpm 1'
+    echo 'use pnpm'
   elif [ -f package-lock.json ]; then
     command npm $*
   elif [ -f yarn.lock ]; then
-    echo 'npm > use yarn 2'
+    echo 'use yarn'
   else
     command npm $*
   fi
@@ -252,9 +252,9 @@ npm() {
 
 yarn() {
   if [ -f pnpm-lock.yaml ]; then
-    echo 'yarn > use pnpm 1'
+    echo 'use pnpm'
   elif [ -f package-lock.json ]; then
-    echo 'yarn > use npm 2'
+    echo 'use npm'
   else
     command yarn $*
   fi
@@ -264,9 +264,9 @@ pnpm() {
   if [ -f pnpm-lock.yaml ]; then
     command pnpm $*
   elif [ -f package-lock.json ]; then
-    echo 'pnpm > use npm 1'
+    echo 'use npm'
   elif [ -f yarn.lock ]; then
-    echo 'pnpm > use yarn 2'
+    echo 'use yarn'
   else
     command pnpm $*
   fi
