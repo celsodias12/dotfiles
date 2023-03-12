@@ -238,22 +238,36 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 alias gdnew="for next in \$( git ls-files --others --exclude-standard ) ; do git --no-pager diff --no-index /dev/null \$next; done;"
 
-yarn() {
-  if [ -f yarn.lock ] && [ -f package-lock.json ]; then
-    echo 'use npm';
+npm() {
+  if [ -f pnpm-lock.yaml ]; then
+    echo 'npm > use pnpm 1'
   elif [ -f package-lock.json ]; then
-    echo 'use npm';
+    command npm $*
+  elif [ -f yarn.lock ]; then
+    echo 'npm > use yarn 2'
   else
-    command yarn $*;
+    command npm $*
   fi
 }
 
-npm() {
-  if [ -f yarn.lock ] && [ -f package-lock.json ]; then
-    command npm $*;
-  elif [ -f yarn.lock ]; then
-    echo 'use yarn';
+yarn() {
+  if [ -f pnpm-lock.yaml ]; then
+    echo 'yarn > use pnpm 1'
+  elif [ -f package-lock.json ]; then
+    echo 'yarn > use npm 2'
   else
-    command npm $*;
+    command yarn $*
+  fi
+}
+
+pnpm() {
+  if [ -f pnpm-lock.yaml ]; then
+    command pnpm $*
+  elif [ -f package-lock.json ]; then
+    echo 'pnpm > use npm 1'
+  elif [ -f yarn.lock ]; then
+    echo 'pnpm > use yarn 2'
+  else
+    command pnpm $*
   fi
 }
