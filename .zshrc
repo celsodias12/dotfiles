@@ -6,13 +6,17 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/jdk-11
 export PATH=$PATH:$JAVA_HOME/bin
 
 export OPENSSL_CONF=/dev/null
 
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/home/$USER/sonar-scanner/bin
+
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -173,12 +177,13 @@ alias challenges="cd ~/projects/challenges"
 alias devOps="cd ~/projects/devOps"
 alias eletronic="cd ~/projects/eletronic"
 alias logic="cd ~/projects/logic"
-alias node="cd ~/projects/node"
+alias node-dir="cd ~/projects/node"
 alias others="cd ~/projects/others"
 alias react="cd ~/projects/react"
 alias teach="cd ~/projects/teach"
 alias work="cd ~/projects/work"
 alias labs="cd ~/projects/work/luizalabs"
+alias shell-scripts="cd ~/projects/shell-scripts"
 
 # Courses
 alias courses="cd ~/projects/courses"
@@ -194,6 +199,10 @@ alias dcd="docker compose down"
 alias dcs="docker compose stop"
 alias dcp="docker compose ps"
 alias dcr="docker compose run"
+
+# Minikube
+alias mk="minikube"
+alias mks="minikube start --driver=docker"
 
 # Kill ports
 alias k="fuser -n tcp -k"
@@ -219,12 +228,18 @@ alias cl="clear"
 alias update="sudo apt update && sudo apt upgrade && sudo apt autoremove"
 alias ips="ip -c -br a"
 alias ..="cd .."
-alias grhi="history | grep"
+alias higr="history | grep"
 alias sozsh="source ~/.zshrc"
-alias vsczsh="code ~/.zshrc"
+alias date-formatted-="ls -lct /etc | tail -1 | awk '{print $6, $7, $8}'"
+alias bin="cd ~/../../usr/local/bin/"
+alias back="cd -"
+alias win="cd ~/../../mnt/c/Users/celso"
+alias lsl="ls -l"
+alias lsa="ls -la"
 
-# Others
+# Softwares
 alias vsc="code ."
+alias chrome="google-chrome"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/celso/downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/celso/downloads/google-cloud-sdk/path.zsh.inc'; fi
@@ -238,13 +253,25 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 alias gdnew="for next in \$( git ls-files --others --exclude-standard ) ; do git --no-pager diff --no-index /dev/null \$next; done;"
 
+pnpm() {
+  if [ -f pnpm-lock.yaml ]; then
+    command pnpm $*
+  elif [ -f package-lock.json ]; then
+    echo 'only use npm'
+  elif [ -f yarn.lock ]; then
+    echo 'only use yarn'
+  else
+    command pnpm $*
+  fi
+}
+
 npm() {
   if [ -f pnpm-lock.yaml ]; then
-    echo 'use pnpm'
+    echo 'only use pnpm'
   elif [ -f package-lock.json ]; then
     command npm $*
   elif [ -f yarn.lock ]; then
-    echo 'use yarn'
+    echo 'only use yarn'
   else
     command npm $*
   fi
@@ -252,22 +279,21 @@ npm() {
 
 yarn() {
   if [ -f pnpm-lock.yaml ]; then
-    echo 'use pnpm'
+    echo 'only use pnpm'
   elif [ -f package-lock.json ]; then
-    echo 'use npm'
+    echo 'only use npm'
   else
     command yarn $*
   fi
 }
 
-pnpm() {
-  if [ -f pnpm-lock.yaml ]; then
-    command pnpm $*
-  elif [ -f package-lock.json ]; then
-    echo 'use npm'
-  elif [ -f yarn.lock ]; then
-    echo 'use yarn'
-  else
-    command pnpm $*
-  fi
-}
+# pnpm
+export PNPM_HOME="/home/celso/.local/share/pnpm"
+case ":$PATH:" in
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
