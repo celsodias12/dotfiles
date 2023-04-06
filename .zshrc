@@ -204,9 +204,6 @@ alias dcr="docker compose run"
 alias mk="minikube"
 alias mks="minikube start --driver=docker"
 
-# Kill ports
-alias k="fuser -n tcp -k"
-
 # npm
 alias ns="npm start"
 alias nrd="npm run dev"
@@ -236,10 +233,16 @@ alias back="cd -"
 alias win="cd ~/../../mnt/c/Users/celso"
 alias lsl="ls -l"
 alias lsa="ls -la"
+alias unziptar="tar -xvf"
+alias k="fuser -n tcp -k"
 
 # Softwares
-alias vsc="code ."
 alias chrome="google-chrome"
+
+# Cryptography
+# to use rsa you need openssl with version 1.1.1
+alias rsa="openssl genrsa -out private.pem 2048"
+alias rsa-pub="openssl rsa -in private.pem -pubout -out public.pem"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/celso/downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/celso/downloads/google-cloud-sdk/path.zsh.inc'; fi
