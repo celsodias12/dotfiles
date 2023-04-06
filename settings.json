@@ -4,6 +4,7 @@
   "terminal.integrated.tabs.enabled": true,
   "terminal.integrated.smoothScrolling": true,
   "terminal.integrated.shellIntegration.history": 500,
+  "terminal.integrated.env.linux": {},
 
   "workbench.sideBar.location": "left",
   "workbench.startupEditor": "none",
@@ -43,7 +44,7 @@
   "editor.linkedEditing": true,
   "editor.suggestSelection": "first",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    // "source.fixAll.eslint": true
     // "source.organizeImports": true
   },
   "editor.suggest.showMethods": true,
@@ -99,7 +100,7 @@
   },
 
   "search.exclude": {
-    "**/node_modules": true,
+    "**/node_modules": false,
     "**/package-lock.json": true,
     "**/yarn.lock": true
   },
@@ -348,6 +349,7 @@
     "Ionicons",
     "iphone",
     "itau",
+    "javac",
     "JDBC",
     "jetify",
     "Keychain",
@@ -446,9 +448,6 @@
   "liveshare.connectionMode": "relay",
   "liveshare.presence": false,
 
-  "yaml.schemas": {
-    "file:///c%3A/Users/celso/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
-  },
   "yaml.customTags": [
     "!And",
     "!And sequence",
@@ -527,8 +526,14 @@
     "non-null-expression",
     "exclude-utility-type",
     "tuple-type",
-    "as-const"
+    "as-const",
+    "interface-with-multiple-generics",
+    "nested-conditional-type"
   ],
 
-  "console-ninja.featureSet": "Pro"
+  "console-ninja.featureSet": "Pro",
+
+  "jest.autoRun": {
+    "onStartup": []
+  },
 }
