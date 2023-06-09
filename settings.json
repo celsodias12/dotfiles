@@ -3,10 +3,11 @@
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.tabs.enabled": true,
   "terminal.integrated.smoothScrolling": true,
-  "terminal.integrated.shellIntegration.history": 500,
+  "terminal.integrated.shellIntegration.history": 1000,
   "terminal.integrated.env.linux": {},
+  "terminal.integrated.env.windows": {},
+  "terminal.integrated.experimentalImageSupport": true,
 
-  "workbench.sideBar.location": "left",
   "workbench.startupEditor": "none",
   "workbench.colorTheme": "Dracula Pro",
   "workbench.iconTheme": "material-icon-theme",
@@ -44,8 +45,7 @@
   "editor.linkedEditing": true,
   "editor.suggestSelection": "first",
   "editor.codeActionsOnSave": {
-    // "source.fixAll.eslint": true
-    // "source.organizeImports": true
+    "source.fixAll.eslint": true
   },
   "editor.suggest.showMethods": true,
   "editor.acceptSuggestionOnEnter": "on",
@@ -92,7 +92,8 @@
     "û": true,
     "Í": true,
     "❯": true,
-    "’": true
+    "’": true,
+    "ô": true
   },
   "editor.stickyScroll.enabled": true,
   "editor.tokenColorCustomizations": {
@@ -100,7 +101,7 @@
   },
 
   "search.exclude": {
-    "**/node_modules": false,
+    "**/node_modules": true,
     "**/package-lock.json": true,
     "**/yarn.lock": true
   },
@@ -155,8 +156,12 @@
     ".env.*": "properties",
     ".env": "properties"
   },
-  "files.defaultLanguage": "${activeEditorLanguage}",
-  "files.maxMemoryForLargeFilesMB": 16384,
+  "files.trimTrailingWhitespace": true,
+  "files.autoSave": "onFocusChange",
+  "files.readonlyInclude": {
+    "**/node_modules/**": true
+  },
+  "files.readonlyFromPermissions": true,
 
   "emmet.syntaxProfiles": {
     "javascript": "jsx"
@@ -297,6 +302,13 @@
   },
   "[dotenv]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[python]": {
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "[plaintext]": {
+    "editor.defaultFormatter": "tlahmann.alex-linter"
   },
 
   "redhat.telemetry.enabled": false,
@@ -483,6 +495,7 @@
   },
 
   "diffEditor.wordWrap": "off",
+  "diffEditor.ignoreTrimWhitespace": false,
 
   "projectManager.git.baseFolders": ["C:\\Users\\Celso\\Desktop\\projects", "~/Projects"],
 
@@ -536,4 +549,13 @@
   "jest.autoRun": {
     "onStartup": []
   },
+
+  "code-runner.runInTerminal": true,
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.ignoreSelection": true,
+
+  "git-graph.graph.uncommittedChanges": "Open Circle at the Checked Out Commit",
+  "git-graph.repository.commits.fetchAvatars": true,
+  "git-graph.repository.commits.showSignatureStatus": true,
+  "git-graph.repository.fetchAndPrune": true
 }
