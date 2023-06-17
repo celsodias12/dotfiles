@@ -18,6 +18,8 @@ export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+export GPG_TTY=$(tty)
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -156,6 +158,7 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 export PATH="~/.nvm/versions/node/v16.15.0/bin:$PATH"
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -184,6 +187,7 @@ alias teach="cd ~/projects/teach"
 alias work="cd ~/projects/work"
 alias labs="cd ~/projects/work/luizalabs"
 alias shell-scripts="cd ~/projects/shell-scripts"
+alias python-dir="cd ~/projects/python"
 
 # Courses
 alias courses="cd ~/projects/courses"
@@ -215,19 +219,22 @@ alias nr="npm r"
 # Sonar
 alias sosc="sonar-scanner"
 
+# Redis
+alias redis-cl="echo "flushall" | redis-cli"
+
 # Python
 alias venv="python -m venv venv"
 alias ac="source venv/bin/activate"
 alias deac="deactivate"
+alias pip-upgrade="python -m pip install pip --upgrade"
 
 # System
 alias cl="clear"
-alias update="sudo apt update && sudo apt upgrade && sudo apt autoremove"
+alias update="sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove"
 alias ips="ip -c -br a"
 alias ..="cd .."
 alias higr="history | grep"
 alias sozsh="source ~/.zshrc"
-alias date-formatted-="ls -lct /etc | tail -1 | awk '{print $6, $7, $8}'"
 alias bin="cd ~/../../usr/local/bin/"
 alias back="cd -"
 alias win="cd ~/../../mnt/c/Users/celso"
@@ -235,26 +242,17 @@ alias lsl="ls -l"
 alias lsa="ls -la"
 alias unziptar="tar -xvf"
 alias k="fuser -n tcp -k"
+alias exp="explorer.exe"
+alias shutdown="wsl.exe --shutdown"
 
 # Softwares
 alias chrome="google-chrome"
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Cryptography
-# to use rsa you need openssl with version 1.1.1
+# to use rsa you need openssl with version 1.1.1 (rsa was deprecated in new versions)
 alias rsa="openssl genrsa -out private.pem 2048"
 alias rsa-pub="openssl rsa -in private.pem -pubout -out public.pem"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/celso/downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/celso/downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/celso/downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/celso/downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-alias gdnew="for next in \$( git ls-files --others --exclude-standard ) ; do git --no-pager diff --no-index /dev/null \$next; done;"
 
 pnpm() {
   if [ -f pnpm-lock.yaml ]; then
@@ -289,6 +287,31 @@ yarn() {
     command yarn $*
   fi
 }
+
+rm-identifier() {
+  find . -type f -name "*Identifier*" -exec rm -rf {} \;
+}
+
+get-cert-details() {
+  openssl pkcs12 -in "$1" -nodes
+}
+
+get-cert-expiration() {
+  openssl x509 -in "$1" -text | grep "Not After :"
+}
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/celso/downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/celso/downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/celso/downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/celso/downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+alias gdnew="for next in \$( git ls-files --others --exclude-standard ) ; do git --no-pager diff --no-index /dev/null \$next; done;"
 
 # pnpm
 export PNPM_HOME="/home/celso/.local/share/pnpm"
