@@ -1,5 +1,4 @@
 [user]
-  email = 47264001+celsodias12@users.noreply.github.com
   name = Celso Dias
 [init]
   defaultBranch = main
@@ -8,21 +7,25 @@
 [alias]
   sw = switch
   swc = switch -c
+
   cm = commit
   cmm = commit -m
   cmam = commit --amend -m
   incm = cmm 'feat: inital commit'
   acmm = !git a . && git cmm
+  acmmpu = !git acmm $1 && git push
+  cmmpu = !git cmm $1 && git push
+
   br = branch
   brd = branch -d
   brD = branch -D
   brr = branch -m
   brl = branch --list
-  pod = push origin --delete
-  a = add
+
   re = reset
   delcm = reset HEAD~1
   reh = reset --hard
+
   st = stash
   stl = stash list
   stc = stash clear
@@ -31,22 +34,26 @@
   sta = stash apply
   std = stash drop
   stp = stash pop
+  asts = !git a . && git sts
+  exst = !git a . && git st && git stash show "stash@{0}" -p >stash.patch && git stp
+  imst = apply stash.patch
+
   lg = log --graph
   lga = log --graph --all
   lgo = log --graph --oneline
   lpo = log --pretty=oneline
   lo = log --oneline
+
+  me = merge
+  meq = merge --quit
+
+  re = revert HEAD
+  pod = push origin -d
+  a = add
   cl = clone
   p = pull
   por = pull origin
   fe = fetch
-  me = merge
-  meq = merge --quit
-  exst = !git add . && git stash && git stash show "stash@{0}" -p >stash.patch && git stash pop
-  imst = apply stash.patch
-
-[includeIf "gitdir:~/projects/work/luizalabs/"]
-  path = ~/.gitconfig.luizalabs
 
 [includeIf "gitdir:~/"]
-  path = ~/.gitconfig.default
+  path = ~/.gitconfig-me
