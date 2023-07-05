@@ -1,6 +1,7 @@
 {
   "terminal.integrated.fontSize": 12,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.tabs.enabled": true,
   "terminal.integrated.smoothScrolling": true,
   "terminal.integrated.shellIntegration.history": 1000,
@@ -38,14 +39,15 @@
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
   "editor.lineHeight": 0,
-  "editor.formatOnSave": true,
-  "editor.formatOnPaste": true,
+  // "editor.formatOnSave": true,
+  // "editor.formatOnPaste": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.renderLineHighlight": "all",
   "editor.linkedEditing": true,
   "editor.suggestSelection": "first",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "source.addMissingImports": true
   },
   "editor.suggest.showMethods": true,
   "editor.acceptSuggestionOnEnter": "on",
@@ -103,7 +105,8 @@
   "search.exclude": {
     "**/node_modules": true,
     "**/package-lock.json": true,
-    "**/yarn.lock": true
+    "**/yarn.lock": true,
+    "**.min.js": true
   },
 
   "javascript.suggest.autoImports": true,
@@ -153,13 +156,12 @@
 
   "files.associations": {
     "*.tsx": "typescriptreact",
-    ".env.*": "properties",
-    ".env": "properties"
+    ".env*": "dotenv"
   },
   "files.trimTrailingWhitespace": true,
   "files.autoSave": "onFocusChange",
   "files.readonlyInclude": {
-    "**/node_modules/**": true
+    "node_modules/*": true
   },
   "files.readonlyFromPermissions": true,
 
@@ -450,60 +452,38 @@
     "zustand"
   ],
 
-  "sonarlint.connectedMode.connections.sonarqube": [
-    {
-      "connectionId": "",
-      "serverUrl": ""
-    }
-  ],
+  // "sonarlint.connectedMode.connections.sonarqube": [
+  //   {
+  //     "connectionId": "",
+  //     "serverUrl": ""
+  //   }
+  // ],
 
   "liveshare.connectionMode": "relay",
-  "liveshare.presence": false,
 
-  "yaml.customTags": [
-    "!And",
-    "!And sequence",
-    "!If",
-    "!If sequence",
-    "!Not",
-    "!Not sequence",
-    "!Equals",
-    "!Equals sequence",
-    "!Or",
-    "!Or sequence",
-    "!FindInMap",
-    "!FindInMap sequence",
-    "!Base64",
-    "!Join",
-    "!Join sequence",
-    "!Cidr",
-    "!Ref",
-    "!Sub",
-    "!Sub sequence",
-    "!GetAtt",
-    "!GetAZs",
-    "!ImportValue",
-    "!ImportValue sequence",
-    "!Select",
-    "!Select sequence",
-    "!Split",
-    "!Split sequence"
-  ],
+  // "yaml.customTags": [
+  //   "",
+  // ],
+  // "yaml.schemas": {
+  //   "kubernetes": ["*.yaml", "*.yml"]
+  //   "../my-schema.json": ["my-file.yaml"],
+  // },
 
   "github.copilot.enable": {
     "*": true
   },
 
   "diffEditor.wordWrap": "off",
-  "diffEditor.ignoreTrimWhitespace": false,
 
-  "projectManager.git.baseFolders": ["C:\\Users\\Celso\\Desktop\\projects", "~/Projects"],
+  "projectManager.git.baseFolders": ["~/Projects", "C:\\Users\\Celso\\Desktop\\projects"],
 
   "colorize.languages": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
 
   "versionlens.suggestions.showOnStartup": true,
 
   "gitlens.hovers.currentLine.over": "line",
+  "gitlens.graph.layout": "editor",
+  "gitlens.graph.minimap.additionalTypes": ["localBranches", "stashes", "remoteBranches", "tags"],
 
   "vscode-edge-devtools.webhint": false,
 
@@ -557,5 +537,22 @@
   "git-graph.graph.uncommittedChanges": "Open Circle at the Checked Out Commit",
   "git-graph.repository.commits.fetchAvatars": true,
   "git-graph.repository.commits.showSignatureStatus": true,
-  "git-graph.repository.fetchAndPrune": true
+  "git-graph.repository.fetchAndPrune": true,
+
+  "vs-kubernetes": {
+    "vscode-kubernetes.minikube-path.linux": "/home/celso/.local/state/vs-kubernetes/tools/minikube/linux-amd64/minikube",
+    "vscode-kubernetes.helm-path.linux": "/home/celso/.local/state/vs-kubernetes/tools/helm/linux-amd64/helm"
+  },
+
+  "checkov.token": "0a06f70f-f20b-4587-b4a4-f0821791dca9",
+
+  "debug.javascript.terminalOptions": {
+    "skipFiles": [
+      "${workspaceFolder}/<node_internals>/**",
+      "${workspaceFolder}/node_modules/**",
+      "internal/**",
+      "**/internal/**",
+      "**/<node_internals>/**"
+    ]
+  }
 }
