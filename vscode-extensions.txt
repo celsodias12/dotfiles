@@ -1,3 +1,4 @@
+Extensions installed on WSL: Ubuntu-22.04:
 aaron-bond.better-comments
 adamhartford.vscode-base64
 adolfdaniel.vscode-chromium-vector-icons
@@ -7,6 +8,7 @@ alefragnani.project-manager
 bradlc.vscode-tailwindcss
 bradymholt.pgformatter
 Bridgecrew.checkov
+Cardinal90.multi-cursor-case-preserve
 chrmarti.regex
 clinyong.vscode-css-modules
 dakara.dakara-foldplus
@@ -22,6 +24,7 @@ figma.figma-vscode-extension
 formulahendry.code-runner
 foxundermoon.shell-format
 GitHub.copilot
+GitHub.copilot-chat
 GitHub.vscode-pull-request-github
 GitLab.gitlab-workflow
 Gruntfuggly.todo-tree
@@ -38,7 +41,6 @@ mhutchie.git-graph
 MikeBovenlander.formate
 mkxml.vscode-filesize
 ms-azuretools.vscode-docker
-ms-edgedevtools.vscode-edge-devtools
 ms-kubernetes-tools.kind-vscode
 ms-kubernetes-tools.vscode-kubernetes-tools
 ms-python.python
@@ -48,15 +50,9 @@ ms-toolsai.jupyter-keymap
 ms-toolsai.jupyter-renderers
 ms-toolsai.vscode-jupyter-cell-tags
 ms-toolsai.vscode-jupyter-slideshow
-ms-vscode-remote.remote-containers
-ms-vscode-remote.remote-ssh
-ms-vscode-remote.remote-ssh-edit
-ms-vscode-remote.remote-wsl
-ms-vscode-remote.vscode-remote-extensionpack
 ms-vscode.cpptools
+ms-vscode.cpptools-extension-pack
 ms-vscode.live-server
-ms-vscode.remote-explorer
-ms-vscode.remote-server
 ms-vsliveshare.vsliveshare
 ms-vsliveshare.vsliveshare-pack
 nicoespeon.abracadabra
@@ -86,7 +82,7 @@ streetsidesoftware.code-spell-checker
 styled-components.vscode-styled-components
 Tim-Koehler.helm-intellisense
 tlahmann.alex-linter
-tomoki1207.pdf
+tldraw-org.tldraw-vscode
 ub1que.add-only
 unifiedjs.vscode-mdx
 usernamehw.errorlens
