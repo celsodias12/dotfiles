@@ -1,0 +1,23 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "github.copilot.enable": {
+      "*": false
+    },
+
+    "window.zoomLevel": 1,
+
+    "typescript.inlayHints.enumMemberValues.enabled": false,
+    "typescript.inlayHints.functionLikeReturnTypes.enabled": false,
+    "typescript.inlayHints.parameterNames.enabled": "none",
+    "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": false,
+    "typescript.inlayHints.parameterTypes.enabled": false,
+    "typescript.inlayHints.propertyDeclarationTypes.enabled": false,
+    "typescript.inlayHints.variableTypes.enabled": false,
+    "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName": false
+  }
+}
