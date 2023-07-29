@@ -7,7 +7,6 @@
   "terminal.integrated.shellIntegration.history": 1000,
   "terminal.integrated.env.linux": {},
   "terminal.integrated.env.windows": {},
-  "terminal.integrated.experimentalImageSupport": true,
 
   "workbench.startupEditor": "none",
   "workbench.colorTheme": "Dracula Pro",
@@ -101,6 +100,8 @@
   "editor.tokenColorCustomizations": {
     "textMateRules": []
   },
+  "editor.minimap.autohide": true,
+  "editor.minimap.showSlider": "mouseover",
 
   "search.exclude": {
     "**/node_modules": true,
@@ -159,7 +160,6 @@
     ".env*": "dotenv"
   },
   "files.trimTrailingWhitespace": true,
-  "files.autoSave": "onFocusChange",
   "files.readonlyInclude": {
     "node_modules/*": true
   },
@@ -489,6 +489,8 @@
 
   "git.autofetch": true,
   "git.mergeEditor": false,
+  "git.autoStash": true,
+  "git.branchProtection": ["master", "main"],
 
   "gitlab.showPipelineUpdateNotifications": true,
 
@@ -544,8 +546,6 @@
     "vscode-kubernetes.helm-path.linux": "/home/celso/.local/state/vs-kubernetes/tools/helm/linux-amd64/helm"
   },
 
-  "checkov.token": "0a06f70f-f20b-4587-b4a4-f0821791dca9",
-
   "debug.javascript.terminalOptions": {
     "skipFiles": [
       "${workspaceFolder}/<node_internals>/**",
@@ -554,5 +554,16 @@
       "**/internal/**",
       "**/<node_internals>/**"
     ]
-  }
+  },
+
+  "makefile.configurations": [
+    {
+      "name": "MyConfiguration",
+
+      "problemMatchers": ["$gcc"],
+
+      "makeArgs": ["any", "other", "args", "you", "want"]
+    }
+  ],
+  "makefile.compileCommandsPath": ".vscode/compile_commands.json"
 }
