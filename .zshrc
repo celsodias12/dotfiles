@@ -1,5 +1,6 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -20,7 +21,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export GPG_TTY=$(tty)
 
-# Set name of the theme to load --- if set to "random", it will
+# Set name of the theme to load --- if set to "random", it wills
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
@@ -33,43 +34,44 @@ SPACESHIP_CHAR_SUFFIX=" "
 SPACESHIP_BATTERY_SHOW=false
 
 SPACESHIP_PROMPT_ORDER=(
-  time # Time stamps section
-  user # Username section
-  dir  # Current directory section
-  host # Hostname section
-  git  # Git section (git_branch + git_status)
-  hg   # Mercurial section (hg_branch  + hg_status)
-  # package       # Package version
-  gradle  # Gradle section
-  maven   # Maven section
-  node    # Node.js section
-  ruby    # Ruby section
-  elixir  # Elixir section
-  xcode   # Xcode section
-  swift   # Swift section
-  golang  # Go section
-  php     # PHP section
-  rust    # Rust section
-  haskell # Haskell Stack section
-  julia   # Julia section
-  aws     # Amazon Web Services section
-  # gcloud    # Google Cloud Platform section
-  venv      # virtualenv section
-  conda     # conda virtualenv section
-  pyenv     # Pyenv section
-  dotnet    # .NET section
-  ember     # Ember.js section
-  kubectl   # Kubectl context section
-  terraform # Terraform workspace section
-  ibmcloud  # IBM Cloud section
-  exec_time # Execution time
-  line_sep  # Line break
-  battery   # Battery level and status
-  vi_mode   # Vi-mode indicator
-  jobs      # Background jobs indicator
-  exit_code # Exit code section
-  char      # Prompt character
+    time # Time stamps section
+    user # Username section
+    dir  # Current directory section
+    host # Hostname section
+    git  # Git section (git_branch + git_status)
+    hg   # Mercurial section (hg_branch  + hg_status)
+    # package       # Package version
+    gradle  # Gradle section
+    maven   # Maven section
+    node    # Node.js section
+    ruby    # Ruby section
+    elixir  # Elixir section
+    xcode   # Xcode section
+    swift   # Swift section
+    golang  # Go section
+    php     # PHP section
+    rust    # Rust section
+    haskell # Haskell Stack section
+    julia   # Julia section
+    aws     # Amazon Web Services section
+    # gcloud    # Google Cloud Platform section
+    venv  # virtualenv section
+    conda # conda virtualenv section
+    # pyenv     # Pyenv section
+    dotnet    # .NET section
+    ember     # Ember.js section
+    kubectl   # Kubectl context section
+    terraform # Terraform workspace section
+    ibmcloud  # IBM Cloud section
+    exec_time # Execution time
+    line_sep  # Line break
+    battery   # Battery level and status
+    vi_mode   # Vi-mode indicator
+    jobs      # Background jobs indicator
+    exit_code # Exit code section
+    char      # Prompt character
 )
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -131,12 +133,22 @@ SPACESHIP_PROMPT_ORDER=(
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
-  ssh-agent
-  zsh-nvm
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-  zsh-completions
+    git
+    ssh-agent
+    zsh-nvm
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    zsh-completions
+    sudo
+    web-search
+    copypath
+    copyfile
+    jsontools
+    redis-cli
+    gpg-agent
+    gitignore
+    fig
+    codeclimate
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -175,19 +187,25 @@ alias home="cd ~"
 
 # Projects folders
 alias projects="cd ~/projects"
-alias c++="cd ~/projects/c++"
+alias browser-extensions="cd ~/browser-extensions"
 alias challenges="cd ~/projects/challenges"
 alias devOps="cd ~/projects/devOps"
 alias eletronic="cd ~/projects/eletronic"
-alias logic="cd ~/projects/logic"
-alias node-dir="cd ~/projects/node"
+alias freelance-finished="cd ~/projects/freelance-finished"
+alias freelance-in-progress="cd ~/projects/freelance-finished"
+alias nnode="cd ~/projects/node"
+alias organizations="cd ~/projects/organizations"
+alias powershell="cd ~/projects/powershell"
 alias others="cd ~/projects/others"
 alias react="cd ~/projects/react"
-alias teach="cd ~/projects/teach"
+alias shell-script="cd ~/projects/shell-script"
 alias work="cd ~/projects/work"
+
+# Work
 alias labs="cd ~/projects/work/luizalabs"
-alias shell-scripts="cd ~/projects/shell-scripts"
-alias python-dir="cd ~/projects/python"
+alias b2="cd ~/projects/work/b2"
+alias new-technology="cd ~/projects/work/new-technology"
+alias rastreagro="cd ~/projects/work/rastreagro"
 
 # Courses
 alias courses="cd ~/projects/courses"
@@ -196,6 +214,15 @@ alias ignite="cd ~/projects/courses/rocketseat/ignite"
 alias fc="cd ~/projects/courses/full_cycle"
 alias fc3="cd ~/projects/courses/full_cycle/full_cycle_3"
 alias jstack="cd ~/projects/courses/jstack"
+
+# Labs
+alias sync-master="br-from-to develop master sync"
+alias sync-develop="br-from-to master develop sync"
+
+# Labs VPN
+alias connect-vpn="sudo vpnc-connect --dpd-idle 0 --debug 1 /etc/vpnc/luizalabs.conf"
+alias disconnect-vpn="sudo vpnc-disconnect"
+alias reconnect-vpn="disconnect-vpn && connect-vpn"
 
 # Docker
 alias dcu="docker compose up"
@@ -208,18 +235,14 @@ alias dcr="docker compose run"
 alias mk="minikube"
 alias mks="minikube start --driver=docker"
 
-# npm
-alias ns="npm start"
-alias nrd="npm run dev"
-alias nrl="npm run lint"
-alias nres="npm run eslint"
-alias ni="npm i"
-alias nr="npm r"
+# Kubectl
+alias kc="kubectl"
 
 # Sonar
 alias sosc="sonar-scanner"
 
 # Redis
+alias redis="redis-cli"
 alias redis-cl="echo "flushall" | redis-cli"
 
 # Python
@@ -232,73 +255,210 @@ alias pip-upgrade="python -m pip install pip --upgrade"
 alias cl="clear"
 alias update="sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove"
 alias ips="ip -c -br a"
-alias ..="cd .."
 alias higr="history | grep"
-alias sozsh="source ~/.zshrc"
+alias src="source ~/.zshrc"
 alias bin="cd ~/../../usr/local/bin/"
 alias back="cd -"
 alias win="cd ~/../../mnt/c/Users/celso"
 alias lsl="ls -l"
 alias lsa="ls -la"
-alias unziptar="tar -xvf"
+alias unzip-tar="tar -xvf"
 alias k="fuser -n tcp -k"
 alias exp="explorer.exe"
 alias shutdown="wsl.exe --shutdown"
 
+# JSON
+alias json-format="pp_json"
+alias json-is-valid="is_json"
+
+# Encode/Decode
+alias encode-url="urlencode_json"
+alias decode-url="urldecode_json"
+alias encode-base64="base64"
+alias decode-base64="base64 --decode"
+
 # Softwares
 alias chrome="google-chrome"
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+# alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias alert="msg.exe celso"
 
 # Cryptography
 # to use rsa you need openssl with version 1.1.1 (rsa was deprecated in new versions)
 alias rsa="openssl genrsa -out private.pem 2048"
 alias rsa-pub="openssl rsa -in private.pem -pubout -out public.pem"
 
+# Node
+alias check-unused-packages="npx depcheck"
+
 pnpm() {
-  if [ -f pnpm-lock.yaml ]; then
-    command pnpm $*
-  elif [ -f package-lock.json ]; then
-    echo 'only use npm'
-  elif [ -f yarn.lock ]; then
-    echo 'only use yarn'
-  else
-    command pnpm $*
-  fi
+    if [ -f pnpm-lock.yaml ]; then
+        command pnpm $*
+    elif [ -f package-lock.json ]; then
+        echo 'only use npm'
+    elif [ -f yarn.lock ]; then
+        echo 'only use yarn'
+    else
+        command pnpm $*
+    fi
 }
 
 npm() {
-  if [ -f pnpm-lock.yaml ]; then
-    echo 'only use pnpm'
-  elif [ -f package-lock.json ]; then
-    command npm $*
-  elif [ -f yarn.lock ]; then
-    echo 'only use yarn'
-  else
-    command npm $*
-  fi
+    if [ -f pnpm-lock.yaml ]; then
+        echo 'only use pnpm'
+    elif [ -f package-lock.json ]; then
+        command npm $*
+    elif [ -f yarn.lock ]; then
+        echo 'only use yarn'
+    else
+        command npm $*
+    fi
 }
 
 yarn() {
-  if [ -f pnpm-lock.yaml ]; then
-    echo 'only use pnpm'
-  elif [ -f package-lock.json ]; then
-    echo 'only use npm'
-  else
-    command yarn $*
-  fi
+    if [ -f pnpm-lock.yaml ]; then
+        echo 'only use pnpm'
+    elif [ -f package-lock.json ]; then
+        echo 'only use npm'
+    else
+        command yarn $*
+    fi
 }
 
 rm-identifier() {
-  find . -type f -name "*Identifier*" -exec rm -rf {} \;
+    find . -type f -name "*:Zone.Identifier*" -exec rm -rf {} \;
 }
 
 get-cert-details() {
-  openssl pkcs12 -in "$1" -nodes
+    openssl pkcs12 -in "$1" -nodes
 }
 
 get-cert-expiration() {
-  openssl x509 -in "$1" -text | grep "Not After :"
+    openssl x509 -in "$1" -text | grep "Not After :"
 }
+
+create-branch() {
+    local branch_name="$1"
+
+    if git show-ref --verify --quiet "refs/heads/$branch_name"; then
+        echo "A branch $branch_name já existe LOCALMENTE" >&2
+        return 1
+    elif git ls-remote --heads origin "$branch_name" | grep -q "$branch_name"; then
+        echo "A branch $branch_name já existe REMOTAMENTE" >&2
+        return 2
+    else
+        git switch -c $branch_name
+        return 0
+    fi
+}
+
+br-from-to() {
+    local pull_branch_name="${1:-main}"
+    local target_branch_name="${2:-develop}"
+    local new_branch_name="${3:-sync}"
+
+    if [[ $(git branch --show-current) != "$pull_branch_name" ]]; then
+        git switch $pull_branch_name
+        git pull
+    fi
+
+    create-branch $new_branch_name/$(date +%d-%m)
+
+    local was_created_branch=$?
+
+    if [ $was_created_branch -ge 1 ]; then
+        return
+    fi
+
+    git pull origin $target_branch_name
+
+    echo "\n[Sync] $pull_branch_name -> $target_branch_name"
+}
+
+zzip() {
+    zip -r $1.zip $1
+}
+
+git-pull-if-remote-exist() {
+    if [[ ! -d .git ]]; then
+        return
+    fi
+
+    local block_list_repos=("app-ui")
+
+    local current_repo_name=$(basename $(git rev-parse --show-toplevel))
+
+    for repo_name in "${block_list_repos[@]}"; do
+        if [[ $repo_name == $current_repo_name ]]; then
+            return
+        fi
+    done
+
+    echo "\nPulling..."
+
+    if [[ $(git remote -v) ]]; then
+        git pull
+    fi
+}
+
+validate-key-pair() {
+    local public_key="$1"
+    local private_key="$2"
+
+    if [[ ! -f $public_key || ! -f $private_key ]]; then
+        echo "Public key or private key not found"
+        return
+    fi
+
+    local public_key_modulus=$(openssl x509 -noout -modulus -in $public_key)
+    local private_key_modulus=$(openssl rsa -noout -modulus -in $private_key)
+
+    if [[ $public_key_modulus != $private_key_modulus ]]; then
+        echo "\nkeys are NOT VALID"
+        return
+    fi
+
+    echo "\nkeys are VALID"
+}
+
+run-command-in-folders() {
+    local dir="$1"
+    local command="$2"
+    local current_dir=$(pwd)
+
+    if [[ ! -d $dir ]]; then
+        echo "Directory not found"
+        return
+    fi
+
+    if [[ ! $command ]]; then
+        echo "Command not found"
+        return
+    fi
+
+    if [[ ! $(ls $dir) ]]; then
+        echo "Folders not found"
+        return
+    fi
+
+    for folder in $(ls $dir); do
+        if [[ -d $dir/$folder ]]; then
+            echo "\n\n Running $command in $folder"
+
+            cd $dir/$folder
+
+            eval $command
+
+            if [[ $? -ne 0 ]]; then
+                echo "Error in $folder"
+            fi
+
+            cd $current_dir
+        fi
+    done
+}
+
+# git-pull-if-remote-exist
+########################################################################################################################
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/celso/downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/celso/downloads/google-cloud-sdk/path.zsh.inc'; fi
@@ -323,3 +483,6 @@ esac
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+# kubectl
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
