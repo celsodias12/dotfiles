@@ -11,10 +11,12 @@
   cm = commit
   cmm = commit -m
   cmam = commit --amend -m
+  aincm = !git a . && git incm
   incm = cmm 'feat: inital commit'
   acmm = !git a . && git cmm
   acmmpu = !git acmm $1 && git push
   cmmpu = !git cmm $1 && git push
+  cmcon = git cmm "fix: resolved conflicts"
 
   br = branch
   brd = branch -d
@@ -23,7 +25,7 @@
   brl = branch --list
 
   re = reset
-  delcm = reset HEAD~1
+  delcm = reset --soft HEAD~1
   reh = reset --hard
 
   st = stash
@@ -48,12 +50,17 @@
   meq = merge --quit
 
   re = revert HEAD
+
   pod = push origin -d
+
   a = add
+
   cl = clone
+
+  fe = fetch
+
   p = pull
   por = pull origin
-  fe = fetch
 
 [includeIf "gitdir:~/"]
   path = ~/.gitconfig-me
