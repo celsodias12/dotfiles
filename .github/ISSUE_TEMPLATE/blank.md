@@ -1,6 +1,10 @@
 ---
-name: 📄 Blank
+name: "\U0001F4C4 Blank"
 about: A blank issue template
+title: "[Blank] "
+labels: bug
+assignees: celsodias12
+
 ---
 
 # Context
