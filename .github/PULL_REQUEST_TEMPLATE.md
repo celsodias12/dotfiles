@@ -1,17 +1,13 @@
-## Pull request checklist
+# Pull request checklist
 
 Please check if your PR fulfills the following requirements:
 
 - [ ] Tests for the changes have been added (for bug fixes / features)
 - [ ] Docs have been reviewed and added / updated if needed (for bug fixes / features)
-- [ ] Build (`npm run build`) was run locally and any changes were pushed
-- [ ] Lint (`npm run lint`) has passed locally and any fixes were made for failures
+- [ ] Build was run locally and any changes were pushed
+- [ ] Lint has passed locally and any fixes were made for failures
 
 ## Pull request type
-
-<!-- Please do not submit updates to dependencies unless it fixes an issue. -->
-
-<!-- Please try to limit your pull request to one type, submit multiple pull requests if needed. -->
 
 Please check the type of change your PR introduces:
 
@@ -25,27 +21,22 @@ Please check the type of change your PR introduces:
 
 ## What is the current behavior?
 
-<!-- Please describe the current behavior that you are modifying. -->
-
-<!-- Issues are required for both bug fixes and features. -->
-
-Issue URL:
+Please describe the current behavior that you are modifying.
 
 ## What is the new behavior?
 
-<!-- Please describe the behavior or changes that are being added by this PR. -->
+Please describe the behavior or changes that are being added by this PR
 
--
--
--
+1.
+2.
+3.
 
 ## Does this introduce a breaking change?
 
-- [ ] Yes
-- [ ] No
+Yes / No
 
-<!-- If this introduces a breaking change, please describe the impact and migration path for existing applications below. -->
+If this introduces a breaking change, please describe the impact and migration path for existing applications.
 
 ## Other information
 
-<!-- Any other information that is important to this PR such as screenshots of how the component looks before and after the change. -->
+Any other information that is important to this PR such as screenshots of how the component looks before and after the change.
