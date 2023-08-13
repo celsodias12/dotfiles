@@ -3,7 +3,7 @@ name: 🐞 Bug report
 about: If something isn't working as expected 🤔
 ---
 
-## Describe the bug
+# Describe the bug
 
 A clear and concise description of what the bug is.
 
@@ -24,17 +24,17 @@ A clear and concise description of what you expected to happen.
 
 If applicable, add screenshots to help explain your problem.
 
-## Desktop (please complete the following information):
+## Desktop (please complete the following information)
 
-- OS: [e.g. iOS]
-- Browser [e.g. chrome, safari]
+- OS: [e.g. Linux, Windows etc.]
+- Browser [e.g. chrome, safari etc.] (if applicable)
 - Version [e.g. 22]
 
-## Smartphone (please complete the following information)
+## Smartphone (please complete the following information if applicable)
 
 - Device: [e.g. iPhone6]
 - OS: [e.g. iOS8.1]
-- Browser [e.g. stock browser, safari]
+- Browser [e.g. chrome, safari etc.] (if applicable)
 - Version [e.g. 22]
 
 ## Additional context
