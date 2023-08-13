@@ -1,27 +1,26 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-      {
-        "type": "npm",
-        "script": "", // Name of your script that is in the package.json
-        "group": {
-          "kind": "test",
-          "isDefault": true
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "start",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "label": "start project",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "custom", // this is not needed but, required by the problemMatcher Object
+        "pattern": {
+          "regexp": "^$" // this is not needed but, required by the problemMatcher Object
         },
-        "label": "", // Your command name (this name is used in the prelaunchtask to run this task)
-        "isBackground": true,
-        "problemMatcher": {
-          "owner": "custom", // This is not needed but, required by the problemMatcher Object
-          "pattern": {
-            "regexp": "^$" // This is not needed but, required by the problemMatcher Object
-          },
-          "background": {
-            "activeOnStart": true,
-            "beginsPattern": "Compiling...", // Signals the begin of the Task
-            "endsPattern": "Compiled .*" // Signals that now the initialization of the task is complete
-          }
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Compiling...", // signals the begin of the Task
+          "endsPattern": "Compiled .*" // signals that now the initialization of the task is complete
         }
       }
-    ]
-  }
-  
+    }
+  ]
+}

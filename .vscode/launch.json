@@ -1,25 +1,39 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-      {
-        "type": "pwa-msedge",
-        "request": "launch",
-        "name": "Debug with Edge",
-        "url": "http://localhost:3333",
-        "webRoot": "${workspaceFolder}",
-        "preLaunchTask": "" // The label of the task which is in task.json
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "configurations": [
+    // react
+    {
+      "type": "msedge", // or chrome
+      "request": "launch",
+      "name": "Debug with Edge",
+      "url": "http://localhost:3333",
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "start project", // the label of the task which is in task.json
+      "serverReadyAction": {
+        "pattern": "listening on port ([0-9]+)",
+        "uriFormat": "http://localhost:%s",
+        "action": "debugWithEdge",
+        "killOnServerStop": true
       },
-      {
-        "type": "pwa-chrome",
-        "request": "launch",
-        "name": "Debug with Chrome",
-        "url": "http://localhost:3333",
-        "webRoot": "${workspaceFolder}",
-        "preLaunchTask": "" // The label of the task which is in task.json
-      }
-    ]
-  }
-  
+      "skipFiles": [
+        "${workspaceFolder}/<node_internals>/**",
+        "${workspaceFolder}/node_modules/**"
+      ]
+    },
+    // node applications
+    {
+      "type": "node-terminal",
+      "name": "node app", // name displayed in debug
+      "request": "launch",
+      "command": "npm start", // command to start the application
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/.env", // environment variables file
+      "skipFiles": [
+        "${workspaceFolder}/<node_internals>/**",
+        "${workspaceFolder}/node_modules/**"
+      ]
+    }
+  ]
+}
