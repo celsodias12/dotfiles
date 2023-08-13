@@ -1,6 +1,8 @@
 ---
 name: 🐞 Bug report
 about: If something isn't working as expected 🤔
+labels: bug
+assignees: celsodias12
 ---
 
 # Describe the bug
@@ -26,13 +28,6 @@ If applicable, add screenshots to help explain your problem.
 ## Desktop (please complete the following information)
 
 - OS: [e.g. Linux, Windows etc.]
-- Browser [e.g. chrome, safari etc.] (if applicable)
-- Version [e.g. 22]
-
-## Smartphone (please complete the following information if applicable)
-
-- Device: [e.g. iPhone6]
-- OS: [e.g. iOS8.1]
 - Browser [e.g. chrome, safari etc.] (if applicable)
 - Version [e.g. 22]
 
