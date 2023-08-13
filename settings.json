@@ -160,9 +160,9 @@
     ".env*": "dotenv"
   },
   "files.trimTrailingWhitespace": true,
-  "files.readonlyInclude": {
-    "node_modules/*": true
-  },
+  // "files.readonlyInclude": {
+  //   "node_modules/*": true
+  // },
   "files.readonlyFromPermissions": true,
 
   "emmet.syntaxProfiles": {
@@ -311,6 +311,9 @@
   },
   "[plaintext]": {
     "editor.defaultFormatter": "tlahmann.alex-linter"
+  },
+  "[powershell]": {
+    "editor.defaultFormatter": "ms-vscode.powershell"
   },
 
   "redhat.telemetry.enabled": false,
@@ -470,7 +473,10 @@
   // },
 
   "github.copilot.enable": {
-    "*": true
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false
   },
 
   "diffEditor.wordWrap": "off",
@@ -554,16 +560,5 @@
       "**/internal/**",
       "**/<node_internals>/**"
     ]
-  },
-
-  "makefile.configurations": [
-    {
-      "name": "MyConfiguration",
-
-      "problemMatchers": ["$gcc"],
-
-      "makeArgs": ["any", "other", "args", "you", "want"]
-    }
-  ],
-  "makefile.compileCommandsPath": ".vscode/compile_commands.json"
+  }
 }

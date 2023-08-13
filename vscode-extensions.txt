@@ -7,7 +7,6 @@ ahmadalli.vscode-nginx-conf
 alefragnani.project-manager
 bradlc.vscode-tailwindcss
 bradymholt.pgformatter
-Bridgecrew.checkov
 Cardinal90.multi-cursor-case-preserve
 chrmarti.regex
 clinyong.vscode-css-modules
@@ -53,6 +52,7 @@ ms-toolsai.vscode-jupyter-slideshow
 ms-vscode.cpptools
 ms-vscode.cpptools-extension-pack
 ms-vscode.live-server
+ms-vscode.powershell
 ms-vsliveshare.vsliveshare
 ms-vsliveshare.vsliveshare-pack
 nicoespeon.abracadabra
@@ -95,4 +95,5 @@ wix.vscode-import-cost
 wmaurer.change-case
 yoavbls.pretty-ts-errors
 Zignd.html-css-class-completion
+ZixuanChen.vitest-explorer
 zxh404.vscode-proto3
