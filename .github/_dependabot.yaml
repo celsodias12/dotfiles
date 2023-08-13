@@ -1,0 +1,55 @@
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    allow:
+      - dependency-type: 'all'
+    assignees:
+      - 'celsodias12'
+    labels:
+      - 'npm'
+    open-pull-requests-limit: 10
+    reviewers:
+      - 'celsodias12'
+  - package-ecosystem: 'docker'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    allow:
+      - dependency-type: 'all'
+    assignees:
+      - 'celsodias12'
+    labels:
+      - 'npm'
+    open-pull-requests-limit: 10
+    reviewers:
+      - 'celsodias12'
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    allow:
+      - dependency-type: 'all'
+    assignees:
+      - 'celsodias12'
+    labels:
+      - 'npm'
+    open-pull-requests-limit: 10
+    reviewers:
+      - 'celsodias12'
+
+registries:
+  npm-npmjs:
+    type: npm-registry
+    url: https://registry.npmjs.org
+    username: celsodias12
+    password: ${{secrets.NPM_PASSWORD}}
+    replaces-base: true
+  dockerhub:
+    type: docker-registry
+    url: https://registry.hub.docker.com
+    username: celsodias12
+    password: ${{secrets.DOCKERHUB_PASSWORD}}
+    replaces-base: true
