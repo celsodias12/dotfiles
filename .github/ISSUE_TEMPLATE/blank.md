@@ -1,5 +1,5 @@
 ---
-name: Blank
+name: 📄 Blank
 about: A blank issue template
 ---
 
