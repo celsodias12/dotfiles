@@ -22,7 +22,7 @@
         "${workspaceFolder}/node_modules/**"
       ]
     },
-    // node applications
+    // node
     {
       "type": "node-terminal",
       "name": "node app", // name displayed in debug
