@@ -1,6 +1,8 @@
 ---
 name: 🚀 Feature request
 about: If you have a feature request 💡
+labels: enhancement
+assignees: celsodias12
 ---
 
 # Context
