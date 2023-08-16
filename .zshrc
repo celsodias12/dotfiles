@@ -187,7 +187,7 @@ alias home="cd ~"
 
 # Projects folders
 alias projects="cd ~/projects"
-alias browser-extensions="cd ~/browser-extensions"
+alias browser-extensions="cd ~/projects/browser-extensions"
 alias challenges="cd ~/projects/challenges"
 alias devOps="cd ~/projects/devOps"
 alias eletronic="cd ~/projects/eletronic"
@@ -218,11 +218,6 @@ alias jstack="cd ~/projects/courses/jstack"
 # Labs
 alias sync-master="br-from-to develop master sync"
 alias sync-develop="br-from-to master develop sync"
-
-# Labs VPN
-alias connect-vpn="sudo vpnc-connect --dpd-idle 0 --debug 1 /etc/vpnc/luizalabs.conf"
-alias disconnect-vpn="sudo vpnc-disconnect"
-alias reconnect-vpn="disconnect-vpn && connect-vpn"
 
 # Docker
 alias dcu="docker compose up"
@@ -442,19 +437,25 @@ run-command-in-folders() {
 
     for folder in $(ls $dir); do
         if [[ -d $dir/$folder ]]; then
-            echo "\n\n Running $command in $folder"
+            echo "\n\nRunning $command in $folder\n"
 
             cd $dir/$folder
 
             eval $command
 
             if [[ $? -ne 0 ]]; then
-                echo "Error in $folder"
+                echo "\nError in $folder"
             fi
 
             cd $current_dir
         fi
     done
+}
+
+commitlint() {
+    local types=("feat" "fix" "docs" "style" "refactor" "perf" "test" "build" "ci" "chore" "revert")
+
+    echo "Types of commit: ${types[@]}"
 }
 
 # git-pull-if-remote-exist
