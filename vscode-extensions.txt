@@ -1,4 +1,3 @@
-Extensions installed on WSL: Ubuntu-22.04:
 aaron-bond.better-comments
 adamhartford.vscode-base64
 adolfdaniel.vscode-chromium-vector-icons
@@ -76,7 +75,6 @@ sburg.vscode-javascript-booster
 SimonSiefke.svg-preview
 SonarSource.sonarlint-vscode
 spoonscen.es6-mocha-snippets
-stivo.tailwind-fold
 stkb.rewrap
 streetsidesoftware.code-spell-checker
 styled-components.vscode-styled-components
