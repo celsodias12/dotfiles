@@ -1,66 +1,76 @@
 [user]
-  name = Celso Dias
+    name = Celso Dias
 [init]
-  defaultBranch = main
+    defaultBranch = main
 [push]
-  autoSetupRemote = true
+    autoSetupRemote = true
 [alias]
-  sw = switch
-  swc = switch -c
+    sw = switch
+    swc = switch -c
 
-  cm = commit
-  cmm = commit -m
-  cmam = commit --amend -m
-  aincm = !git a . && git incm
-  incm = cmm 'feat: inital commit'
-  acmm = !git a . && git cmm
-  acmmpu = !git acmm $1 && git push
-  cmmpu = !git cmm $1 && git push
-  cmcon = git cmm "fix: resolved conflicts"
+    p = pull
+    por = pull origin
 
-  br = branch
-  brd = branch -d
-  brD = branch -D
-  brr = branch -m
-  brl = branch --list
+    cm = commit
+    cmm = commit -m
+    cmmam = commit --amend -m
+    incm = cmm 'feat: inital commit'
+    acmm = !git a . && git cmm
 
-  re = reset
-  delcm = reset --soft HEAD~1
-  reh = reset --hard
+    br = branch
+    brd = branch -d
+    brD = branch -D
+    brr = branch -m
+    brl = branch --list
 
-  st = stash
-  stl = stash list
-  stc = stash clear
-  stw = stash show
-  sts = stash save
-  sta = stash apply
-  std = stash drop
-  stp = stash pop
-  asts = !git a . && git sts
-  exst = !git a . && git st && git stash show "stash@{0}" -p >stash.patch && git stp
-  imst = apply stash.patch
+    re = reset
+    delcm = reset --soft HEAD~1
+    reh = reset --hard
 
-  lg = log --graph
-  lga = log --graph --all
-  lgo = log --graph --oneline
-  lpo = log --pretty=oneline
-  lo = log --oneline
+    st = stash
+    stl = stash list
+    stc = stash clear
+    stw = stash show
+    sts = stash save
+    sta = stash apply
+    std = stash drop
+    stp = stash pop
+    exst = !git a . && git st && git stash show "stash@{0}" -p >stash.patch && git stp
+    imst = apply stash.patch
 
-  me = merge
-  meq = merge --quit
+    lg = log --graph
+    lga = log --graph --all
+    lgo = log --graph --oneline
+    lpo = log --pretty=oneline
+    lo = log --oneline
 
-  re = revert HEAD
+    me = merge
+    meq = merge --quit
 
-  pod = push origin -d
+    re = revert HEAD~1
 
-  a = add
+    pod = push origin -d
 
-  cl = clone
+    a = add
 
-  fe = fetch
+    cl = clone
 
-  p = pull
-  por = pull origin
+    fe = fetch
+
+    feature = "!f() { git swc feature/$1; }; f"
+    hotfix = "!f() { git swc hotfix/$1; }; f"
+
+    feat = "!f() { git cmm \"feat: $1\"; }; f"
+    fix = "!f() { git cmm \"fix: $1\"; }; f"
+    docs = "!f() { git cmm \"docs: $1\"; }; f"
+    style = "!f() { git cmm \"style: $1\"; }; f"
+    refactor = "!f() { git cmm \"refactor: $1\"; }; f"
+    perf = "!f() { git cmm \"perf: $1\"; }; f"
+    test = "!f() { git cmm \"test: $1\"; }; f"
+    build = "!f() { git cmm \"build: $1\"; }; f"
+    ci = "!f() { git cmm \"ci: $1\"; }; f"
+    chore = "!f() { git cmm \"chore: $1\"; }; f"
+    revert = "!f() { git cmm \"revert: $1\"; }; f"
 
 [includeIf "gitdir:~/"]
   path = ~/.gitconfig-me
