@@ -26,6 +26,7 @@
   },
   "workbench.list.smoothScrolling": true,
   "workbench.tree.renderIndentGuides": "always",
+  "workbench.editor.pinnedTabsOnSeparateRow": true,
 
   "explorer.compactFolders": false,
   "explorer.autoRevealExclude": {
@@ -98,10 +99,33 @@
   },
   "editor.stickyScroll.enabled": true,
   "editor.tokenColorCustomizations": {
+    "[*Light*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#000"
+          }
+        }
+      ]
+    },
+    "[*Dark*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#fff"
+          }
+        }
+      ]
+    },
     "textMateRules": []
   },
   "editor.minimap.autohide": true,
-  "editor.minimap.showSlider": "mouseover",
+  "editor.minimap.showSlider":"mouseover",
+  "editor.renderWhitespace": "trailing",
+  "editor.inlayHints.enabled": "on",
+  "editor.codeActionWidget.includeNearbyQuickfixes": true,
 
   "search.exclude": {
     "**/node_modules": true,
@@ -164,6 +188,9 @@
   //   "node_modules/*": true
   // },
   "files.readonlyFromPermissions": true,
+  "files.exclude": {
+    "**/.git": true
+  },
 
   "emmet.syntaxProfiles": {
     "javascript": "jsx"
@@ -481,7 +508,9 @@
 
   "diffEditor.wordWrap": "off",
 
-  "projectManager.git.baseFolders": ["~/Projects", "C:\\Users\\Celso\\Desktop\\projects"],
+  "projectManager.git.baseFolders": [
+    "~/projects"
+  ],
 
   "colorize.languages": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
 
@@ -489,7 +518,9 @@
 
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.graph.layout": "editor",
-  "gitlens.graph.minimap.additionalTypes": ["localBranches", "stashes", "remoteBranches", "tags"],
+  "gitlens.graph.minimap.additionalTypes": [
+    "tags"
+  ],
 
   "vscode-edge-devtools.webhint": false,
 
@@ -549,16 +580,31 @@
 
   "vs-kubernetes": {
     "vscode-kubernetes.minikube-path.linux": "/home/celso/.local/state/vs-kubernetes/tools/minikube/linux-amd64/minikube",
-    "vscode-kubernetes.helm-path.linux": "/home/celso/.local/state/vs-kubernetes/tools/helm/linux-amd64/helm"
+    "vscode-kubernetes.helm-path.linux": "/home/celso/.local/state/vs-kubernetes/tools/helm/linux-amd64/helm",
+    "vscode-kubernetes.minikube-path-linux": "/home/celso/.local/state/vs-kubernetes/tools/minikube/linux-amd64/minikube",
+    "vscode-kubernetes.helm-path-linux": "/home/celso/.local/state/vs-kubernetes/tools/helm/linux-amd64/helm"
   },
 
   "debug.javascript.terminalOptions": {
     "skipFiles": [
       "${workspaceFolder}/<node_internals>/**",
       "${workspaceFolder}/node_modules/**",
+      "${workspaceFolder}/internal/**",
+      "internal/",
       "internal/**",
       "**/internal/**",
       "**/<node_internals>/**"
     ]
-  }
+  },
+  "hediet.vscode-drawio.resizeImages": null,
+  "hediet.vscode-drawio.codeLinkActivated": false,
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
+  "gitlens.graph.scrollMarkers.additionalTypes": [
+    "localBranches",
+    "stashes",
+    "remoteBranches",
+    "tags"
+  ],
 }
