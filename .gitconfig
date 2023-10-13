@@ -13,7 +13,7 @@
 
     cm = commit
     cmm = commit -m
-    cmmam = commit --amend -m
+    cmmam = commit --amend
     incm = cmm 'feat: inital commit'
     acmm = !git a . && git cmm
 
@@ -23,9 +23,9 @@
     brr = branch -m
     brl = branch --list
 
-    re = reset
+    res = reset
     delcm = reset --soft HEAD~1
-    reh = reset --hard
+    resh = reset --hard
 
     st = stash
     stl = stash list
@@ -47,7 +47,7 @@
     me = merge
     meq = merge --quit
 
-    re = revert HEAD~1
+    rev = revert HEAD~1
 
     pod = push origin -d
 
@@ -60,17 +60,17 @@
     feature = "!f() { git swc feature/$1; }; f"
     hotfix = "!f() { git swc hotfix/$1; }; f"
 
-    feat = "!f() { git cmm \"feat: $1\"; }; f"
-    fix = "!f() { git cmm \"fix: $1\"; }; f"
-    docs = "!f() { git cmm \"docs: $1\"; }; f"
-    style = "!f() { git cmm \"style: $1\"; }; f"
-    refactor = "!f() { git cmm \"refactor: $1\"; }; f"
-    perf = "!f() { git cmm \"perf: $1\"; }; f"
-    test = "!f() { git cmm \"test: $1\"; }; f"
-    build = "!f() { git cmm \"build: $1\"; }; f"
-    ci = "!f() { git cmm \"ci: $1\"; }; f"
-    chore = "!f() { git cmm \"chore: $1\"; }; f"
-    revert = "!f() { git cmm \"revert: $1\"; }; f"
+    feat = "!f() { local commit_type='feat'; if [ $# -eq 1 ]; then local commit_message=$1; git cmm \"$commit_type: $commit_message\"; elif [ $# -eq 2 ]; then local scope=$1; local commit_message=$2; git cmm \"$commit_type($scope): $commit_message\"; else echo 'Invalid arguments'; return 1; fi; }; f"
+    fix = "!f() { local commit_type='fix'; if [ $# -eq 1 ]; then local commit_message=$1; git cmm \"$commit_type: $commit_message\"; elif [ $# -eq 2 ]; then local scope=$1; local commit_message=$2; git cmm \"$commit_type($scope): $commit_message\"; else echo 'Invalid arguments'; return 1; fi; }; f"
+    docs = "!f() { local commit_type='docs'; if [ $# -eq 1 ]; then local commit_message=$1; git cmm \"$commit_type: $commit_message\"; elif [ $# -eq 2 ]; then local scope=$1; local commit_message=$2; git cmm \"$commit_type($scope): $commit_message\"; else echo 'Invalid arguments'; return 1; fi; }; f"
+    style = "!f() { local commit_type='style'; if [ $# -eq 1 ]; then local commit_message=$1; git cmm \"$commit_type: $commit_message\"; elif [ $# -eq 2 ]; then local scope=$1; local commit_message=$2; git cmm \"$commit_type($scope): $commit_message\"; else echo 'Invalid arguments'; return 1; fi; }; f"
+    refactor = "!f() { local commit_type='refactor'; if [ $# -eq 1 ]; then local commit_message=$1; git cmm \"$commit_type: $commit_message\"; elif [ $# -eq 2 ]; then local scope=$1; local commit_message=$2; git cmm \"$commit_type($scope): $commit_message\"; else echo 'Invalid arguments'; return 1; fi; }; f"
+    perf = "!f() { local commit_type='perf'; if [ $# -eq 1 ]; then local commit_message=$1; git cmm \"$commit_type: $commit_message\"; elif [ $# -eq 2 ]; then local scope=$1; local commit_message=$2; git cmm \"$commit_type($scope): $commit_message\"; else echo 'Invalid arguments'; return 1; fi; }; f"
+    test = "!f() { local commit_type='test'; if [ $# -eq 1 ]; then local commit_message=$1; git cmm \"$commit_type: $commit_message\"; elif [ $# -eq 2 ]; then local scope=$1; local commit_message=$2; git cmm \"$commit_type($scope): $commit_message\"; else echo 'Invalid arguments'; return 1; fi; }; f"
+    build = "!f() { local commit_type='build'; if [ $# -eq 1 ]; then local commit_message=$1; git cmm \"$commit_type: $commit_message\"; elif [ $# -eq 2 ]; then local scope=$1; local commit_message=$2; git cmm \"$commit_type($scope): $commit_message\"; else echo 'Invalid arguments'; return 1; fi; }; f"
+    ci = "!f() { local commit_type='ci'; if [ $# -eq 1 ]; then local commit_message=$1; git cmm \"$commit_type: $commit_message\"; elif [ $# -eq 2 ]; then local scope=$1; local commit_message=$2; git cmm \"$commit_type($scope): $commit_message\"; else echo 'Invalid arguments'; return 1; fi; }; f"
+    chore = "!f() { local commit_type='chore'; if [ $# -eq 1 ]; then local commit_message=$1; git cmm \"$commit_type: $commit_message\"; elif [ $# -eq 2 ]; then local scope=$1; local commit_message=$2; git cmm \"$commit_type($scope): $commit_message\"; else echo 'Invalid arguments'; return 1; fi; }; f"
+    revert = "!f() { local commit_type='revert'; if [ $# -eq 1 ]; then local commit_message=$1; git cmm \"$commit_type: $commit_message\"; elif [ $# -eq 2 ]; then local scope=$1; local commit_message=$2; git cmm \"$commit_type($scope): $commit_message\"; else echo 'Invalid arguments'; return 1; fi; }; f"
 
 [includeIf "gitdir:~/"]
   path = ~/.gitconfig-me
