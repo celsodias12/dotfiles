@@ -1,6 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -200,12 +197,7 @@ alias others="cd ~/projects/others"
 alias react="cd ~/projects/react"
 alias shell-script="cd ~/projects/shell-script"
 alias work="cd ~/projects/work"
-
-# Work
-alias labs="cd ~/projects/work/luizalabs"
-alias b2="cd ~/projects/work/b2"
-alias new-technology="cd ~/projects/work/new-technology"
-alias rastreagro="cd ~/projects/work/rastreagro"
+alias programs="cd ~/programs"
 
 # Courses
 alias courses="cd ~/projects/courses"
@@ -214,10 +206,6 @@ alias ignite="cd ~/projects/courses/rocketseat/ignite"
 alias fc="cd ~/projects/courses/full_cycle"
 alias fc3="cd ~/projects/courses/full_cycle/full_cycle_3"
 alias jstack="cd ~/projects/courses/jstack"
-
-# Labs
-alias sync-master="br-from-to develop master sync"
-alias sync-develop="br-from-to master develop sync"
 
 # Docker
 alias dcu="docker compose up"
@@ -254,11 +242,12 @@ alias higr="history | grep"
 alias src="source ~/.zshrc"
 alias bin="cd ~/../../usr/local/bin/"
 alias back="cd -"
-alias win="cd ~/../../mnt/c/Users/celso"
 alias lsl="ls -l"
 alias lsa="ls -la"
 alias unzip-tar="tar -xvf"
 alias k="fuser -n tcp -k"
+
+# Windows
 alias exp="explorer.exe"
 alias shutdown="wsl.exe --shutdown"
 
@@ -285,13 +274,17 @@ alias rsa-pub="openssl rsa -in private.pem -pubout -out public.pem"
 # Node
 alias check-unused-packages="npx depcheck"
 
+# Remember
+# alias js2ts="find . -depth -type f -name "*.js" -not -path "./node_modules/*" -exec sh -c 'mv -- "$1" "$(dirname "$1")/$(basename "$1" .js).ts"' _ '{}' \;"
+alias show-file-extensions="cloc . --exclude-dir=node_modules,.gitlab,.git,coverage,.vscode,others,.nyc_output"
+
 pnpm() {
     if [ -f pnpm-lock.yaml ]; then
         command pnpm $*
     elif [ -f package-lock.json ]; then
-        echo 'only use npm'
+        logger 'only use npm'
     elif [ -f yarn.lock ]; then
-        echo 'only use yarn'
+        logger 'only use yarn'
     else
         command pnpm $*
     fi
@@ -299,11 +292,11 @@ pnpm() {
 
 npm() {
     if [ -f pnpm-lock.yaml ]; then
-        echo 'only use pnpm'
+        logger 'only use pnpm'
     elif [ -f package-lock.json ]; then
         command npm $*
     elif [ -f yarn.lock ]; then
-        echo 'only use yarn'
+        logger 'only use yarn'
     else
         command npm $*
     fi
@@ -311,9 +304,9 @@ npm() {
 
 yarn() {
     if [ -f pnpm-lock.yaml ]; then
-        echo 'only use pnpm'
+        logger 'only use pnpm'
     elif [ -f package-lock.json ]; then
-        echo 'only use npm'
+        logger 'only use npm'
     else
         command yarn $*
     fi
@@ -324,49 +317,76 @@ rm-identifier() {
 }
 
 get-cert-details() {
-    openssl pkcs12 -in "$1" -nodes
+    local cert_path="$1"
+
+    openssl pkcs12 -in $cert_path -nodes
 }
 
 get-cert-expiration() {
-    openssl x509 -in "$1" -text | grep "Not After :"
+    local cert_path="$1"
+
+    openssl x509 -in $cert_path -text | grep "Not After :"
 }
 
-create-branch() {
-    local branch_name="$1"
-
-    if git show-ref --verify --quiet "refs/heads/$branch_name"; then
-        echo "A branch $branch_name já existe LOCALMENTE" >&2
-        return 1
-    elif git ls-remote --heads origin "$branch_name" | grep -q "$branch_name"; then
-        echo "A branch $branch_name já existe REMOTAMENTE" >&2
-        return 2
-    else
-        git switch -c $branch_name
-        return 0
-    fi
+logger() {
+    echo "\n[SCRIPT] $*"
 }
 
 br-from-to() {
     local pull_branch_name="${1:-main}"
     local target_branch_name="${2:-develop}"
-    local new_branch_name="${3:-sync}"
+    local new_branch_prefix="${3:-sync}"
 
-    if [[ $(git branch --show-current) != "$pull_branch_name" ]]; then
-        git switch $pull_branch_name
+    if [[ $(git branch --show-current) != "$target_branch_name" ]]; then
+        logger "Switching to $target_branch_name"
+
+        git switch $target_branch_name
+
+        local was_switched_branch=$?
+
+        if [ $was_switched_branch -ge 1 ]; then
+            logger "Error to switch branch"
+            return
+        fi
+
+        logger "Pulling $target_branch_name"
+
         git pull
     fi
 
-    create-branch $new_branch_name/$(date +%d-%m)
+    local new_branch_name="$new_branch_prefix/$(date +%d-%m-%y)"
+
+    logger "Creating branch $new_branch_name"
+
+    create-branch() {
+        local branch_name="$1"
+
+        if git show-ref --verify --quiet "refs/heads/$branch_name"; then
+            logger "A branch $branch_name já existe LOCALMENTE" >&2
+            return 1
+        elif git ls-remote --heads origin "$branch_name" | grep -q "$branch_name"; then
+            logger "A branch $branch_name já existe REMOTAMENTE" >&2
+            return 2
+        else
+            git switch -c $branch_name
+            return 0
+        fi
+    }
+
+    create-branch $new_branch_name
 
     local was_created_branch=$?
 
     if [ $was_created_branch -ge 1 ]; then
+        logger "Error to create branch"
         return
     fi
 
-    git pull origin $target_branch_name
+    logger "Pulling $pull_branch_name"
 
-    echo "\n[Sync] $pull_branch_name -> $target_branch_name"
+    git pull origin $pull_branch_name
+
+    logger "[Sync] $pull_branch_name -> $target_branch_name"
 }
 
 zzip() {
@@ -388,7 +408,7 @@ git-pull-if-remote-exist() {
         fi
     done
 
-    echo "\nPulling..."
+    logger "Pulling..."
 
     if [[ $(git remote -v) ]]; then
         git pull
@@ -400,19 +420,23 @@ validate-key-pair() {
     local private_key="$2"
 
     if [[ ! -f $public_key || ! -f $private_key ]]; then
-        echo "Public key or private key not found"
+        logger "Public key or private key not found"
         return
     fi
 
-    local public_key_modulus=$(openssl x509 -noout -modulus -in $public_key)
+    # local public_key_modulus=$(openssl x509 -noout -modulus -in $public_key)
+    local public_key_modulus=$(openssl rsa -pubin -inform PEM -noout -modulus -in $public_key)
+    logger "Public key modulus: $public_key_modulus"
+
     local private_key_modulus=$(openssl rsa -noout -modulus -in $private_key)
+    logger "Private key modulus: $private_key_modulus"
 
     if [[ $public_key_modulus != $private_key_modulus ]]; then
-        echo "\nkeys are NOT VALID"
+        logger "keys are: NOT VALID"
         return
     fi
 
-    echo "\nkeys are VALID"
+    logger "keys are: VALID"
 }
 
 run-command-in-folders() {
@@ -421,30 +445,30 @@ run-command-in-folders() {
     local current_dir=$(pwd)
 
     if [[ ! -d $dir ]]; then
-        echo "Directory not found"
+        logger "Directory not found"
         return
     fi
 
     if [[ ! $command ]]; then
-        echo "Command not found"
+        logger "Command not found"
         return
     fi
 
     if [[ ! $(ls $dir) ]]; then
-        echo "Folders not found"
+        logger "Folders not found"
         return
     fi
 
     for folder in $(ls $dir); do
         if [[ -d $dir/$folder ]]; then
-            echo "\n\nRunning $command in $folder\n"
+            logger "\n\nRunning $command in $folder\n"
 
             cd $dir/$folder
 
             eval $command
 
             if [[ $? -ne 0 ]]; then
-                echo "\nError in $folder"
+                logger "\nError in $folder"
             fi
 
             cd $current_dir
@@ -452,14 +476,31 @@ run-command-in-folders() {
     done
 }
 
-commitlint() {
+conventional-commits() {
     local types=("feat" "fix" "docs" "style" "refactor" "perf" "test" "build" "ci" "chore" "revert")
 
-    echo "Types of commit: ${types[@]}"
+    logger "Types of commit: ${types[@]}"
 }
 
-# git-pull-if-remote-exist
+git-commit() {
+    local commit_type="$1"
+    if [ $# -eq 2 ] && [ -n $2 ]; then
+        local commit_message="$2"
+
+        git cmm "$commit_type: $commit_message"
+    elif [ $# -eq 3 ] && [ -n $3 ]; then
+        local scope="$2"
+        local commit_message="$3"
+
+        git cmm "$commit_type($scope): $commit_message"
+    else
+        logger "Invalid arguments: $*"
+        return 1
+    fi
+}
+
 ########################################################################################################################
+# git-pull-if-remote-exist
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/celso/downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/celso/downloads/google-cloud-sdk/path.zsh.inc'; fi
@@ -482,8 +523,33 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
-
 # kubectl
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+# place this after nvm initialization!
+autoload -U add-zsh-hook
+
+load-nvmrc() {
+    local nvmrc_path="$(nvm_find_nvmrc)"
+
+    if [ -n "$nvmrc_path" ]; then
+        local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+        if [ "$nvmrc_node_version" = "N/A" ]; then
+            nvm install
+        elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
+            nvm use --silent
+        fi
+    fi
+}
+
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
