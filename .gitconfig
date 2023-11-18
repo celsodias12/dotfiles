@@ -35,7 +35,8 @@
     sta = stash apply
     std = stash drop
     stp = stash pop
-    exst = !git a . && git st && git stash show "stash@{0}" -p >stash.patch && git stp
+    # exst = !git add . && git stash save && git stash show "stash@{0}" -p >stash.patch && git stash pop
+    exst = !git a . && git sts && git stash show "stash@{0}" -p >stash.patch && git stp
     imst = apply stash.patch
 
     lg = log --graph
@@ -60,17 +61,40 @@
     feature = "!f() { git swc feature/$1; }; f"
     hotfix = "!f() { git swc hotfix/$1; }; f"
 
-    feat = "!f() { local commit_type='feat'; if [ $# -eq 1 ]; then local commit_message=$1; git cmm \"$commit_type: $commit_message\"; elif [ $# -eq 2 ]; then local scope=$1; local commit_message=$2; git cmm \"$commit_type($scope): $commit_message\"; else echo 'Invalid arguments'; return 1; fi; }; f"
-    fix = "!f() { local commit_type='fix'; if [ $# -eq 1 ]; then local commit_message=$1; git cmm \"$commit_type: $commit_message\"; elif [ $# -eq 2 ]; then local scope=$1; local commit_message=$2; git cmm \"$commit_type($scope): $commit_message\"; else echo 'Invalid arguments'; return 1; fi; }; f"
-    docs = "!f() { local commit_type='docs'; if [ $# -eq 1 ]; then local commit_message=$1; git cmm \"$commit_type: $commit_message\"; elif [ $# -eq 2 ]; then local scope=$1; local commit_message=$2; git cmm \"$commit_type($scope): $commit_message\"; else echo 'Invalid arguments'; return 1; fi; }; f"
-    style = "!f() { local commit_type='style'; if [ $# -eq 1 ]; then local commit_message=$1; git cmm \"$commit_type: $commit_message\"; elif [ $# -eq 2 ]; then local scope=$1; local commit_message=$2; git cmm \"$commit_type($scope): $commit_message\"; else echo 'Invalid arguments'; return 1; fi; }; f"
-    refactor = "!f() { local commit_type='refactor'; if [ $# -eq 1 ]; then local commit_message=$1; git cmm \"$commit_type: $commit_message\"; elif [ $# -eq 2 ]; then local scope=$1; local commit_message=$2; git cmm \"$commit_type($scope): $commit_message\"; else echo 'Invalid arguments'; return 1; fi; }; f"
-    perf = "!f() { local commit_type='perf'; if [ $# -eq 1 ]; then local commit_message=$1; git cmm \"$commit_type: $commit_message\"; elif [ $# -eq 2 ]; then local scope=$1; local commit_message=$2; git cmm \"$commit_type($scope): $commit_message\"; else echo 'Invalid arguments'; return 1; fi; }; f"
-    test = "!f() { local commit_type='test'; if [ $# -eq 1 ]; then local commit_message=$1; git cmm \"$commit_type: $commit_message\"; elif [ $# -eq 2 ]; then local scope=$1; local commit_message=$2; git cmm \"$commit_type($scope): $commit_message\"; else echo 'Invalid arguments'; return 1; fi; }; f"
-    build = "!f() { local commit_type='build'; if [ $# -eq 1 ]; then local commit_message=$1; git cmm \"$commit_type: $commit_message\"; elif [ $# -eq 2 ]; then local scope=$1; local commit_message=$2; git cmm \"$commit_type($scope): $commit_message\"; else echo 'Invalid arguments'; return 1; fi; }; f"
-    ci = "!f() { local commit_type='ci'; if [ $# -eq 1 ]; then local commit_message=$1; git cmm \"$commit_type: $commit_message\"; elif [ $# -eq 2 ]; then local scope=$1; local commit_message=$2; git cmm \"$commit_type($scope): $commit_message\"; else echo 'Invalid arguments'; return 1; fi; }; f"
-    chore = "!f() { local commit_type='chore'; if [ $# -eq 1 ]; then local commit_message=$1; git cmm \"$commit_type: $commit_message\"; elif [ $# -eq 2 ]; then local scope=$1; local commit_message=$2; git cmm \"$commit_type($scope): $commit_message\"; else echo 'Invalid arguments'; return 1; fi; }; f"
-    revert = "!f() { local commit_type='revert'; if [ $# -eq 1 ]; then local commit_message=$1; git cmm \"$commit_type: $commit_message\"; elif [ $# -eq 2 ]; then local scope=$1; local commit_message=$2; git cmm \"$commit_type($scope): $commit_message\"; else echo 'Invalid arguments'; return 1; fi; }; f"
+    # feat = "!f() { zsh -ic \"git-commit feat \"$1\" \"$2\"\"; }; f"
+    feat = "!f() { git fnCommit feat \"$1\" \"$2\"; }; f"
+    afeat = "!git a . && git feat \"$1\" \"$2\""
+    fix = "!f() { git fnCommit fix \"$1\" \"$2\"; }; f"
+    afix = "!git a . && git fix \"$1\" \"$2\""
+    docs = "!f() { git fnCommit docs \"$1\" \"$2\"; }; f"
+    adocs = "!git a . && git docs \"$1\" \"$2\""
+    style = "!f() { git fnCommit style \"$1\" \"$2\"; }; f"
+    astyle = "!git a . && git style \"$1\" \"$2\""
+    refactor = "!f() { git fnCommit refactor \"$1\" \"$2\"; }; f"
+    arefactor = "!git a . && git refactor \"$1\" \"$2\""
+    perf = "!f() { git fnCommit perf \"$1\" \"$2\"; }; f"
+    aperf = "!git a . && git perf \"$1\" \"$2\""
+    test = "!f() { git fnCommit test \"$1\" \"$2\"; }; f"
+    atest = "!git a . && git test \"$1\" \"$2\""
+    build = "!f() { git fnCommit build \"$1\" \"$2\"; }; f"
+    abuild = "!git a . && git build \"$1\" \"$2\""
+    ci = "!f() { git fnCommit ci \"$1\" \"$2\"; }; f"
+    aci = "!git a . && git ci \"$1\" \"$2\""
+    chore = "!f() { git fnCommit chore \"$1\" \"$2\"; }; f"
+    achore = "!git a . && git chore \"$1\" \"$2\""
+    revert = "!f() { git fnCommit revert \"$1\" \"$2\"; }; f"
+    arevert = "!git a . && git revert \"$1\" \"$2\""
+
+    fnCommit="!f() { local commit_type=\"$1\"; if [ $# -eq 3 ] && [ -z \"$3\" ]; then local commit_message=\"$2\"; git cmm \"$commit_type: $commit_message\"; elif [ $# -eq 3 ]; then local scope=\"$2\"; local commit_message=\"$3\"; git cmm \"$commit_type($scope): $commit_message\"; else logger \"Invalid arguments: $*\"; return 1; fi; }; f"
+
+    # create for specific branch, ^4ee07ea, -2 main, ^v1.0
+    # git fetch feature.bundle branch_bundle:new_branch
+    bcr = "bundle create feature.bundle"
+    # create for all branchs
+    # git clone app.bundle app
+    bcra = "bundle create app.bundle --all"
+    bve= "bundle verify app.bundle"
+
 
 [includeIf "gitdir:~/"]
   path = ~/.gitconfig-me
