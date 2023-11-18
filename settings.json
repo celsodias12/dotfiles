@@ -122,10 +122,10 @@
     "textMateRules": []
   },
   "editor.minimap.autohide": true,
-  "editor.minimap.showSlider":"mouseover",
+  "editor.minimap.showSlider": "mouseover",
   "editor.renderWhitespace": "trailing",
   "editor.inlayHints.enabled": "on",
-  "editor.codeActionWidget.includeNearbyQuickfixes": true,
+  "editor.codeActionWidget.includeNearbyQuickFixes": true,
 
   "search.exclude": {
     "**/node_modules": true,
@@ -333,14 +333,19 @@
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "[python]": {
-    "editor.formatOnType": true,
-    "editor.defaultFormatter": "ms-python.python"
+    "editor.formatOnType": true
   },
   "[plaintext]": {
     "editor.defaultFormatter": "tlahmann.alex-linter"
   },
   "[powershell]": {
     "editor.defaultFormatter": "ms-vscode.powershell"
+  },
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
   },
 
   "redhat.telemetry.enabled": false,
@@ -349,26 +354,44 @@
   "quokka.showOutputOnStart": true,
 
   "cSpell.userWords": [
+    "ABECS",
+    "ACCC",
+    "ACSC",
+    "ACSP",
     "adyen",
+    "AGPSS",
+    "AGTEC",
+    "AGTOT",
     "antd",
     "appcenter",
     "avds",
+    "axios",
+    "Bacen",
+    "Barriga",
     "bootsplash",
+    "bradesco",
     "browserslist",
+    "cacc",
     "camelcase",
     "categorys",
     "Celso",
     "chakra",
+    "CHAVITO",
     "checkmark",
     "cielo",
     "cnab",
+    "cnpj",
     "Cnpj",
     "codepush",
     "collapsable",
     "commitlint",
+    "conti",
+    "CYBERSOURCE",
+    "datadog",
     "datetimepicker",
     "DDTHH",
     "docwxyxoifgyqh",
+    "docz",
     "dtos",
     "dtostrf",
     "ellipsize",
@@ -376,34 +399,54 @@
     "expdas",
     "expds",
     "fastify",
+    "Fintech",
+    "FINTECH",
     "formik",
     "freelas",
     "geocode",
     "geolocation",
     "Gerencianet",
+    "github",
     "googlemaps",
     "gradlew",
+    "grafana",
+    "gringotts",
+    "griphook",
+    "Griphook",
+    "GSCB",
+    "gsurf",
     "Hackintosh",
     "hcaptcha",
     "Heltec",
     "hookform",
+    "idempotency",
     "iife",
     "impas",
     "instana",
     "Ionicons",
+    "ipay",
     "iphone",
+    "ispb",
     "itau",
     "javac",
     "JDBC",
     "jetify",
+    "kabum",
     "Keychain",
     "keycloak",
+    "konduto",
     "Konduto",
     "Laravel",
     "linkedin",
+    "luxon",
+    "magalu",
+    "Magalu",
+    "MAGALU",
+    "MANU",
     "mapbox",
     "middlewares",
     "mmssss",
+    "mobx",
     "modalize",
     "Moti",
     "multiline",
@@ -412,11 +455,13 @@
     "nestjs",
     "nestjsx",
     "netinfo",
+    "nginx",
     "nonstrict",
     "noopener",
     "noreferrer",
     "npkill",
     "Onesignal",
+    "othr",
     "paren",
     "Parens",
     "persistor",
@@ -426,6 +471,8 @@
     "Pressable",
     "Pressables",
     "qrcode",
+    "QRDN",
+    "QRES",
     "Qube",
     "rajdhani",
     "Rastreagro",
@@ -437,6 +484,7 @@
     "rehydrated",
     "REPORTSELECTED",
     "respawn",
+    "rjct",
     "rlog",
     "rmieiof",
     "rncc",
@@ -456,16 +504,27 @@
     "Roadmap",
     "Roboto",
     "Rocketseat",
+    "rollbar",
     "rreducer",
     "Searchbar",
+    "sesamo",
     "Sesamo",
     "singin",
+    "slopid",
+    "slry",
     "soapenv",
+    "soid",
     "sonarlint",
+    "sorid",
+    "srid",
+    "stid",
+    "Stid",
     "Stopots",
     "stylert",
     "stylesheet",
     "submenu",
+    "submerchants",
+    "svgs",
     "swipeable",
     "tanstack",
     "textinput",
@@ -476,11 +535,14 @@
     "unipam",
     "varchar",
     "vercel",
+    "vitest",
     "WALLU",
     "whatsapp",
     "Xiaomi",
+    "yohan",
     "zustand"
   ],
+  "cSpell.language": "en,pt_BR",
 
   // "sonarlint.connectedMode.connections.sonarqube": [
   //   {
@@ -505,12 +567,14 @@
     "markdown": true,
     "scminput": false
   },
+  "github.copilot.advanced": {
+    "debug.showScores": true
+  },
+  "github.copilot.chat.localeOverride": "pt-br",
 
   "diffEditor.wordWrap": "off",
 
-  "projectManager.git.baseFolders": [
-    "~/projects"
-  ],
+  "projectManager.git.baseFolders": ["~/projects"],
 
   "colorize.languages": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
 
@@ -518,9 +582,9 @@
 
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.graph.layout": "editor",
-  "gitlens.graph.minimap.additionalTypes": [
-    "tags"
-  ],
+  "gitlens.graph.minimap.additionalTypes": ["tags"],
+  "gitlens.graph.scrollMarkers.additionalTypes": ["localBranches", "stashes", "remoteBranches", "tags"],
+  "gitlens.graph.minimap.enabled": false,
 
   "vscode-edge-devtools.webhint": false,
 
@@ -563,7 +627,7 @@
     "nested-conditional-type"
   ],
 
-  "console-ninja.featureSet": "Pro",
+  "console-ninja.featureSet": "Community",
 
   "jest.autoRun": {
     "onStartup": []
@@ -596,15 +660,9 @@
       "**/<node_internals>/**"
     ]
   },
+
   "hediet.vscode-drawio.resizeImages": null,
   "hediet.vscode-drawio.codeLinkActivated": false,
-  "[java]": {
-    "editor.defaultFormatter": "redhat.java"
-  },
-  "gitlens.graph.scrollMarkers.additionalTypes": [
-    "localBranches",
-    "stashes",
-    "remoteBranches",
-    "tags"
-  ],
+
+  "java.compile.nullAnalysis.mode": "automatic"
 }
