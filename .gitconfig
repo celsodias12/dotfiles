@@ -13,7 +13,9 @@
 
     cm = commit
     cmm = commit -m
-    cmmam = commit --amend
+    acmam = !git a . && git commit --amend
+    cmam = commit --amend
+    aincm = !git a . && git incm
     incm = cmm 'feat: inital commit'
     acmm = !git a . && git cmm
 
@@ -27,16 +29,19 @@
     delcm = reset --soft HEAD~1
     resh = reset --hard
 
+    remad = remote add origin
+    remre = remote remove origin
+
+    pod = push origin --delete
+
     st = stash
     stl = stash list
     stc = stash clear
-    stw = stash show
     sts = stash save
     sta = stash apply
     std = stash drop
     stp = stash pop
-    # exst = !git add . && git stash save && git stash show "stash@{0}" -p >stash.patch && git stash pop
-    exst = !git a . && git sts && git stash show "stash@{0}" -p >stash.patch && git stp
+    exst = !git a . && git sts && git st show "stash@{0}" -p >stash.patch && git stp
     imst = apply stash.patch
 
     lg = log --graph
@@ -58,31 +63,43 @@
 
     fe = fetch
 
+    cp = cherry-pick
+
     feature = "!f() { git swc feature/$1; }; f"
     hotfix = "!f() { git swc hotfix/$1; }; f"
+    bug = "!f() { git swc bug/$1; }; f"
 
-    # feat = "!f() { zsh -ic \"git-commit feat \"$1\" \"$2\"\"; }; f"
     feat = "!f() { git fnCommit feat \"$1\" \"$2\"; }; f"
     afeat = "!git a . && git feat \"$1\" \"$2\""
+
     fix = "!f() { git fnCommit fix \"$1\" \"$2\"; }; f"
     afix = "!git a . && git fix \"$1\" \"$2\""
+
     docs = "!f() { git fnCommit docs \"$1\" \"$2\"; }; f"
     adocs = "!git a . && git docs \"$1\" \"$2\""
+
     style = "!f() { git fnCommit style \"$1\" \"$2\"; }; f"
     astyle = "!git a . && git style \"$1\" \"$2\""
+
     refactor = "!f() { git fnCommit refactor \"$1\" \"$2\"; }; f"
     arefactor = "!git a . && git refactor \"$1\" \"$2\""
+
     perf = "!f() { git fnCommit perf \"$1\" \"$2\"; }; f"
     aperf = "!git a . && git perf \"$1\" \"$2\""
+
     test = "!f() { git fnCommit test \"$1\" \"$2\"; }; f"
     atest = "!git a . && git test \"$1\" \"$2\""
+
     build = "!f() { git fnCommit build \"$1\" \"$2\"; }; f"
     abuild = "!git a . && git build \"$1\" \"$2\""
+
     ci = "!f() { git fnCommit ci \"$1\" \"$2\"; }; f"
     aci = "!git a . && git ci \"$1\" \"$2\""
+
     chore = "!f() { git fnCommit chore \"$1\" \"$2\"; }; f"
     achore = "!git a . && git chore \"$1\" \"$2\""
-    revert = "!f() { git fnCommit revert \"$1\" \"$2\"; }; f"
+
+    rrevert = "!f() { git fnCommit revert \"$1\" \"$2\"; }; f"
     arevert = "!git a . && git revert \"$1\" \"$2\""
 
     fnCommit="!f() { local commit_type=\"$1\"; if [ $# -eq 3 ] && [ -z \"$3\" ]; then local commit_message=\"$2\"; git cmm \"$commit_type: $commit_message\"; elif [ $# -eq 3 ]; then local scope=\"$2\"; local commit_message=\"$3\"; git cmm \"$commit_type($scope): $commit_message\"; else logger \"Invalid arguments: $*\"; return 1; fi; }; f"
@@ -96,5 +113,11 @@
     bve= "bundle verify app.bundle"
 
 
+[includeIf "gitdir:/tmp"]
+  path = ~/.gitconfig-me
+
 [includeIf "gitdir:~/"]
   path = ~/.gitconfig-me
+
+[includeIf "gitdir:~/projects/freelance-in-progress/"]
+  path = ~/.gitconfig-gitlab
