@@ -1,5 +1,5 @@
 {
-  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.fontSize": 14,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.tabs.enabled": true,
@@ -8,7 +8,7 @@
   "terminal.integrated.env.linux": {},
   "terminal.integrated.env.windows": {},
 
-  "workbench.startupEditor": "none",
+  "workbench.startupEditor": "newUntitledFile",
   "workbench.colorTheme": "Dracula Pro",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.editor.labelFormat": "short",
@@ -25,12 +25,27 @@
     "editor.lineHighlightBorder": "#9fced11f"
   },
   "workbench.list.smoothScrolling": true,
-  "workbench.tree.renderIndentGuides": "always",
   "workbench.editor.pinnedTabsOnSeparateRow": true,
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.tree.enableStickyScroll": true,
 
   "explorer.compactFolders": false,
   "explorer.autoRevealExclude": {
     "**/node_modules": true
+  },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml",
+    ".env": ".env*",
+    ".eslintrc": ".eslint*",
+    ".eslintrc.js": ".eslint*",
+    "Dockerfile": ".dockerignore",
+    ".prettierrc": ".prettier*"
   },
 
   "editor.tabSize": 2,
@@ -46,14 +61,14 @@
   "editor.linkedEditing": true,
   "editor.suggestSelection": "first",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.addMissingImports": true
+    "source.fixAll.eslint": "explicit",
+    "source.addMissingImports": "explicit"
   },
   "editor.suggest.showMethods": true,
   "editor.acceptSuggestionOnEnter": "on",
   "editor.inlineSuggest.enabled": true,
   "editor.wordWrap": "off",
-  "editor.wordBasedSuggestions": false,
+  "editor.wordBasedSuggestions": "off",
   "editor.suggest.preview": true,
   "editor.guides.bracketPairs": true,
   "editor.guides.bracketPairsHorizontal": "active",
@@ -64,7 +79,7 @@
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.unicodeHighlight.invisibleCharacters": true,
   "editor.unicodeHighlight.ambiguousCharacters": true,
-  "editor.unicodeHighlight.nonBasicASCII": true,
+  "editor.unicodeHighlight.nonBasicASCII": false,
   "editor.unicodeHighlight.allowedCharacters": {
     "ê": true,
     "ç": true,
@@ -127,6 +142,9 @@
   "editor.inlayHints.enabled": "on",
   "editor.codeActionWidget.includeNearbyQuickFixes": true,
 
+  "window.commandCenter": false,
+  "window.menuBarVisibility": "compact",
+
   "search.exclude": {
     "**/node_modules": true,
     "**/package-lock.json": true,
@@ -184,9 +202,6 @@
     ".env*": "dotenv"
   },
   "files.trimTrailingWhitespace": true,
-  // "files.readonlyInclude": {
-  //   "node_modules/*": true
-  // },
   "files.readonlyFromPermissions": true,
   "files.exclude": {
     "**/.git": true
@@ -279,16 +294,19 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "files.autoSave": "afterDelay"
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "files.autoSave": "afterDelay"
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[env]": {
-    "editor.defaultFormatter": "dotenv.dotenv-vscode"
+    "editor.defaultFormatter": "dotenv.dotenv-vscode",
+    "files.autoSave": "afterDelay"
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -306,7 +324,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[sql]": {
-    "editor.defaultFormatter": "bradymholt.pgformatter"
+    "editor.defaultFormatter": "bradymholt.pgformatter",
+    "files.autoSave": "afterDelay"
   },
   "[postgres]": {
     "editor.defaultFormatter": "bradymholt.pgformatter"
@@ -315,37 +334,49 @@
     "editor.defaultFormatter": "Prisma.prisma"
   },
   "[ignore]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
+    "editor.defaultFormatter": "foxundermoon.shell-format",
+    "files.autoSave": "afterDelay"
   },
   "[properties]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
+    "editor.defaultFormatter": "foxundermoon.shell-format",
+    "files.autoSave": "afterDelay"
   },
   "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
+    "editor.defaultFormatter": "foxundermoon.shell-format",
+    "files.autoSave": "afterDelay"
   },
   "[dockerfile]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
+    "editor.defaultFormatter": "foxundermoon.shell-format",
+    "files.autoSave": "afterDelay"
   },
   "[nginx]": {
-    "editor.defaultFormatter": "ahmadalli.vscode-nginx-conf"
+    "editor.defaultFormatter": "ahmadalli.vscode-nginx-conf",
+    "files.autoSave": "afterDelay"
   },
   "[dotenv]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
+    "editor.defaultFormatter": "foxundermoon.shell-format",
+    "files.autoSave": "afterDelay"
   },
   "[python]": {
     "editor.formatOnType": true
   },
   "[plaintext]": {
-    "editor.defaultFormatter": "tlahmann.alex-linter"
+    "editor.defaultFormatter": "tlahmann.alex-linter",
+    "files.autoSave": "afterDelay"
   },
   "[powershell]": {
-    "editor.defaultFormatter": "ms-vscode.powershell"
+    "editor.defaultFormatter": "ms-vscode.powershell",
+    "files.autoSave": "afterDelay"
   },
   "[java]": {
     "editor.defaultFormatter": "redhat.java"
   },
   "[yaml]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "files.autoSave": "afterDelay"
+  },
+  "[markdown]": {
+    "files.autoSave": "afterDelay"
   },
 
   "redhat.telemetry.enabled": false,
@@ -362,6 +393,7 @@
     "AGPSS",
     "AGTEC",
     "AGTOT",
+    "alex",
     "antd",
     "appcenter",
     "avds",
@@ -375,6 +407,7 @@
     "camelcase",
     "categorys",
     "Celso",
+    "celsodias",
     "chakra",
     "CHAVITO",
     "checkmark",
@@ -386,6 +419,8 @@
     "collapsable",
     "commitlint",
     "conti",
+    "csrf",
+    "Csrf",
     "CYBERSOURCE",
     "datadog",
     "datetimepicker",
@@ -407,6 +442,7 @@
     "geolocation",
     "Gerencianet",
     "github",
+    "gitlab",
     "googlemaps",
     "gradlew",
     "grafana",
@@ -436,6 +472,7 @@
     "keycloak",
     "konduto",
     "Konduto",
+    "kubernetes",
     "Laravel",
     "linkedin",
     "luxon",
@@ -445,6 +482,8 @@
     "MANU",
     "mapbox",
     "middlewares",
+    "mikro",
+    "Mikro",
     "mmssss",
     "mobx",
     "modalize",
@@ -455,6 +494,7 @@
     "nestjs",
     "nestjsx",
     "netinfo",
+    "Netshoes",
     "nginx",
     "nonstrict",
     "noopener",
@@ -466,6 +506,7 @@
     "Parens",
     "persistor",
     "pjpeg",
+    "Postgre",
     "postgres",
     "prebuild",
     "Pressable",
@@ -474,6 +515,7 @@
     "QRDN",
     "QRES",
     "Qube",
+    "quokka",
     "rajdhani",
     "Rastreagro",
     "rcombreducer",
@@ -536,10 +578,13 @@
     "varchar",
     "vercel",
     "vitest",
+    "wallu",
+    "Wallu",
     "WALLU",
     "whatsapp",
     "Xiaomi",
     "yohan",
+    "Zattini",
     "zustand"
   ],
   "cSpell.language": "en,pt_BR",
@@ -550,6 +595,8 @@
   //     "serverUrl": ""
   //   }
   // ],
+  "sonarlint.output.showVerboseLogs": true,
+  "sonarlint.output.showAnalyzerLogs": true,
 
   "liveshare.connectionMode": "relay",
 
@@ -594,10 +641,12 @@
   "git.branchProtection": ["master", "main"],
 
   "gitlab.showPipelineUpdateNotifications": true,
+  "gitlab.aiAssistedCodeSuggestions.enabled": true,
 
   "dotenv.enableAutocloaking": false,
 
   "remote.downloadExtensionsLocally": true,
+  "remote.autoForwardPortsSource": "hybrid",
 
   "totalTypeScript.hideAllTips": false,
   "totalTypeScript.hideBasicTips": true,
@@ -629,9 +678,7 @@
 
   "console-ninja.featureSet": "Community",
 
-  "jest.autoRun": {
-    "onStartup": []
-  },
+  "jest.runMode": "on-demand",
 
   "code-runner.runInTerminal": true,
   "code-runner.clearPreviousOutput": true,
@@ -664,5 +711,9 @@
   "hediet.vscode-drawio.resizeImages": null,
   "hediet.vscode-drawio.codeLinkActivated": false,
 
-  "java.compile.nullAnalysis.mode": "automatic"
+  "java.compile.nullAnalysis.mode": "automatic",
+  "java.autobuild.enabled": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "dev.containers.executeInWSL": true,
+  "files.autoSave": "afterDelay"
 }
