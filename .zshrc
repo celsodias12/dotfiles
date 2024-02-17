@@ -4,7 +4,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-export JAVA_HOME=/usr/lib/jvm/jdk-11
+export JAVA_HOME=/usr/lib/jvm/jdk-17-oracle-x64
+
 export PATH=$PATH:$JAVA_HOME/bin
 
 export OPENSSL_CONF=/dev/null
@@ -149,6 +150,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.zshrc-labs
 
 # User configuration
 
@@ -207,12 +209,17 @@ alias fc="cd ~/projects/courses/full_cycle"
 alias fc3="cd ~/projects/courses/full_cycle/full_cycle_3"
 alias jstack="cd ~/projects/courses/jstack"
 
+# Git
+alias sync-master="br-from-to develop master sync"
+alias sync-develop="br-from-to master develop sync"
+
 # Docker
 alias dcu="docker compose up"
 alias dcd="docker compose down"
 alias dcs="docker compose stop"
 alias dcp="docker compose ps"
 alias dcr="docker compose run"
+alias drm="sudo chown celso:celso .docker/* && sudo rm -rf .docker"
 
 # Minikube
 alias mk="minikube"
@@ -226,7 +233,7 @@ alias sosc="sonar-scanner"
 
 # Redis
 alias redis="redis-cli"
-alias redis-cl="echo "flushall" | redis-cli"
+alias redis-cl="echo "flushall" | redis-cli $*"
 
 # Python
 alias venv="python -m venv venv"
@@ -273,6 +280,8 @@ alias rsa-pub="openssl rsa -in private.pem -pubout -out public.pem"
 
 # Node
 alias check-unused-packages="npx depcheck"
+alias npxy="npx -y"
+alias nest="npx @nestjs/cli"
 
 # Remember
 # alias js2ts="find . -depth -type f -name "*.js" -not -path "./node_modules/*" -exec sh -c 'mv -- "$1" "$(dirname "$1")/$(basename "$1" .js).ts"' _ '{}' \;"
