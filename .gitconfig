@@ -17,6 +17,7 @@
     cmam = commit --amend
     aincm = !git a . && git incm
     incm = cmm 'feat: inital commit'
+    aincm = !git a . && git cmm 'feat: inital commit'
     acmm = !git a . && git cmm
 
     br = branch
